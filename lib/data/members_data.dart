@@ -306,84 +306,132 @@ class MembersData {
     ),
 
     // =========================================================================
-    // MEMBER 04 — Replace with Member 04's actual details
+    // MEMBER 04 — Vichakshi Shashiprabha
     // Screen file: lib/screens/members/member_04_screen.dart
-    // Design Style: Gradient Profile Design
+    // Design Style: Gradient Glassmorphism
     // =========================================================================
     GroupMember(
       id: 'member_04',
       memberNumber: 4,
-      studentId: 'STU-2026-004',
-      fullName: 'Member 04 (Placeholder Name)',
-      shortRole: 'Flutter Animation Specialist',
+      studentId: 'STU-2026-004 (Placeholder)',
+      fullName: 'Vichakshi Shashiprabha',
+      shortRole: 'UI/UX Designer & IT Undergraduate',
       shortDescription:
-          'Crafts fluid glassmorphic UIs, gradients, and responsive mobile flows.',
-      address: 'Negombo, Western Province (Placeholder City)',
-      email: 'member04.placeholder@university.edu.example',
+          'Motivated and creative IT student specializing in UI/UX design, focused on crafting intuitive, user-friendly, and visually appealing digital interfaces.',
+      address: 'City / District (Placeholder)',
+      email: 'vichakshi245@gmail.com',
       photoAsset: 'assets/images/member_04.jpg',
-      designStyleName: 'Gradient & Glass',
+      designStyleName: 'Gradient Glassmorphism',
       accentColor: Color(0xFF7C3AED),
-      bioQuote: 'Light, depth, and motion guide the user without extra words.',
+      bioQuote:
+          'Passionate about creating intuitive, user-friendly, and visually appealing digital interfaces.',
       qualifications: [
         AcademicQualification(
-          level: 'G.C.E. O/L',
-          title: 'Ordinary Level Examination (Placeholder)',
-          institution: 'St. Mary/Joseph High School (Placeholder)',
-          year: '2020',
-          gradeOrStatus: '8 As (Sample)',
+          level: 'Diploma',
+          title: 'National Diploma in Information Technology',
+          institution: 'ITUM',
+          year: '2025 – Present',
+          gradeOrStatus: 'Ongoing',
+        ),
+        AcademicQualification(
+          level: 'NVQ Level 4',
+          title: 'ICTT NVQ Level 4 Course',
+          institution: 'VTA, Maharagama',
+          year: '2022 – 2023',
+          gradeOrStatus: 'Completed',
+        ),
+        AcademicQualification(
+          level: 'Diploma',
+          title: 'Diploma in Graphic Design',
+          institution: 'Sipway Campus, Kurunegala',
+          year: '2023',
+          gradeOrStatus: 'Completed',
         ),
         AcademicQualification(
           level: 'G.C.E. A/L',
-          title: 'Advanced Level — Combined Maths & ICT (Placeholder)',
-          institution: 'West Coast College (Placeholder)',
-          year: '2023',
-          gradeOrStatus: '2 Bs, 1 C (Sample)',
+          title: 'G.C.E. A/L Examination',
+          institution: 'Dharmapala Vidyalaya, Pannipitiya',
+          year: '2021 (2022)',
+          gradeOrStatus: 'Results (Placeholder)',
         ),
         AcademicQualification(
           level: 'Certificate',
-          title: 'Cross-Platform Dart & Flutter Certificate (Placeholder)',
-          institution: 'Online Tech Academy (Placeholder)',
-          year: '2025',
-          gradeOrStatus: 'Completed',
+          title: 'Introduction to Figma',
+          institution: 'Simplilearn SkillUp',
+          year: 'Oct 2026',
+          gradeOrStatus: 'Certified',
+        ),
+        AcademicQualification(
+          level: 'Certificate',
+          title: 'Introduction to Adobe XD',
+          institution: 'Simplilearn SkillUp',
+          year: 'Nov 2026',
+          gradeOrStatus: 'Certified',
+        ),
+        AcademicQualification(
+          level: 'Certificate',
+          title: 'Design Thinking for Beginners',
+          institution: 'Simplilearn SkillUp',
+          year: 'Oct 2026',
+          gradeOrStatus: 'Certified',
         ),
       ],
       softSkills: [
         SoftSkill(
-          name: 'Collaboration',
+          name: 'Teamwork',
           level: 0.90,
-          description: 'Pairs smoothly on state management and widget composition.',
+          description:
+              'Collaborates with developers on group projects like SeettuManager to integrate React layouts with backend APIs (level placeholder).',
         ),
         SoftSkill(
-          name: 'Active Listening',
+          name: 'Rapid Learning',
+          level: 0.88,
+          description:
+              'Continuously upskills across UI/UX design tools, design thinking, and modern web technologies (level placeholder).',
+        ),
+        SoftSkill(
+          name: 'Problem-Solving',
           level: 0.87,
-          description: 'Captures peer feedback during design critiques.',
+          description:
+              'Turns user registration, payment, and tracking requirements into clean, intuitive interface flows (level placeholder).',
         ),
         SoftSkill(
-          name: 'Self-Motivation',
-          level: 0.93,
-          description: 'Explores new Flutter rendering APIs independently.',
+          name: 'Event Coordination',
+          level: 0.89,
+          description:
+              'Organizes student activities and martial arts training built on prefectship and coaching experience (level placeholder).',
         ),
         SoftSkill(
-          name: 'Time Management',
-          level: 0.86,
-          description: 'Balances coursework, labs, and group milestones.',
+          name: 'Communication',
+          level: 0.90,
+          description:
+              'Aligns clearly with cross-functional project teams, students, and academic stakeholders (level placeholder).',
         ),
       ],
       talents: [
         SpecialTalent(
-          title: 'Swimming',
+          title: 'Karate Coaching',
           category: 'Sports',
-          detail: 'Freestyle lap swimmer and coastal lifesaving enthusiast.',
+          detail:
+              'Karate Coach at Ilma International Girls School (May 2024 – Present); holds NISS Coaching Licence, SLKF Coach ID, and D Grade Instructor status; 3rd Place at Sri Lanka School Karate Championship 2018 & Colombo District Championship 2017 (Female Kata).',
         ),
         SpecialTalent(
-          title: 'Electronic Music Production',
-          category: 'Music',
-          detail: 'Ambient synth soundscapes and lo-fi beats.',
+          title: 'UI/UX & Graphic Design',
+          category: 'Creative Design',
+          detail:
+              'Designs mobile and web experiences using Figma, Adobe XD, Photoshop, Illustrator, and CorelDRAW; designed complete interface screens for SeettuManager.',
         ),
         SpecialTalent(
-          title: 'Motion Graphics',
-          category: 'Art',
-          detail: 'Short kinetic typography loops.',
+          title: 'Frontend & Visual Prototyping',
+          category: 'Technology',
+          detail:
+              'Builds interactive web views with HTML5, CSS3, React.js, and Power BI, bridging visual design with functional implementation.',
+        ),
+        SpecialTalent(
+          title: 'Student Leadership & Prefectship',
+          category: 'Leadership',
+          detail:
+              'Served as Senior Prefect (2018) and Junior Prefect (2017) at Homagama President’s College, and worked as a Trainee at ITUM Division of Interdisciplinary Studies.',
         ),
       ],
     ),
