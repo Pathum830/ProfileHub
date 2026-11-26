@@ -706,91 +706,105 @@ class MembersData {
     ),
 
     // =========================================================================
-    // MEMBER 07 — Replace with Member 07's actual details
+    // MEMBER 07 — Thuvijavanthy Yogaraj
     // Screen file: lib/screens/members/member_07_screen.dart
-    // Design Style: Dark Theme Profile
+    // Design Style: Dark Cyberpunk / Futuristic Dashboard
     // =========================================================================
     GroupMember(
       id: 'member_07',
       memberNumber: 7,
-      studentId: 'STU-2026-007',
-      fullName: 'Member 07 (Placeholder Name)',
-      shortRole: 'Security & Testing Engineer',
+      studentId: 'STU-2026-007 (Placeholder)',
+      fullName: 'Thuvijavanthy Yogaraj',
+      shortRole: 'UI/UX Designer & IT Student',
       shortDescription:
-          'Builds resilient dark-mode tools, widget tests, and terminal interfaces.',
-      address: 'Jaffna, Northern Province (Placeholder City)',
-      email: 'member07.placeholder@university.edu.example',
+          'Creative Information Technology student at ITUM with two UI/UX certifications, designing dashboards and user flows in Figma and building practical interfaces in HTML, CSS, and React.js.',
+      address: 'City / District, Sri Lanka (Placeholder)',
+      email: 'yogarajthuvi123@gmail.com',
       photoAsset: 'assets/images/member_07.jpg',
       designStyleName: 'Dark Cyberpunk',
       accentColor: Color(0xFF00F5D4),
-      bioQuote: 'Clean tests and strong validation keep midnight builds calm.',
+      bioQuote:
+          'Designing intuitive, user-centred digital experiences that remain practical to develop.',
       qualifications: [
         AcademicQualification(
-          level: 'G.C.E. O/L',
-          title: 'Ordinary Level Examination (Placeholder)',
-          institution: 'Northern High School (Placeholder)',
-          year: '2020',
-          gradeOrStatus: '9 As (Sample)',
-        ),
-        AcademicQualification(
           level: 'G.C.E. A/L',
-          title: 'Advanced Level — Physical Science (Placeholder)',
-          institution: 'Jaffna College (Placeholder)',
-          year: '2023',
-          gradeOrStatus: '2 As, 1 B (Sample)',
+          title: 'G.C.E. Advanced Level',
+          institution: 'T/Sri Shanmuga Hindu Ladies College',
+          year: '2022',
+          gradeOrStatus: 'Results (Placeholder)',
         ),
         AcademicQualification(
           level: 'Certificate',
-          title: 'Cybersecurity & Mobile Testing Essentials (Placeholder)',
-          institution: 'Tech Security Lab (Placeholder)',
-          year: '2025',
-          gradeOrStatus: 'Honors',
+          title: 'UI/UX for Designers',
+          institution: 'Simplilearn',
+          year: '2026',
+          gradeOrStatus: 'Completed',
         ),
         AcademicQualification(
-          level: 'Degree',
-          title: 'BSc (Hons) in Cyber & Software Systems (Ongoing)',
-          institution: 'University Campus (Placeholder)',
-          year: '2024 – Present',
-          gradeOrStatus: 'Year 2',
+          level: 'Certificate',
+          title: 'Introduction to Graphic Design & Basics of UI/UX',
+          institution: 'Simplilearn',
+          year: '2026',
+          gradeOrStatus: 'Completed',
+        ),
+        AcademicQualification(
+          level: 'Diploma',
+          title: 'National Diploma in Technology (NDT) – Information Technology',
+          institution: 'Institute of Technology, University of Moratuwa (ITUM)',
+          year: '2025 – 2028 (Expected)',
+          gradeOrStatus: 'Ongoing',
         ),
       ],
       softSkills: [
         SoftSkill(
-          name: 'Problem Solving',
-          level: 0.95,
-          description: 'Isolates edge-case crashes and async race conditions.',
-        ),
-        SoftSkill(
-          name: 'Resilience',
-          level: 0.91,
-          description: 'Stays methodical during complex debugging sessions.',
-        ),
-        SoftSkill(
-          name: 'Technical Writing',
-          level: 0.87,
-          description: 'Documents testing steps and Firebase setup guides.',
-        ),
-        SoftSkill(
-          name: 'Team Support',
+          name: 'Creative Thinking',
           level: 0.90,
-          description: 'Helps group mates run static analysis and tests.',
+          description:
+              'Creative thinking, visual communication, and attention to detail in UI/UX craft (level placeholder).',
+        ),
+        SoftSkill(
+          name: 'Empathy & Problem-Solving',
+          level: 0.88,
+          description:
+              'Empathy for users, problem-solving, and critical thinking across user flows (level placeholder).',
+        ),
+        SoftSkill(
+          name: 'Communication & Teamwork',
+          level: 0.86,
+          description:
+              'Verbal and written communication paired with collaborative team execution (level placeholder).',
+        ),
+        SoftSkill(
+          name: 'Work Ethic & Adaptability',
+          level: 0.89,
+          description:
+              'Time management, adaptability, and an eager quick-learner mindset (level placeholder).',
         ),
       ],
       talents: [
         SpecialTalent(
-          title: 'Capture The Flag (CTF)',
-          category: 'Tech Hobby',
-          detail: 'Solves cryptography and logic challenges on weekends.',
+          title: 'UI/UX & Figma Prototyping',
+          category: 'Design Talent',
+          detail:
+              'User research basics, user flows, wireframing, prototyping, and responsive dashboards in Figma.',
         ),
         SpecialTalent(
-          title: 'Mechanical Keyboards',
-          category: 'Hobby',
-          detail: 'Custom keycap layouts and tactile switch modding.',
+          title: 'Graphic & Visual Design',
+          category: 'Creative Talent',
+          detail:
+              'Visual hierarchy, typography, colour theory, and graphic design fundamentals.',
         ),
         SpecialTalent(
-          title: 'Track & Field Sprinting',
-          category: 'Sports',
-          detail: '100m and 200m university athletics participant.',
+          title: 'Front-End Interfaces',
+          category: 'Technical Talent',
+          detail:
+              'Building practical user interfaces with HTML, CSS, JavaScript, React.js, Git, and GitHub.',
+        ),
+        SpecialTalent(
+          title: 'Personal Hobby (Placeholder)',
+          category: 'Hobby (Placeholder)',
+          detail:
+              'Placeholder — update with verified personal hobbies or extracurricular interests.',
         ),
       ],
     ),
