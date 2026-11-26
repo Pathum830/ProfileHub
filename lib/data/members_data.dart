@@ -16,91 +16,111 @@ class MembersData {
 
   static const List<GroupMember> members = [
     // =========================================================================
-    // MEMBER 01 — Replace with Member 01's actual details
+    // MEMBER 01 — Pathum Siriwardhana
     // Screen file: lib/screens/members/member_01_screen.dart
     // Design Style: Modern Minimalist Profile
     // =========================================================================
     GroupMember(
       id: 'member_01',
       memberNumber: 1,
-      studentId: 'STU-2026-001',
-      fullName: 'Member 01 (Placeholder Name)',
-      shortRole: 'Mobile UI Architect',
+      studentId: 'STU-2026-001 (Placeholder)',
+      fullName: 'Pathum Siriwardhana',
+      shortRole: 'Intern DevOps Engineer',
       shortDescription:
-          'Passionate about clean minimalist interfaces and structured Dart code.',
-      address: 'Colombo 07, Western Province (Placeholder City)',
-      email: 'member01.placeholder@university.edu.example',
+          'IT student at ITUM focused on DevOps engineering, cloud infrastructure, Linux, Docker, and CI/CD automation.',
+      address: 'Badulla, Sri Lanka',
+      email: 'pathumsiriwardhana86@gmail.com',
       photoAsset: 'assets/images/member_01.jpg',
       designStyleName: 'Modern Minimalist',
-      accentColor: Color(0xFFC85A32),
-      bioQuote: 'Simplicity is about subtracting the obvious and adding the meaningful.',
+      accentColor: Color(0xFF9C7A54),
+      bioQuote:
+          'Helping deliver reliable software through efficient build, test, and deployment workflows.',
       qualifications: [
         AcademicQualification(
           level: 'G.C.E. O/L',
           title: 'Ordinary Level Examination (Placeholder)',
-          institution: 'National Secondary School (Placeholder)',
-          year: '2020',
-          gradeOrStatus: '9 As (Sample)',
+          institution: 'Secondary School Name (Placeholder)',
+          year: 'YYYY (Placeholder)',
+          gradeOrStatus: 'Results (Placeholder)',
         ),
         AcademicQualification(
           level: 'G.C.E. A/L',
-          title: 'Advanced Level — Physical Science Stream (Placeholder)',
-          institution: 'National College (Placeholder)',
-          year: '2023',
-          gradeOrStatus: '3 Passes (Sample)',
+          title: 'Advanced Level Examination (Placeholder)',
+          institution: 'B/Dharmadutha Collage (Placeholder)',
+          year: '2017 (Placeholder)',
+          gradeOrStatus: 'A6 B2 C1 (Placeholder)',
         ),
         AcademicQualification(
           level: 'Certificate',
-          title: 'Certificate in Mobile App Foundations (Placeholder)',
-          institution: 'Tech Institute (Placeholder)',
-          year: '2024',
-          gradeOrStatus: 'Distinction',
+          title: 'Python for Beginners',
+          institution: 'University of Moratuwa',
+          year: '2025',
+          gradeOrStatus: 'Completed',
         ),
         AcademicQualification(
-          level: 'Degree',
-          title: 'BSc (Hons) in Software Engineering (Ongoing)',
-          institution: 'University Campus (Placeholder)',
+          level: 'Certificate',
+          title: 'Cloud Computing Fundamentals',
+          institution: 'IBM SkillsBuild',
+          year: '2026',
+          gradeOrStatus: 'Completed',
+        ),
+        AcademicQualification(
+          level: 'Certificate',
+          title: 'Google AI Essentials',
+          institution: 'Google',
+          year: '2026',
+          gradeOrStatus: 'Completed',
+        ),
+        AcademicQualification(
+          level: 'Diploma',
+          title: 'National Diploma in Technology (NDT) – Information Technology',
+          institution:
+              'Institute of Technology, University of Moratuwa (ITUM), Sri Lanka',
           year: '2024 – Present',
-          gradeOrStatus: 'Year 2',
+          gradeOrStatus: 'Ongoing',
         ),
       ],
       softSkills: [
         SoftSkill(
-          name: 'Teamwork',
-          level: 0.92,
-          description: 'Collaborates effectively across Git branches and UI reviews.',
+          name: 'Team Collaboration',
+          level: 0.85,
+          description:
+              'Collaborated in academic group projects using Git and GitHub workflows (level placeholder).',
         ),
         SoftSkill(
-          name: 'Communication',
-          level: 0.88,
-          description: 'Writes clear technical documentation and sprint updates.',
+          name: 'Communication (Placeholder)',
+          level: 0.80,
+          description:
+              'Placeholder — update with verified personal soft skill details.',
         ),
         SoftSkill(
-          name: 'Time Management',
-          level: 0.90,
-          description: 'Delivers modular screen milestones ahead of deadlines.',
+          name: 'Time Management (Placeholder)',
+          level: 0.80,
+          description:
+              'Placeholder — update with verified personal soft skill details.',
         ),
         SoftSkill(
-          name: 'Attention to Detail',
-          level: 0.94,
-          description: 'Focuses on typography rhythm, spacing, and alignment.',
+          name: 'Adaptability (Placeholder)',
+          level: 0.82,
+          description:
+              'Placeholder — update with verified personal soft skill details.',
         ),
       ],
       talents: [
         SpecialTalent(
-          title: 'Minimalist Photography',
-          category: 'Art',
-          detail: 'Architectural street framing and monochrome light studies.',
+          title: 'Special Talent 01 (Placeholder)',
+          category: 'Placeholder',
+          detail: 'Add your verified artistic, creative, or technical talent here.',
         ),
         SpecialTalent(
-          title: 'Badminton',
-          category: 'Sports',
-          detail: 'Inter-faculty doubles player and weekend club participant.',
+          title: 'Sport / Activity 02 (Placeholder)',
+          category: 'Placeholder',
+          detail: 'Add your verified sports or extracurricular activity here.',
         ),
         SpecialTalent(
-          title: 'Acoustic Guitar',
-          category: 'Music',
-          detail: 'Fingerstyle arrangements during study breaks.',
+          title: 'Personal Hobby 03 (Placeholder)',
+          category: 'Placeholder',
+          detail: 'Add your verified music, reading, or personal interest here.',
         ),
       ],
     ),
