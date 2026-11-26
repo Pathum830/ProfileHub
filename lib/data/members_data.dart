@@ -216,91 +216,132 @@ class MembersData {
     ),
 
     // =========================================================================
-    // MEMBER 03 — Replace with Member 03's actual details
+    // MEMBER 03 — Nimeshika Sewwandi
     // Screen file: lib/screens/members/member_03_screen.dart
-    // Design Style: Creative Portfolio Layout
+    // Design Style: Creative Portfolio / Neo-Brutalist
     // =========================================================================
     GroupMember(
       id: 'member_03',
       memberNumber: 3,
-      studentId: 'STU-2026-003',
-      fullName: 'Member 03 (Placeholder Name)',
-      shortRole: 'Creative Interaction Designer',
+      studentId: 'ITUM/IT/2025/003 (Placeholder)',
+      fullName: 'Nimeshika Sewwandi',
+      shortRole: 'Software Engineering Intern',
       shortDescription:
-          'Explores bold color systems, custom animations, and playful layouts.',
-      address: 'Galle, Southern Province (Placeholder City)',
-      email: 'member03.placeholder@university.edu.example',
+          'Motivated IT student at ITUM skilled in programming, web development, and UI/UX design, passionate about building impactful digital solutions.',
+      address: 'Mahiyanganaya, Sri Lanka',
+      email: 'sewwandinimeshika95@gmail.com',
       photoAsset: 'assets/images/member_03.jpg',
-      designStyleName: 'Creative Portfolio',
-      accentColor: Color(0xFFFF4D6D),
-      bioQuote: 'Every screen is a canvas for memorable micro-interactions.',
+      designStyleName: 'Creative Portfolio / Neo-Brutalist',
+      accentColor: Color(0xFFFFDF00),
+      bioQuote:
+          'Motivated and hardworking IT student with basic knowledge of programming, web development and graphic design. A quick learner with teamwork and communication skills, eager to learn, gain practical experience and grow professionally.',
       qualifications: [
         AcademicQualification(
-          level: 'G.C.E. O/L',
-          title: 'Ordinary Level Examination (Placeholder)',
-          institution: 'Southern Girls/Boys School (Placeholder)',
-          year: '2020',
-          gradeOrStatus: 'Completed (Sample)',
-        ),
-        AcademicQualification(
-          level: 'G.C.E. A/L',
-          title: 'Advanced Level — Art & Design / ICT (Placeholder)',
-          institution: 'Coastal College (Placeholder)',
-          year: '2023',
-          gradeOrStatus: 'Completed (Sample)',
+          level: 'Diploma',
+          title: 'National Diploma in Information Technology (NDIT)',
+          institution:
+              'Institute of Technology, University of Moratuwa (ITUM)',
+          year: '2025 – 2027',
+          gradeOrStatus: 'Current GPA: 2.51 / 4.00 (Ongoing)',
         ),
         AcademicQualification(
           level: 'Certificate',
-          title: 'UI/UX Visual Design Bootcamp (Placeholder)',
-          institution: 'Design Studio School (Placeholder)',
-          year: '2024',
-          gradeOrStatus: 'Top Portfolio',
+          title: 'Python for Beginners',
+          institution: 'CODL, University of Moratuwa',
+          year: '2025',
+          gradeOrStatus: 'Completed',
         ),
         AcademicQualification(
-          level: 'Degree',
-          title: 'BSc in Interactive Media & Computing (Ongoing)',
-          institution: 'University Campus (Placeholder)',
-          year: '2024 – Present',
-          gradeOrStatus: 'Year 2',
+          level: 'Certificate',
+          title: 'Web Development',
+          institution: 'CODL, University of Moratuwa',
+          year: '2025',
+          gradeOrStatus: 'Completed',
+        ),
+        AcademicQualification(
+          level: 'Certificate',
+          title: 'Foundation English Course',
+          institution: 'Kekirawa English Academy',
+          year: '2024',
+          gradeOrStatus: 'Completed',
+        ),
+        AcademicQualification(
+          level: 'G.C.E. A/L',
+          title: 'Advanced Level Examination (Placeholder)',
+          institution: 'Secondary School, Mahiyanganaya (Placeholder)',
+          year: '2023 (Placeholder)',
+          gradeOrStatus: 'Completed (Placeholder)',
+        ),
+        AcademicQualification(
+          level: 'G.C.E. O/L',
+          title: 'Ordinary Level Examination (Placeholder)',
+          institution: 'Secondary School, Mahiyanganaya (Placeholder)',
+          year: '2020 (Placeholder)',
+          gradeOrStatus: 'Completed (Placeholder)',
         ),
       ],
       softSkills: [
         SoftSkill(
-          name: 'Creative Problem Solving',
-          level: 0.95,
-          description: 'Turns complex requirements into intuitive visual stories.',
+          name: 'Problem Solving',
+          level: 0.92,
+          description:
+              'Analytical debugging and algorithmic problem solving across software projects.',
         ),
         SoftSkill(
-          name: 'Empathy',
-          level: 0.90,
-          description: 'Designs accessible layouts for diverse screen sizes.',
-        ),
-        SoftSkill(
-          name: 'Adaptability',
-          level: 0.89,
-          description: 'Iterates rapidly based on usability feedback.',
+          name: 'Communication',
+          level: 0.88,
+          description:
+              'Clear articulation and presentation skills in bilingual English & Sinhala team environments.',
         ),
         SoftSkill(
           name: 'Teamwork',
-          level: 0.88,
-          description: 'Shares reusable assets and style ideas with teammates.',
+          level: 0.94,
+          description:
+              'Collaborative group project development using Git and GitHub workflows.',
+        ),
+        SoftSkill(
+          name: 'Adaptability',
+          level: 0.90,
+          description:
+              'Quick learner transitioning swiftly across emerging technologies and toolsets.',
+        ),
+        SoftSkill(
+          name: 'Time Management',
+          level: 0.86,
+          description:
+              'Balancing academic diploma coursework with hands-on project deliverables.',
         ),
       ],
       talents: [
         SpecialTalent(
-          title: 'Digital Illustration',
-          category: 'Art',
-          detail: 'Character sketching, vector posters, and editorial covers.',
+          title: 'UI/UX & Figma Prototyping',
+          category: 'Design & Creativity',
+          detail:
+              'Crafting user-centric wireframes, bold interactive mockups, and creative visual design systems.',
         ),
         SpecialTalent(
-          title: 'Origami & Paper Craft',
-          category: 'Hobby',
-          detail: 'Modular geometric paper sculptures.',
+          title: 'IoT Health Innovation',
+          category: 'Technology & Hardware',
+          detail:
+              'Designed & developed SentinelCare smart medical hand band system with sensors and web dashboard.',
         ),
         SpecialTalent(
-          title: 'Ukulele',
-          category: 'Music',
-          detail: 'Indie acoustic covers and rhythm composition.',
+          title: 'Full-Stack Web Development',
+          category: 'Engineering & Coding',
+          detail:
+              'Building responsive real-time web applications with React.js, Node.js, PHP, and MySQL.',
+        ),
+        SpecialTalent(
+          title: 'Digital Illustration & Poster Art',
+          category: 'Creative Art',
+          detail:
+              'Creating expressive sketches, neo-brutalist vector illustrations, and digital graphics.',
+        ),
+        SpecialTalent(
+          title: 'Tech Exploration & Gaming',
+          category: 'Personal Passion',
+          detail:
+              'Enthusiastic about exploring modern frameworks, developer communities, and logic puzzle games.',
         ),
       ],
     ),
