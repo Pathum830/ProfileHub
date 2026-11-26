@@ -26,15 +26,13 @@ class MembersData {
       studentId: 'STU-2026-001 (Placeholder)',
       fullName: 'Pathum Siriwardhana',
       shortRole: 'Intern DevOps Engineer',
-      shortDescription:
-          'IT student at ITUM focused on DevOps engineering, cloud infrastructure, Linux, Docker, and CI/CD automation.',
+      shortDescription: 'IT student at ITUM focused on DevOps engineering, cloud infrastructure, Linux, Docker, and CI/CD automation.',
       address: 'Badulla, Sri Lanka',
       email: 'pathumsiriwardhana86@gmail.com',
       photoAsset: 'assets/images/member_01.jpg',
       designStyleName: 'Modern Minimalist',
       accentColor: Color(0xFF9C7A54),
-      bioQuote:
-          'Helping deliver reliable software through efficient build, test, and deployment workflows.',
+      bioQuote: 'Helping deliver reliable software through efficient build, test, and deployment workflows.',
       qualifications: [
         AcademicQualification(
           level: 'G.C.E. O/L',
@@ -73,9 +71,9 @@ class MembersData {
         ),
         AcademicQualification(
           level: 'Diploma',
-          title: 'National Diploma in Technology (NDT) – Information Technology',
-          institution:
-              'Institute of Technology, University of Moratuwa (ITUM), Sri Lanka',
+          title:
+              'National Diploma in Technology (NDT) – Information Technology',
+          institution: 'Institute of Technology, University of Moratuwa (ITUM), Sri Lanka',
           year: '2024 – Present',
           gradeOrStatus: 'Ongoing',
         ),
@@ -84,8 +82,7 @@ class MembersData {
         SoftSkill(
           name: 'Team Collaboration',
           level: 0.85,
-          description:
-              'Collaborated in academic group projects using Git and GitHub workflows (level placeholder).',
+          description: 'Collaborated in academic group projects using Git and GitHub workflows (level placeholder).',
         ),
         SoftSkill(
           name: 'Communication (Placeholder)',
@@ -110,7 +107,8 @@ class MembersData {
         SpecialTalent(
           title: 'Special Talent 01 (Placeholder)',
           category: 'Placeholder',
-          detail: 'Add your verified artistic, creative, or technical talent here.',
+          detail:
+              'Add your verified artistic, creative, or technical talent here.',
         ),
         SpecialTalent(
           title: 'Sport / Activity 02 (Placeholder)',
@@ -120,7 +118,8 @@ class MembersData {
         SpecialTalent(
           title: 'Personal Hobby 03 (Placeholder)',
           category: 'Placeholder',
-          detail: 'Add your verified music, reading, or personal interest here.',
+          detail:
+              'Add your verified music, reading, or personal interest here.',
         ),
       ],
     ),
@@ -178,7 +177,8 @@ class MembersData {
         SoftSkill(
           name: 'Leadership',
           level: 0.93,
-          description: 'Coordinates task tracking and release readiness checks.',
+          description:
+              'Coordinates task tracking and release readiness checks.',
         ),
         SoftSkill(
           name: 'Analytical Thinking',
@@ -193,7 +193,8 @@ class MembersData {
         SoftSkill(
           name: 'Conflict Resolution',
           level: 0.87,
-          description: 'Keeps group discussions constructive and goal-oriented.',
+          description:
+              'Keeps group discussions constructive and goal-oriented.',
         ),
       ],
       talents: [
@@ -210,7 +211,8 @@ class MembersData {
         SpecialTalent(
           title: 'Financial Modeling',
           category: 'Hobby',
-          detail: 'Builds personal budgeting spreadsheets and tech case studies.',
+          detail:
+              'Builds personal budgeting spreadsheets and tech case studies.',
         ),
       ],
     ),
@@ -223,6 +225,8 @@ class MembersData {
     GroupMember(
       id: 'member_03',
       memberNumber: 3,
+
+
       studentId: 'ITUM/IT/2025/003 (Placeholder)',
       fullName: 'Nimeshika Sewwandi',
       shortRole: 'Software Engineering Intern',
@@ -230,6 +234,7 @@ class MembersData {
           'Motivated IT student at ITUM skilled in programming, web development, and UI/UX design, passionate about building impactful digital solutions.',
       address: 'Mahiyanganaya, Sri Lanka',
       email: 'sewwandinimeshika95@gmail.com',
+ main
       photoAsset: 'assets/images/member_03.jpg',
       designStyleName: 'Creative Portfolio / Neo-Brutalist',
       accentColor: Color(0xFFFFDF00),
@@ -282,10 +287,12 @@ class MembersData {
       ],
       softSkills: [
         SoftSkill(
+
           name: 'Problem Solving',
           level: 0.92,
           description:
               'Analytical debugging and algorithmic problem solving across software projects.',
+ main
         ),
         SoftSkill(
           name: 'Communication',
@@ -357,15 +364,13 @@ class MembersData {
       studentId: 'STU-2026-004 (Placeholder)',
       fullName: 'Vichakshi Shashiprabha',
       shortRole: 'UI/UX Designer & IT Undergraduate',
-      shortDescription:
-          'Motivated and creative IT student specializing in UI/UX design, focused on crafting intuitive, user-friendly, and visually appealing digital interfaces.',
-      address: 'City / District (Placeholder)',
+      shortDescription: 'Motivated and creative IT student specializing in UI/UX design, focused on crafting intuitive, user-friendly, and visually appealing digital interfaces.',
+      address: 'Homagama / Colombo',
       email: 'vichakshi245@gmail.com',
       photoAsset: 'assets/images/member_04.jpg',
       designStyleName: 'Gradient Glassmorphism',
       accentColor: Color(0xFF7C3AED),
-      bioQuote:
-          'Passionate about creating intuitive, user-friendly, and visually appealing digital interfaces.',
+      bioQuote: 'Passionate about creating intuitive, user-friendly, and visually appealing digital interfaces.',
       qualifications: [
         AcademicQualification(
           level: 'Diploma',
@@ -421,58 +426,49 @@ class MembersData {
         SoftSkill(
           name: 'Teamwork',
           level: 0.90,
-          description:
-              'Collaborates with developers on group projects like SeettuManager to integrate React layouts with backend APIs (level placeholder).',
+          description: 'Collaborates with developers on group projects like SeettuManager to integrate React layouts with backend APIs (level placeholder).',
         ),
         SoftSkill(
           name: 'Rapid Learning',
           level: 0.88,
-          description:
-              'Continuously upskills across UI/UX design tools, design thinking, and modern web technologies (level placeholder).',
+          description: 'Continuously upskills across UI/UX design tools, design thinking, and modern web technologies (level placeholder).',
         ),
         SoftSkill(
           name: 'Problem-Solving',
           level: 0.87,
-          description:
-              'Turns user registration, payment, and tracking requirements into clean, intuitive interface flows (level placeholder).',
+          description: 'Turns user registration, payment, and tracking requirements into clean, intuitive interface flows (level placeholder).',
         ),
         SoftSkill(
           name: 'Event Coordination',
           level: 0.89,
-          description:
-              'Organizes student activities and martial arts training built on prefectship and coaching experience (level placeholder).',
+          description: 'Organizes student activities and martial arts training built on prefectship and coaching experience (level placeholder).',
         ),
         SoftSkill(
           name: 'Communication',
           level: 0.90,
-          description:
-              'Aligns clearly with cross-functional project teams, students, and academic stakeholders (level placeholder).',
+          description: 'Aligns clearly with cross-functional project teams, students, and academic stakeholders (level placeholder).',
         ),
       ],
       talents: [
         SpecialTalent(
           title: 'Karate Coaching',
           category: 'Sports',
-          detail:
-              'Karate Coach at Ilma International Girls School (May 2024 – Present); holds NISS Coaching Licence, SLKF Coach ID, and D Grade Instructor status; 3rd Place at Sri Lanka School Karate Championship 2018 & Colombo District Championship 2017 (Female Kata).',
+          detail: 'Karate Coach at Ilma International Girls School (May 2024 – Present); holds NISS Coaching Licence, SLKF Coach ID, and D Grade Instructor status; 3rd Place at Sri Lanka School Karate Championship 2018 & Colombo District Championship 2017 (Female Kata).',
         ),
         SpecialTalent(
           title: 'UI/UX & Graphic Design',
           category: 'Creative Design',
-          detail:
-              'Designs mobile and web experiences using Figma, Adobe XD, Photoshop, Illustrator, and CorelDRAW; designed complete interface screens for SeettuManager.',
+          detail: 'Designs mobile and web experiences using Figma, Adobe XD, Photoshop, Illustrator, and CorelDRAW; designed complete interface screens for SeettuManager.',
         ),
         SpecialTalent(
           title: 'Frontend & Visual Prototyping',
           category: 'Technology',
-          detail:
-              'Builds interactive web views with HTML5, CSS3, React.js, and Power BI, bridging visual design with functional implementation.',
+          detail: 'Builds interactive web views with HTML5, CSS3, React.js, and Power BI, bridging visual design with functional implementation.',
         ),
         SpecialTalent(
           title: 'Student Leadership & Prefectship',
           category: 'Leadership',
-          detail:
-              'Served as Senior Prefect (2018) and Junior Prefect (2017) at Homagama President’s College, and worked as a Trainee at ITUM Division of Interdisciplinary Studies.',
+          detail: 'Served as Senior Prefect (2018) and Junior Prefect (2017) at Homagama President’s College, and worked as a Trainee at ITUM Division of Interdisciplinary Studies.',
         ),
       ],
     ),
@@ -485,6 +481,7 @@ class MembersData {
     GroupMember(
       id: 'member_05',
       memberNumber: 5,
+
       studentId: '23IT0536',
       fullName: 'Chamodi Madhushani',
       shortRole: 'Software Engineer • Mobile App Dev',
@@ -492,6 +489,7 @@ class MembersData {
           'Motivated IT undergraduate at the Institute of Technology, University of Moratuwa, passionate about Full-Stack and Mobile Application Development.',
       address: 'Horampalla, Sri Lanka',
       email: 'chamodimadhushani18@gmail.com',
+ main
       photoAsset: 'assets/images/member_05.jpg',
       designStyleName: 'Personal Journey Timeline',
       accentColor: Color(0xFF1B4D3E),
@@ -607,6 +605,8 @@ class MembersData {
     GroupMember(
       id: 'member_06',
       memberNumber: 6,
+
+
       studentId: '23IT0539',
       fullName: 'Thiruththanikan',
       shortRole: 'Software Engineer · Full-Stack & AI Solutions Developer',
@@ -618,6 +618,7 @@ class MembersData {
           'banking services and resolve transaction issues.',
       address: 'Point Pedro, Sri Lanka',
       email: 'thiruththanikan2003@gmail.com',
+ main
       photoAsset: 'assets/images/member_06.jpg',
       designStyleName: 'Magazine Editorial',
       accentColor: Color(0xFF97502F),
@@ -713,6 +714,8 @@ class MembersData {
     GroupMember(
       id: 'member_07',
       memberNumber: 7,
+
+
       studentId: 'STU-2026-007 (Placeholder)',
       fullName: 'Thuvijavanthy Yogaraj',
       shortRole: 'UI/UX Designer & IT Student',
@@ -720,6 +723,7 @@ class MembersData {
           'Creative Information Technology student at ITUM with two UI/UX certifications, designing dashboards and user flows in Figma and building practical interfaces in HTML, CSS, and React.js.',
       address: 'City / District, Sri Lanka (Placeholder)',
       email: 'yogarajthuvi123@gmail.com',
+ main
       photoAsset: 'assets/images/member_07.jpg',
       designStyleName: 'Dark Cyberpunk',
       accentColor: Color(0xFF00F5D4),
@@ -817,12 +821,15 @@ class MembersData {
     GroupMember(
       id: 'member_08',
       memberNumber: 8,
+
+
       studentId: 'Not provided',
       fullName: 'Sahabdeen Fathima Shahfa',
       shortRole: 'IT undergraduate · AI/ML',
       shortDescription: 'IT undergraduate with university project experience in machine learning and natural language processing.',
       address: 'Not provided',
       email: 'fathimashahfa03@gmail.com',
+ main
       photoAsset: 'assets/images/member_08.jpg',
       designStyleName: 'Modern Bento Grid',
       accentColor: Color(0xFF534386),
@@ -907,14 +914,14 @@ class MembersData {
       studentId: 'STU-2026-009',
       fullName: 'Member 09 (Placeholder Name)',
       shortRole: 'Analytics & Product Lead',
-      shortDescription:
-          'Transforms profile metrics and academic milestones into interactive dashboards.',
+      shortDescription: 'Transforms profile metrics and academic milestones into interactive dashboards.',
       address: 'Anuradhapura, North Central Province (Placeholder City)',
       email: 'member09.placeholder@university.edu.example',
       photoAsset: 'assets/images/member_09.jpg',
       designStyleName: 'Modern Dashboard',
       accentColor: Color(0xFF2563EB),
-      bioQuote: 'Good dashboards turn raw facts into actionable insight at a glance.',
+      bioQuote:
+          'Good dashboards turn raw facts into actionable insight at a glance.',
       qualifications: [
         AcademicQualification(
           level: 'G.C.E. O/L',
