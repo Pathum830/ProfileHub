@@ -26,15 +26,13 @@ class MembersData {
       studentId: 'STU-2026-001 (Placeholder)',
       fullName: 'Pathum Siriwardhana',
       shortRole: 'Intern DevOps Engineer',
-      shortDescription:
-          'IT student at ITUM focused on DevOps engineering, cloud infrastructure, Linux, Docker, and CI/CD automation.',
+      shortDescription: 'IT student at ITUM focused on DevOps engineering, cloud infrastructure, Linux, Docker, and CI/CD automation.',
       address: 'Badulla, Sri Lanka',
       email: 'pathumsiriwardhana86@gmail.com',
       photoAsset: 'assets/images/member_01.jpg',
       designStyleName: 'Modern Minimalist',
       accentColor: Color(0xFF9C7A54),
-      bioQuote:
-          'Helping deliver reliable software through efficient build, test, and deployment workflows.',
+      bioQuote: 'Helping deliver reliable software through efficient build, test, and deployment workflows.',
       qualifications: [
         AcademicQualification(
           level: 'G.C.E. O/L',
@@ -73,9 +71,9 @@ class MembersData {
         ),
         AcademicQualification(
           level: 'Diploma',
-          title: 'National Diploma in Technology (NDT) – Information Technology',
-          institution:
-              'Institute of Technology, University of Moratuwa (ITUM), Sri Lanka',
+          title:
+              'National Diploma in Technology (NDT) – Information Technology',
+          institution: 'Institute of Technology, University of Moratuwa (ITUM), Sri Lanka',
           year: '2024 – Present',
           gradeOrStatus: 'Ongoing',
         ),
@@ -84,8 +82,7 @@ class MembersData {
         SoftSkill(
           name: 'Team Collaboration',
           level: 0.85,
-          description:
-              'Collaborated in academic group projects using Git and GitHub workflows (level placeholder).',
+          description: 'Collaborated in academic group projects using Git and GitHub workflows (level placeholder).',
         ),
         SoftSkill(
           name: 'Communication (Placeholder)',
@@ -110,7 +107,8 @@ class MembersData {
         SpecialTalent(
           title: 'Special Talent 01 (Placeholder)',
           category: 'Placeholder',
-          detail: 'Add your verified artistic, creative, or technical talent here.',
+          detail:
+              'Add your verified artistic, creative, or technical talent here.',
         ),
         SpecialTalent(
           title: 'Sport / Activity 02 (Placeholder)',
@@ -120,7 +118,8 @@ class MembersData {
         SpecialTalent(
           title: 'Personal Hobby 03 (Placeholder)',
           category: 'Placeholder',
-          detail: 'Add your verified music, reading, or personal interest here.',
+          detail:
+              'Add your verified music, reading, or personal interest here.',
         ),
       ],
     ),
@@ -204,6 +203,10 @@ class MembersData {
           level: 0.95,
           description:
               'Proven ability to translate complex software requirements into clean, maintainable code and optimized database solutions.',
+          name: 'Leadership',
+          level: 0.93,
+          description:
+              'Coordinates task tracking and release readiness checks.',
         ),
         SoftSkill(
           name: 'Teamwork & Collaboration',
@@ -222,6 +225,10 @@ class MembersData {
           level: 0.85,
           description:
               'Articulate technical and client communication cultivated through banking customer service and academic presentations.',
+          name: 'Conflict Resolution',
+          level: 0.87,
+          description:
+              'Keeps group discussions constructive and goal-oriented.',
         ),
       ],
       talents: [
@@ -242,96 +249,146 @@ class MembersData {
           category: 'Security & Innovation',
           detail:
               'Built secure web-based automated voting systems with audit trails and completed advanced cyber security & networking certification.',
+          title: 'Financial Modeling',
+          category: 'Hobby',
+          detail:
+              'Builds personal budgeting spreadsheets and tech case studies.',
         ),
       ],
     ),
 
     // =========================================================================
-    // MEMBER 03 — Replace with Member 03's actual details
+    // MEMBER 03 — Nimeshika Sewwandi
     // Screen file: lib/screens/members/member_03_screen.dart
-    // Design Style: Creative Portfolio Layout
+    // Design Style: Creative Portfolio / Neo-Brutalist
     // =========================================================================
     GroupMember(
       id: 'member_03',
       memberNumber: 3,
-      studentId: 'STU-2026-003',
-      fullName: 'Member 03 (Placeholder Name)',
-      shortRole: 'Creative Interaction Designer',
+
+
+      studentId: 'ITUM/IT/2025/003 (Placeholder)',
+      fullName: 'Nimeshika Sewwandi',
+      shortRole: 'Software Engineering Intern',
       shortDescription:
-          'Explores bold color systems, custom animations, and playful layouts.',
-      address: 'Galle, Southern Province (Placeholder City)',
-      email: 'member03.placeholder@university.edu.example',
+          'Motivated IT student at ITUM skilled in programming, web development, and UI/UX design, passionate about building impactful digital solutions.',
+      address: 'Mahiyanganaya, Sri Lanka',
+      email: 'sewwandinimeshika95@gmail.com',
+ main
       photoAsset: 'assets/images/member_03.jpg',
-      designStyleName: 'Creative Portfolio',
-      accentColor: Color(0xFFFF4D6D),
-      bioQuote: 'Every screen is a canvas for memorable micro-interactions.',
+      designStyleName: 'Creative Portfolio / Neo-Brutalist',
+      accentColor: Color(0xFFFFDF00),
+      bioQuote:
+          'Motivated and hardworking IT student with basic knowledge of programming, web development and graphic design. A quick learner with teamwork and communication skills, eager to learn, gain practical experience and grow professionally.',
       qualifications: [
         AcademicQualification(
-          level: 'G.C.E. O/L',
-          title: 'Ordinary Level Examination (Placeholder)',
-          institution: 'Southern Girls/Boys School (Placeholder)',
-          year: '2020',
-          gradeOrStatus: 'Completed (Sample)',
-        ),
-        AcademicQualification(
-          level: 'G.C.E. A/L',
-          title: 'Advanced Level — Art & Design / ICT (Placeholder)',
-          institution: 'Coastal College (Placeholder)',
-          year: '2023',
-          gradeOrStatus: 'Completed (Sample)',
+          level: 'Diploma',
+          title: 'National Diploma in Information Technology (NDIT)',
+          institution:
+              'Institute of Technology, University of Moratuwa (ITUM)',
+          year: '2025 – 2027',
+          gradeOrStatus: 'Current GPA: 2.51 / 4.00 (Ongoing)',
         ),
         AcademicQualification(
           level: 'Certificate',
-          title: 'UI/UX Visual Design Bootcamp (Placeholder)',
-          institution: 'Design Studio School (Placeholder)',
-          year: '2024',
-          gradeOrStatus: 'Top Portfolio',
+          title: 'Python for Beginners',
+          institution: 'CODL, University of Moratuwa',
+          year: '2025',
+          gradeOrStatus: 'Completed',
         ),
         AcademicQualification(
-          level: 'Degree',
-          title: 'BSc in Interactive Media & Computing (Ongoing)',
-          institution: 'University Campus (Placeholder)',
-          year: '2024 – Present',
-          gradeOrStatus: 'Year 2',
+          level: 'Certificate',
+          title: 'Web Development',
+          institution: 'CODL, University of Moratuwa',
+          year: '2025',
+          gradeOrStatus: 'Completed',
+        ),
+        AcademicQualification(
+          level: 'Certificate',
+          title: 'Foundation English Course',
+          institution: 'Kekirawa English Academy',
+          year: '2024',
+          gradeOrStatus: 'Completed',
+        ),
+        AcademicQualification(
+          level: 'G.C.E. A/L',
+          title: 'Advanced Level Examination (Placeholder)',
+          institution: 'Secondary School, Mahiyanganaya (Placeholder)',
+          year: '2023 (Placeholder)',
+          gradeOrStatus: 'Completed (Placeholder)',
+        ),
+        AcademicQualification(
+          level: 'G.C.E. O/L',
+          title: 'Ordinary Level Examination (Placeholder)',
+          institution: 'Secondary School, Mahiyanganaya (Placeholder)',
+          year: '2020 (Placeholder)',
+          gradeOrStatus: 'Completed (Placeholder)',
         ),
       ],
       softSkills: [
         SoftSkill(
-          name: 'Creative Problem Solving',
-          level: 0.95,
-          description: 'Turns complex requirements into intuitive visual stories.',
+
+          name: 'Problem Solving',
+          level: 0.92,
+          description:
+              'Analytical debugging and algorithmic problem solving across software projects.',
+ main
         ),
         SoftSkill(
-          name: 'Empathy',
-          level: 0.90,
-          description: 'Designs accessible layouts for diverse screen sizes.',
-        ),
-        SoftSkill(
-          name: 'Adaptability',
-          level: 0.89,
-          description: 'Iterates rapidly based on usability feedback.',
+          name: 'Communication',
+          level: 0.88,
+          description:
+              'Clear articulation and presentation skills in bilingual English & Sinhala team environments.',
         ),
         SoftSkill(
           name: 'Teamwork',
-          level: 0.88,
-          description: 'Shares reusable assets and style ideas with teammates.',
+          level: 0.94,
+          description:
+              'Collaborative group project development using Git and GitHub workflows.',
+        ),
+        SoftSkill(
+          name: 'Adaptability',
+          level: 0.90,
+          description:
+              'Quick learner transitioning swiftly across emerging technologies and toolsets.',
+        ),
+        SoftSkill(
+          name: 'Time Management',
+          level: 0.86,
+          description:
+              'Balancing academic diploma coursework with hands-on project deliverables.',
         ),
       ],
       talents: [
         SpecialTalent(
-          title: 'Digital Illustration',
-          category: 'Art',
-          detail: 'Character sketching, vector posters, and editorial covers.',
+          title: 'UI/UX & Figma Prototyping',
+          category: 'Design & Creativity',
+          detail:
+              'Crafting user-centric wireframes, bold interactive mockups, and creative visual design systems.',
         ),
         SpecialTalent(
-          title: 'Origami & Paper Craft',
-          category: 'Hobby',
-          detail: 'Modular geometric paper sculptures.',
+          title: 'IoT Health Innovation',
+          category: 'Technology & Hardware',
+          detail:
+              'Designed & developed SentinelCare smart medical hand band system with sensors and web dashboard.',
         ),
         SpecialTalent(
-          title: 'Ukulele',
-          category: 'Music',
-          detail: 'Indie acoustic covers and rhythm composition.',
+          title: 'Full-Stack Web Development',
+          category: 'Engineering & Coding',
+          detail:
+              'Building responsive real-time web applications with React.js, Node.js, PHP, and MySQL.',
+        ),
+        SpecialTalent(
+          title: 'Digital Illustration & Poster Art',
+          category: 'Creative Art',
+          detail:
+              'Creating expressive sketches, neo-brutalist vector illustrations, and digital graphics.',
+        ),
+        SpecialTalent(
+          title: 'Tech Exploration & Gaming',
+          category: 'Personal Passion',
+          detail:
+              'Enthusiastic about exploring modern frameworks, developer communities, and logic puzzle games.',
         ),
       ],
     ),
@@ -347,15 +404,13 @@ class MembersData {
       studentId: 'STU-2026-004 (Placeholder)',
       fullName: 'Vichakshi Shashiprabha',
       shortRole: 'UI/UX Designer & IT Undergraduate',
-      shortDescription:
-          'Motivated and creative IT student specializing in UI/UX design, focused on crafting intuitive, user-friendly, and visually appealing digital interfaces.',
-      address: 'City / District (Placeholder)',
+      shortDescription: 'Motivated and creative IT student specializing in UI/UX design, focused on crafting intuitive, user-friendly, and visually appealing digital interfaces.',
+      address: 'Homagama / Colombo',
       email: 'vichakshi245@gmail.com',
       photoAsset: 'assets/images/member_04.jpg',
       designStyleName: 'Gradient Glassmorphism',
       accentColor: Color(0xFF7C3AED),
-      bioQuote:
-          'Passionate about creating intuitive, user-friendly, and visually appealing digital interfaces.',
+      bioQuote: 'Passionate about creating intuitive, user-friendly, and visually appealing digital interfaces.',
       qualifications: [
         AcademicQualification(
           level: 'Diploma',
@@ -411,58 +466,49 @@ class MembersData {
         SoftSkill(
           name: 'Teamwork',
           level: 0.90,
-          description:
-              'Collaborates with developers on group projects like SeettuManager to integrate React layouts with backend APIs (level placeholder).',
+          description: 'Collaborates with developers on group projects like SeettuManager to integrate React layouts with backend APIs (level placeholder).',
         ),
         SoftSkill(
           name: 'Rapid Learning',
           level: 0.88,
-          description:
-              'Continuously upskills across UI/UX design tools, design thinking, and modern web technologies (level placeholder).',
+          description: 'Continuously upskills across UI/UX design tools, design thinking, and modern web technologies (level placeholder).',
         ),
         SoftSkill(
           name: 'Problem-Solving',
           level: 0.87,
-          description:
-              'Turns user registration, payment, and tracking requirements into clean, intuitive interface flows (level placeholder).',
+          description: 'Turns user registration, payment, and tracking requirements into clean, intuitive interface flows (level placeholder).',
         ),
         SoftSkill(
           name: 'Event Coordination',
           level: 0.89,
-          description:
-              'Organizes student activities and martial arts training built on prefectship and coaching experience (level placeholder).',
+          description: 'Organizes student activities and martial arts training built on prefectship and coaching experience (level placeholder).',
         ),
         SoftSkill(
           name: 'Communication',
           level: 0.90,
-          description:
-              'Aligns clearly with cross-functional project teams, students, and academic stakeholders (level placeholder).',
+          description: 'Aligns clearly with cross-functional project teams, students, and academic stakeholders (level placeholder).',
         ),
       ],
       talents: [
         SpecialTalent(
           title: 'Karate Coaching',
           category: 'Sports',
-          detail:
-              'Karate Coach at Ilma International Girls School (May 2024 – Present); holds NISS Coaching Licence, SLKF Coach ID, and D Grade Instructor status; 3rd Place at Sri Lanka School Karate Championship 2018 & Colombo District Championship 2017 (Female Kata).',
+          detail: 'Karate Coach at Ilma International Girls School (May 2024 – Present); holds NISS Coaching Licence, SLKF Coach ID, and D Grade Instructor status; 3rd Place at Sri Lanka School Karate Championship 2018 & Colombo District Championship 2017 (Female Kata).',
         ),
         SpecialTalent(
           title: 'UI/UX & Graphic Design',
           category: 'Creative Design',
-          detail:
-              'Designs mobile and web experiences using Figma, Adobe XD, Photoshop, Illustrator, and CorelDRAW; designed complete interface screens for SeettuManager.',
+          detail: 'Designs mobile and web experiences using Figma, Adobe XD, Photoshop, Illustrator, and CorelDRAW; designed complete interface screens for SeettuManager.',
         ),
         SpecialTalent(
           title: 'Frontend & Visual Prototyping',
           category: 'Technology',
-          detail:
-              'Builds interactive web views with HTML5, CSS3, React.js, and Power BI, bridging visual design with functional implementation.',
+          detail: 'Builds interactive web views with HTML5, CSS3, React.js, and Power BI, bridging visual design with functional implementation.',
         ),
         SpecialTalent(
           title: 'Student Leadership & Prefectship',
           category: 'Leadership',
-          detail:
-              'Served as Senior Prefect (2018) and Junior Prefect (2017) at Homagama President’s College, and worked as a Trainee at ITUM Division of Interdisciplinary Studies.',
+          detail: 'Served as Senior Prefect (2018) and Junior Prefect (2017) at Homagama President’s College, and worked as a Trainee at ITUM Division of Interdisciplinary Studies.',
         ),
       ],
     ),
@@ -475,6 +521,7 @@ class MembersData {
     GroupMember(
       id: 'member_05',
       memberNumber: 5,
+
       studentId: '23IT0536',
       fullName: 'Chamodi Madhushani',
       shortRole: 'Software Engineer • Mobile App Dev',
@@ -482,6 +529,7 @@ class MembersData {
           'Motivated IT undergraduate at the Institute of Technology, University of Moratuwa, passionate about Full-Stack and Mobile Application Development.',
       address: 'Horampalla, Sri Lanka',
       email: 'chamodimadhushani18@gmail.com',
+ main
       photoAsset: 'assets/images/member_05.jpg',
       designStyleName: 'Personal Journey Timeline',
       accentColor: Color(0xFF1B4D3E),
@@ -590,174 +638,217 @@ class MembersData {
     ),
 
     // =========================================================================
-    // MEMBER 06 — Replace with Member 06's actual details
+    // MEMBER 06 — Thiruththanikan
     // Screen file: lib/screens/members/member_06_screen.dart
     // Design Style: Magazine-Style Profile
     // =========================================================================
     GroupMember(
       id: 'member_06',
       memberNumber: 6,
-      studentId: 'STU-2026-006',
-      fullName: 'Member 06 (Placeholder Name)',
-      shortRole: 'Editorial & Typography Lead',
+
+
+      studentId: '23IT0539',
+      fullName: 'Thiruththanikan',
+      shortRole: 'Software Engineer · Full-Stack & AI Solutions Developer',
       shortDescription:
-          'Loves print-inspired mobile grids, expressive headings, and storytelling.',
-      address: 'Matara, Southern Province (Placeholder City)',
-      email: 'member06.placeholder@university.edu.example',
+          'Thiruththanikan is an Information Technology undergraduate and '
+          'software engineer with experience in full-stack development, machine '
+          'learning, and cloud deployment. As a digital assistant at Commercial '
+          'Bank of Ceylon, he helped retail clients use online and mobile '
+          'banking services and resolve transaction issues.',
+      address: 'Point Pedro, Sri Lanka',
+      email: 'thiruththanikan2003@gmail.com',
+ main
       photoAsset: 'assets/images/member_06.jpg',
       designStyleName: 'Magazine Editorial',
-      accentColor: Color(0xFFB91C1C),
-      bioQuote: 'Great typography gives digital screens the poise of print.',
+      accentColor: Color(0xFF97502F),
+      bioQuote:
+          'Translating business and operational requirements into high-impact '
+          'digital solutions',
       qualifications: [
         AcademicQualification(
-          level: 'G.C.E. O/L',
-          title: 'Ordinary Level Examination (Placeholder)',
-          institution: 'Southern Model School (Placeholder)',
-          year: '2020',
-          gradeOrStatus: '8 As, 1 C (Sample)',
+          level: 'National Diploma',
+          title:
+              'National Diploma in Technology (NDT) in Information Technology',
+          institution: 'Institute of Technology, University of Moratuwa',
+          year: '2024 – Present',
+          gradeOrStatus: 'In progress',
         ),
         AcademicQualification(
           level: 'G.C.E. A/L',
-          title: 'Advanced Level — Languages & ICT (Placeholder)',
-          institution: 'Matara Central College (Placeholder)',
-          year: '2023',
-          gradeOrStatus: '2 As, 1 B (Sample)',
+          title: 'Advanced Level · Physical Science',
+          institution: 'J / Hartley College',
+          year: '2022/2023',
+          gradeOrStatus: 'Grades not provided (placeholder)',
+        ),
+        AcademicQualification(
+          level: 'G.C.E. O/L',
+          title: 'Ordinary Level Examination',
+          institution: 'J / Hartley College',
+          year: '2019',
+          gradeOrStatus: 'Grades not provided (placeholder)',
         ),
         AcademicQualification(
           level: 'Certificate',
-          title: 'Editorial & Digital Publishing Certificate (Placeholder)',
-          institution: 'Media Institute (Placeholder)',
-          year: '2024',
-          gradeOrStatus: 'Merit',
+          title: 'Python for Beginners',
+          institution:
+              'Institute of Technology / University of Moratuwa (CODL)',
+          year: 'Year not provided (placeholder)',
         ),
       ],
       softSkills: [
+        // The model requires a level. This profile presents unscored labels.
         SoftSkill(
-          name: 'Storytelling',
-          level: 0.94,
-          description: 'Frames user journeys with compelling visual hierarchy.',
+          name: 'Customer communication',
+          level: 0,
+          description:
+              'Guided retail clients through digital banking workflows.',
         ),
         SoftSkill(
-          name: 'Critical Thinking',
-          level: 0.89,
-          description: 'Evaluates readability and contrast on small viewports.',
+          name: 'Problem solving',
+          level: 0,
+          description: 'Troubleshot authentication and transaction queries.',
         ),
         SoftSkill(
-          name: 'Presentation',
-          level: 0.92,
-          description: 'Leads slide decks and live project demonstrations.',
-        ),
-        SoftSkill(
-          name: 'Teamwork',
-          level: 0.88,
-          description: 'Reviews copy consistency across all screens.',
+          name: 'Explaining technical concepts',
+          level: 0,
+          description:
+              'Broke complex workflows into steps customers could follow.',
         ),
       ],
       talents: [
         SpecialTalent(
-          title: 'Classical Violin',
-          category: 'Music',
-          detail: 'Performed in school chamber ensembles for 6 years.',
+          title: 'ResQAI',
+          category: 'Applied AI',
+          detail:
+              'Designed a disaster-response platform that processes voice, text, '
+              'and image reports to help prioritize rescue dispatch.',
         ),
         SpecialTalent(
-          title: 'Editorial Photography',
-          category: 'Art',
-          detail: 'Portrait lighting and magazine-style photo essays.',
+          title: 'Interactive portfolio',
+          category: 'Frontend engineering',
+          detail:
+              'Built a responsive React portfolio to showcase projects and '
+              'credentials, with accessible components and smooth transitions.',
         ),
         SpecialTalent(
-          title: 'Cycling',
-          category: 'Sports',
-          detail: 'Early morning coastal road rides.',
+          title: 'Enterprise event management',
+          category: 'Full-stack development',
+          detail:
+              'Developed a platform for event discovery, registration, and '
+              'ticketing, with role-based administration.',
+        ),
+        SpecialTalent(
+          title: 'Not provided (placeholder)',
+          category: 'Hobbies',
+          detail: 'The biography supplied no hobby information.',
         ),
       ],
     ),
 
     // =========================================================================
-    // MEMBER 07 — Replace with Member 07's actual details
+    // MEMBER 07 — Thuvijavanthy Yogaraj
     // Screen file: lib/screens/members/member_07_screen.dart
-    // Design Style: Dark Theme Profile
+    // Design Style: Dark Cyberpunk / Futuristic Dashboard
     // =========================================================================
     GroupMember(
       id: 'member_07',
       memberNumber: 7,
-      studentId: 'STU-2026-007',
-      fullName: 'Member 07 (Placeholder Name)',
-      shortRole: 'Security & Testing Engineer',
+
+
+      studentId: 'STU-2026-007 (Placeholder)',
+      fullName: 'Thuvijavanthy Yogaraj',
+      shortRole: 'UI/UX Designer & IT Student',
       shortDescription:
-          'Builds resilient dark-mode tools, widget tests, and terminal interfaces.',
-      address: 'Jaffna, Northern Province (Placeholder City)',
-      email: 'member07.placeholder@university.edu.example',
+          'Creative Information Technology student at ITUM with two UI/UX certifications, designing dashboards and user flows in Figma and building practical interfaces in HTML, CSS, and React.js.',
+      address: 'City / District, Sri Lanka (Placeholder)',
+      email: 'yogarajthuvi123@gmail.com',
+ main
       photoAsset: 'assets/images/member_07.jpg',
       designStyleName: 'Dark Cyberpunk',
       accentColor: Color(0xFF00F5D4),
-      bioQuote: 'Clean tests and strong validation keep midnight builds calm.',
+      bioQuote:
+          'Designing intuitive, user-centred digital experiences that remain practical to develop.',
       qualifications: [
         AcademicQualification(
-          level: 'G.C.E. O/L',
-          title: 'Ordinary Level Examination (Placeholder)',
-          institution: 'Northern High School (Placeholder)',
-          year: '2020',
-          gradeOrStatus: '9 As (Sample)',
-        ),
-        AcademicQualification(
           level: 'G.C.E. A/L',
-          title: 'Advanced Level — Physical Science (Placeholder)',
-          institution: 'Jaffna College (Placeholder)',
-          year: '2023',
-          gradeOrStatus: '2 As, 1 B (Sample)',
+          title: 'G.C.E. Advanced Level',
+          institution: 'T/Sri Shanmuga Hindu Ladies College',
+          year: '2022',
+          gradeOrStatus: 'Results (Placeholder)',
         ),
         AcademicQualification(
           level: 'Certificate',
-          title: 'Cybersecurity & Mobile Testing Essentials (Placeholder)',
-          institution: 'Tech Security Lab (Placeholder)',
-          year: '2025',
-          gradeOrStatus: 'Honors',
+          title: 'UI/UX for Designers',
+          institution: 'Simplilearn',
+          year: '2026',
+          gradeOrStatus: 'Completed',
         ),
         AcademicQualification(
-          level: 'Degree',
-          title: 'BSc (Hons) in Cyber & Software Systems (Ongoing)',
-          institution: 'University Campus (Placeholder)',
-          year: '2024 – Present',
-          gradeOrStatus: 'Year 2',
+          level: 'Certificate',
+          title: 'Introduction to Graphic Design & Basics of UI/UX',
+          institution: 'Simplilearn',
+          year: '2026',
+          gradeOrStatus: 'Completed',
+        ),
+        AcademicQualification(
+          level: 'Diploma',
+          title: 'National Diploma in Technology (NDT) – Information Technology',
+          institution: 'Institute of Technology, University of Moratuwa (ITUM)',
+          year: '2025 – 2028 (Expected)',
+          gradeOrStatus: 'Ongoing',
         ),
       ],
       softSkills: [
         SoftSkill(
-          name: 'Problem Solving',
-          level: 0.95,
-          description: 'Isolates edge-case crashes and async race conditions.',
-        ),
-        SoftSkill(
-          name: 'Resilience',
-          level: 0.91,
-          description: 'Stays methodical during complex debugging sessions.',
-        ),
-        SoftSkill(
-          name: 'Technical Writing',
-          level: 0.87,
-          description: 'Documents testing steps and Firebase setup guides.',
-        ),
-        SoftSkill(
-          name: 'Team Support',
+          name: 'Creative Thinking',
           level: 0.90,
-          description: 'Helps group mates run static analysis and tests.',
+          description:
+              'Creative thinking, visual communication, and attention to detail in UI/UX craft (level placeholder).',
+        ),
+        SoftSkill(
+          name: 'Empathy & Problem-Solving',
+          level: 0.88,
+          description:
+              'Empathy for users, problem-solving, and critical thinking across user flows (level placeholder).',
+        ),
+        SoftSkill(
+          name: 'Communication & Teamwork',
+          level: 0.86,
+          description:
+              'Verbal and written communication paired with collaborative team execution (level placeholder).',
+        ),
+        SoftSkill(
+          name: 'Work Ethic & Adaptability',
+          level: 0.89,
+          description:
+              'Time management, adaptability, and an eager quick-learner mindset (level placeholder).',
         ),
       ],
       talents: [
         SpecialTalent(
-          title: 'Capture The Flag (CTF)',
-          category: 'Tech Hobby',
-          detail: 'Solves cryptography and logic challenges on weekends.',
+          title: 'UI/UX & Figma Prototyping',
+          category: 'Design Talent',
+          detail:
+              'User research basics, user flows, wireframing, prototyping, and responsive dashboards in Figma.',
         ),
         SpecialTalent(
-          title: 'Mechanical Keyboards',
-          category: 'Hobby',
-          detail: 'Custom keycap layouts and tactile switch modding.',
+          title: 'Graphic & Visual Design',
+          category: 'Creative Talent',
+          detail:
+              'Visual hierarchy, typography, colour theory, and graphic design fundamentals.',
         ),
         SpecialTalent(
-          title: 'Track & Field Sprinting',
-          category: 'Sports',
-          detail: '100m and 200m university athletics participant.',
+          title: 'Front-End Interfaces',
+          category: 'Technical Talent',
+          detail:
+              'Building practical user interfaces with HTML, CSS, JavaScript, React.js, Git, and GitHub.',
+        ),
+        SpecialTalent(
+          title: 'Personal Hobby (Placeholder)',
+          category: 'Hobby (Placeholder)',
+          detail:
+              'Placeholder — update with verified personal hobbies or extracurricular interests.',
         ),
       ],
     ),
@@ -770,77 +861,84 @@ class MembersData {
     GroupMember(
       id: 'member_08',
       memberNumber: 8,
-      studentId: 'STU-2026-008',
-      fullName: 'Member 08 (Placeholder Name)',
-      shortRole: 'Responsive Layout Engineer',
-      shortDescription:
-          'Designs modular Bento card grids that adapt cleanly across screen sizes.',
-      address: 'Gampaha, Western Province (Placeholder City)',
-      email: 'member08.placeholder@university.edu.example',
+
+
+      studentId: 'Not provided',
+      fullName: 'Sahabdeen Fathima Shahfa',
+      shortRole: 'IT undergraduate · AI/ML',
+      shortDescription: 'IT undergraduate with university project experience in machine learning and natural language processing.',
+      address: 'Not provided',
+      email: 'fathimashahfa03@gmail.com',
+ main
       photoAsset: 'assets/images/member_08.jpg',
-      designStyleName: 'Bento Card Grid',
-      accentColor: Color(0xFF0D9488),
-      bioQuote: 'Modular cards make complex information effortless to scan.',
+      designStyleName: 'Modern Bento Grid',
+      accentColor: Color(0xFF534386),
+      bioQuote: 'Not provided',
       qualifications: [
         AcademicQualification(
-          level: 'G.C.E. O/L',
-          title: 'Ordinary Level Examination (Placeholder)',
-          institution: 'Gampaha Secondary School (Placeholder)',
-          year: '2020',
-          gradeOrStatus: '8 As, 1 B (Sample)',
+          level: 'Diploma',
+          title: 'National Diploma in Information Technology',
+          institution: 'Institute of Technology, University of Moratuwa',
+          year: '2025–Present',
+          gradeOrStatus: 'In progress',
         ),
         AcademicQualification(
           level: 'G.C.E. A/L',
-          title: 'Advanced Level — Engineering Technology (Placeholder)',
-          institution: 'District Tech College (Placeholder)',
-          year: '2023',
-          gradeOrStatus: '3 Passes (Sample)',
+          title: 'G.C.E. Advanced Level · Physical Science',
+          institution: 'Km/Mahmud Ladies College, Kalmunai',
+          year: '2020–2022',
         ),
         AcademicQualification(
-          level: 'Diploma',
-          title: 'Higher Diploma in Mobile Computing (Placeholder)',
-          institution: 'IT Polytechnic (Placeholder)',
-          year: '2024',
-          gradeOrStatus: 'Merit',
+          level: 'G.C.E. O/L',
+          title: 'G.C.E. Ordinary Level',
+          institution: 'Km/Mahmud Ladies College, Kalmunai',
+          year: '2019',
         ),
       ],
       softSkills: [
+        // The CV lists these skills without proficiency scores.
         SoftSkill(
-          name: 'Collaboration',
-          level: 0.92,
-          description: 'Coordinates layout breakpoints across Android devices.',
+          name: 'Attention to Detail',
+          level: 0,
+          description:
+              'Processed and cleaned data for a university AI project.',
         ),
         SoftSkill(
-          name: 'Creativity',
-          level: 0.88,
-          description: 'Balances playful chips with crisp information cards.',
+          name: 'Analytical Thinking',
+          level: 0,
+          description: 'Trained and evaluated machine learning models.',
         ),
         SoftSkill(
-          name: 'Dependability',
-          level: 0.91,
-          description: 'Consistently finishes assigned PRs with zero lints.',
+          name: 'Problem Solving',
+          level: 0,
+          description: 'Worked on complaint priority prediction and duplicate detection.',
         ),
         SoftSkill(
           name: 'Communication',
-          level: 0.87,
-          description: 'Clarifies user flows early with wireframes.',
+          level: 0,
+          description: 'Listed as a soft skill in the CV.',
+        ),
+        SoftSkill(
+          name: 'Teamwork',
+          level: 0,
+          description: 'Contributed to the AI module of a university project.',
         ),
       ],
       talents: [
         SpecialTalent(
-          title: 'Cricket',
-          category: 'Sports',
-          detail: 'All-rounder in inter-batch weekend leather-ball matches.',
+          title: 'Applied Machine Learning',
+          category: 'Technical skill',
+          detail: 'Prepared data and trained and evaluated models for a municipal services project.',
         ),
         SpecialTalent(
-          title: 'Culinary Baking',
+          title: 'Full-stack Development',
+          category: 'Technical skill',
+          detail: 'Built REST APIs and a React interface for TraceTest.',
+        ),
+        SpecialTalent(
+          title: 'Hobbies not provided',
           category: 'Hobby',
-          detail: 'Experiments with sourdough and artisan pastries.',
-        ),
-        SpecialTalent(
-          title: '3D Paper Modeling',
-          category: 'Art',
-          detail: 'Low-poly papercraft figurines.',
+          detail: 'No hobbies were listed in the CV.',
         ),
       ],
     ),
@@ -856,14 +954,14 @@ class MembersData {
       studentId: 'STU-2026-009',
       fullName: 'Member 09 (Placeholder Name)',
       shortRole: 'Analytics & Product Lead',
-      shortDescription:
-          'Transforms profile metrics and academic milestones into interactive dashboards.',
+      shortDescription: 'Transforms profile metrics and academic milestones into interactive dashboards.',
       address: 'Anuradhapura, North Central Province (Placeholder City)',
       email: 'member09.placeholder@university.edu.example',
       photoAsset: 'assets/images/member_09.jpg',
       designStyleName: 'Modern Dashboard',
       accentColor: Color(0xFF2563EB),
-      bioQuote: 'Good dashboards turn raw facts into actionable insight at a glance.',
+      bioQuote:
+          'Good dashboards turn raw facts into actionable insight at a glance.',
       qualifications: [
         AcademicQualification(
           level: 'G.C.E. O/L',

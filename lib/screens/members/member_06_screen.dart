@@ -3,475 +3,338 @@ import 'package:group_profile_app/models/group_member.dart';
 import 'package:group_profile_app/widgets/favorite_button.dart';
 import 'package:group_profile_app/widgets/member_photo.dart';
 
-/// MEMBER 06 BIO SCREEN — Design Style: Magazine-Style Profile
-/// ============================================================================
-/// Contributor: Member 06
-/// High-contrast print editorial spread featuring a full-bleed cover hero,
-/// oversized pull-quote, drop-cap intro, inverted feature box, and 2-column grid.
-/// ============================================================================
-class Member06Screen extends StatefulWidget {
+class Member06Screen extends StatelessWidget {
   const Member06Screen({super.key, required this.member});
 
   final GroupMember member;
 
-  @override
-  State<Member06Screen> createState() => _Member06ScreenState();
-}
+  static const _ink = Color(0xFF151413);
+  static const _paper = Color(0xFFFFFFFF);
+  static const _muted = Color(0xFF57514D);
+  static const _orange = Color(0xFF97502F);
+  static const _lightOrange = Color(0xFFDEA487);
+  static const _rule = Color(0xFFD9D2CD);
+  static const _missing = 'Not provided (placeholder)';
 
-class _Member06ScreenState extends State<Member06Screen> {
-  static const Color _paper = Color(0xFFFFFFFF);
-  static const Color _jet = Color(0xFF111111);
-  static const Color _crimson = Color(0xFFB91C1C);
-  static const Color _stone = Color(0xFF57534E);
-
-  bool _showEditionNotes = false;
+  static const _display = TextStyle(
+    color: _ink,
+    fontFamily: 'serif',
+    fontWeight: FontWeight.w700,
+    fontSize: 38,
+    height: 1.02,
+  );
+  static const _label = TextStyle(
+    color: _orange,
+    fontSize: 12,
+    fontWeight: FontWeight.w700,
+    letterSpacing: 1.7,
+  );
+  static const _body = TextStyle(color: _muted, fontSize: 15, height: 1.5);
 
   @override
   Widget build(BuildContext context) {
-    final m = widget.member;
+    final size = MediaQuery.sizeOf(context);
+    final reduceMotion = MediaQuery.disableAnimationsOf(context);
+    final photo = MemberPhoto(
+      assetPath: member.photoAsset,
+      memberNumber: member.memberNumber,
+      accentColor: _orange,
+    );
 
     return Scaffold(
       backgroundColor: _paper,
       body: CustomScrollView(
         slivers: [
           SliverAppBar(
-            expandedHeight: 330,
             pinned: true,
-            backgroundColor: _jet,
-            foregroundColor: Colors.white,
+            expandedHeight: (size.width * 1.18).clamp(280.0, 640.0).toDouble(),
+            backgroundColor: _ink,
+            foregroundColor: _paper,
+            surfaceTintColor: Colors.transparent,
             title: const Text(
-              'THE CA02 REVIEW',
+              'NexaProfile',
               style: TextStyle(
                 fontFamily: 'serif',
                 fontWeight: FontWeight.w700,
-                letterSpacing: 2.0,
-                fontSize: 15,
               ),
             ),
             actions: [
               FavoriteButton(
-                memberId: m.id,
-                activeColor: _crimson,
-                inactiveColor: Colors.white,
+                memberId: member.id,
+                activeColor: _lightOrange,
+                inactiveColor: _paper,
               ),
             ],
             flexibleSpace: FlexibleSpaceBar(
+              collapseMode: reduceMotion
+                  ? CollapseMode.pin
+                  : CollapseMode.parallax,
               background: Stack(
                 fit: StackFit.expand,
                 children: [
-                  Hero(
-                    tag: 'photo_${m.id}',
-                    child: MemberPhoto(
-                      assetPath: m.photoAsset,
-                      memberNumber: m.memberNumber,
-                      accentColor: _crimson,
+                  Semantics(
+                    image: true,
+                    label: 'Portrait of ${member.fullName}',
+                    child: HeroMode(
+                      enabled: !reduceMotion,
+                      child: Hero(tag: 'photo_${member.id}', child: photo),
                     ),
                   ),
-                  Container(
+                  const DecoratedBox(
                     decoration: BoxDecoration(
                       gradient: LinearGradient(
                         begin: Alignment.topCenter,
                         end: Alignment.bottomCenter,
                         colors: [
-                          Colors.black.withValues(alpha: 0.25),
-                          Colors.black.withValues(alpha: 0.85),
+                          Color(0xDD151413),
+                          Color(0x00151413),
+                          Color(0xAA151413),
                         ],
+                        stops: [0, 0.36, 1],
                       ),
                     ),
                   ),
                   Positioned(
-                    left: 20,
-                    right: 20,
-                    bottom: 22,
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Container(
-                          color: _crimson,
-                          padding: const EdgeInsets.symmetric(
-                            horizontal: 10,
-                            vertical: 4,
-                          ),
-                          child: Text(
-                            'ISSUE NO. 06  •  ${m.shortRole.toUpperCase()}',
-                            style: const TextStyle(
-                              color: Colors.white,
-                              fontSize: 10,
-                              fontWeight: FontWeight.w800,
-                              letterSpacing: 1.6,
+                    left: 24,
+                    right: 24,
+                    bottom: 20,
+                    child: Text(
+                      'MEMBER ${member.memberNumber.toString().padLeft(2, '0')}',
+                      style: _label.copyWith(color: _paper),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+          SliverSafeArea(
+            top: false,
+            sliver: SliverList.list(
+              children: [
+                _spread(
+                  LayoutBuilder(
+                    builder: (context, constraints) {
+                      final titleSize = (constraints.maxWidth * .115)
+                          .clamp(28.0, 80.0)
+                          .toDouble();
+                      return Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(member.studentId, style: _label),
+                          const SizedBox(height: 8),
+                          Semantics(
+                            header: true,
+                            child: Text(
+                              member.fullName,
+                              style: _display.copyWith(fontSize: titleSize),
                             ),
                           ),
-                        ),
-                        const SizedBox(height: 10),
-                        Text(
-                          m.fullName,
-                          style: const TextStyle(
-                            fontFamily: 'serif',
-                            color: Colors.white,
-                            fontSize: 30,
-                            fontWeight: FontWeight.w700,
-                            height: 1.08,
-                          ),
-                        ),
-                        const SizedBox(height: 6),
-                        Text(
-                          '${m.address}  |  ${m.studentId}',
-                          style: const TextStyle(
-                            color: Colors.white70,
-                            fontSize: 12.5,
-                            letterSpacing: 0.5,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ),
-          SliverToBoxAdapter(
-            child: Center(
-              child: ConstrainedBox(
-                constraints: const BoxConstraints(maxWidth: 740),
-                child: Padding(
-                  padding: const EdgeInsets.fromLTRB(20, 24, 20, 40),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      _buildPullQuote(m),
-                      const SizedBox(height: 22),
-                      _buildDropCapLead(m),
-                      const SizedBox(height: 24),
-                      _buildEditorialColumns(m),
-                      const SizedBox(height: 24),
-                      _buildInvertedSkillsSpread(m),
-                      const SizedBox(height: 24),
-                      _buildCultureAndTalents(m),
-                    ],
-                  ),
-                ),
-              ),
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildPullQuote(GroupMember m) {
-    return Container(
-      padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 18),
-      decoration: const BoxDecoration(
-        border: Border(
-          top: BorderSide(color: _jet, width: 2.5),
-          bottom: BorderSide(color: _jet, width: 1),
-        ),
-      ),
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          const Text(
-            '“',
-            style: TextStyle(
-              fontFamily: 'serif',
-              color: _crimson,
-              fontSize: 48,
-              height: 0.85,
-              fontWeight: FontWeight.w900,
-            ),
-          ),
-          const SizedBox(width: 10),
-          Expanded(
-            child: Text(
-              m.bioQuote,
-              style: const TextStyle(
-                fontFamily: 'serif',
-                color: _jet,
-                fontSize: 18,
-                fontStyle: FontStyle.italic,
-                height: 1.35,
-              ),
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildDropCapLead(GroupMember m) {
-    final firstChar = m.shortDescription.isNotEmpty
-        ? m.shortDescription[0].toUpperCase()
-        : 'G';
-    final rest = m.shortDescription.length > 1
-        ? m.shortDescription.substring(1)
-        : '';
-
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Container(
-              margin: const EdgeInsets.only(right: 10, top: 2),
-              padding: const EdgeInsets.symmetric(horizontal: 11, vertical: 4),
-              color: _jet,
-              child: Text(
-                firstChar,
-                style: const TextStyle(
-                  fontFamily: 'serif',
-                  color: Colors.white,
-                  fontSize: 28,
-                  fontWeight: FontWeight.w700,
-                ),
-              ),
-            ),
-            Expanded(
-              child: Text(
-                rest,
-                style: const TextStyle(
-                  fontFamily: 'serif',
-                  color: _jet,
-                  fontSize: 15.5,
-                  height: 1.55,
-                ),
-              ),
-            ),
-          ],
-        ),
-        const SizedBox(height: 12),
-        InkWell(
-          onTap: () => setState(() => _showEditionNotes = !_showEditionNotes),
-          child: Row(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Text(
-                _showEditionNotes ? 'HIDE MASTHEAD DETAILS' : 'VIEW MASTHEAD CONTACT',
-                style: const TextStyle(
-                  color: _crimson,
-                  fontSize: 11.5,
-                  fontWeight: FontWeight.w800,
-                  letterSpacing: 1.2,
-                ),
-              ),
-              const SizedBox(width: 4),
-              Icon(
-                _showEditionNotes
-                    ? Icons.keyboard_arrow_up
-                    : Icons.keyboard_arrow_down,
-                color: _crimson,
-                size: 18,
-              ),
-            ],
-          ),
-        ),
-        if (_showEditionNotes) ...[
-          const SizedBox(height: 10),
-          Container(
-            width: double.infinity,
-            padding: const EdgeInsets.all(14),
-            color: const Color(0xFFF5F5F4),
-            child: Text(
-              'Correspondent Email: ${m.email}\nEditorial Bureau: ${m.address}',
-              style: const TextStyle(color: _jet, fontSize: 13, height: 1.5),
-            ),
-          ),
-        ] else ...[
-          const SizedBox(height: 6),
-          Text(
-            'Contact: ${m.email}  •  ${m.address}',
-            style: const TextStyle(color: _stone, fontSize: 12.5),
-          ),
-        ],
-      ],
-    );
-  }
-
-  Widget _buildEditorialColumns(GroupMember m) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        const Text(
-          'ACADEMIC CREDENTIALS',
-          style: TextStyle(
-            color: _crimson,
-            fontSize: 12,
-            fontWeight: FontWeight.w900,
-            letterSpacing: 1.8,
-          ),
-        ),
-        const SizedBox(height: 10),
-        LayoutBuilder(
-          builder: (context, constraints) {
-            final crossCount = constraints.maxWidth >= 520 ? 2 : 1;
-            return GridView.builder(
-              shrinkWrap: true,
-              physics: const NeverScrollableScrollPhysics(),
-              itemCount: m.qualifications.length,
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: crossCount,
-                mainAxisSpacing: 12,
-                crossAxisSpacing: 14,
-                childAspectRatio: crossCount == 2 ? 2.15 : 3.2,
-              ),
-              itemBuilder: (context, index) {
-                final q = m.qualifications[index];
-                return Container(
-                  padding: const EdgeInsets.all(12),
-                  decoration: const BoxDecoration(
-                    border: Border(
-                      top: BorderSide(color: _jet, width: 1.5),
-                      bottom: BorderSide(color: Color(0xFFD6D3D1)),
-                    ),
-                  ),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        '${q.level.toUpperCase()} — ${q.year}',
-                        style: const TextStyle(
-                          color: _crimson,
-                          fontSize: 10.5,
-                          fontWeight: FontWeight.w800,
-                          letterSpacing: 1.1,
-                        ),
-                      ),
-                      const SizedBox(height: 4),
-                      Text(
-                        q.title,
-                        maxLines: 2,
-                        overflow: TextOverflow.ellipsis,
-                        style: const TextStyle(
-                          fontFamily: 'serif',
-                          color: _jet,
-                          fontSize: 14.5,
-                          fontWeight: FontWeight.w700,
-                        ),
-                      ),
-                      const Spacer(),
-                      Text(
-                        q.institution,
-                        maxLines: 1,
-                        overflow: TextOverflow.ellipsis,
-                        style: const TextStyle(color: _stone, fontSize: 12),
-                      ),
-                    ],
-                  ),
-                );
-              },
-            );
-          },
-        ),
-      ],
-    );
-  }
-
-  Widget _buildInvertedSkillsSpread(GroupMember m) {
-    return Container(
-      width: double.infinity,
-      padding: const EdgeInsets.all(20),
-      color: _jet,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          const Text(
-            'IN PROFILE: SOFT SKILLS',
-            style: TextStyle(
-              color: Color(0xFFFCA5A5),
-              fontSize: 11.5,
-              fontWeight: FontWeight.w800,
-              letterSpacing: 1.8,
-            ),
-          ),
-          const SizedBox(height: 14),
-          ...m.softSkills.map(
-            (s) => Padding(
-              padding: const EdgeInsets.only(bottom: 12),
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    '▪ ',
-                    style: const TextStyle(color: _crimson, fontSize: 16),
-                  ),
-                  Expanded(
-                    child: RichText(
-                      text: TextSpan(
-                        style: const TextStyle(color: Colors.white, fontSize: 13.5, height: 1.45),
-                        children: [
-                          TextSpan(
-                            text: '${s.name} (${(s.level * 100).round()}%): ',
-                            style: const TextStyle(fontWeight: FontWeight.w800),
-                          ),
-                          TextSpan(
-                            text: s.description,
-                            style: const TextStyle(color: Colors.white70),
-                          ),
+                          const SizedBox(height: 12),
+                          Text(member.shortRole, style: _body),
+                          const SizedBox(height: 22),
+                          const Divider(color: _ink),
+                          const SizedBox(height: 10),
+                          Text('ADDRESS', style: _label),
+                          SelectableText(member.address, style: _body),
+                          const SizedBox(height: 12),
+                          Text('EMAIL', style: _label),
+                          SelectableText(member.email, style: _body),
                         ],
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildCultureAndTalents(GroupMember m) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        const Text(
-          'ARTS, SPORTS & OFF-THE-CLOCK',
-          style: TextStyle(
-            color: _crimson,
-            fontSize: 12,
-            fontWeight: FontWeight.w900,
-            letterSpacing: 1.8,
-          ),
-        ),
-        const SizedBox(height: 12),
-        ...m.talents.map(
-          (t) => Padding(
-            padding: const EdgeInsets.only(bottom: 12),
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Container(
-                  width: 6,
-                  height: 44,
-                  color: _crimson,
-                ),
-                const SizedBox(width: 12),
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        '${t.title}  ·  ${t.category.toUpperCase()}',
-                        style: const TextStyle(
-                          fontFamily: 'serif',
-                          color: _jet,
-                          fontSize: 15.5,
-                          fontWeight: FontWeight.w700,
-                        ),
-                      ),
-                      const SizedBox(height: 2),
-                      Text(
-                        t.detail,
-                        style: const TextStyle(color: _stone, fontSize: 13),
-                      ),
-                    ],
+                      );
+                    },
                   ),
                 ),
+                _spread(_about()),
+                _spread(_section('Academic qualifications', _qualifications())),
+                ColoredBox(
+                  color: _ink,
+                  child: _spread(
+                    _section('Soft skills', _skills(), color: _paper),
+                  ),
+                ),
+                _spread(_section('Special talents', _talents())),
               ],
             ),
           ),
+        ],
+      ),
+    );
+  }
+
+  Widget _spread(Widget child) {
+    return Center(
+      child: ConstrainedBox(
+        constraints: const BoxConstraints(maxWidth: 780),
+        child: Padding(
+          padding: const EdgeInsets.fromLTRB(24, 28, 24, 30),
+          child: SizedBox(width: double.infinity, child: child),
         ),
+      ),
+    );
+  }
+
+  Widget _section(String title, Widget content, {Color color = _ink}) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Semantics(
+          header: true,
+          child: Text(title, style: _display.copyWith(color: color)),
+        ),
+        const SizedBox(height: 20),
+        content,
       ],
+    );
+  }
+
+  Widget _about() {
+    final lead = member.shortDescription.trim();
+    final quote = member.bioQuote.trim();
+    return _section(
+      'About me',
+      Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          if (lead.isEmpty)
+            const Text(_missing, style: _body)
+          else
+            Semantics(
+              label: lead,
+              child: ExcludeSemantics(
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      lead.characters.first,
+                      style: _display.copyWith(color: _orange, fontSize: 62),
+                    ),
+                    const SizedBox(width: 9),
+                    Expanded(
+                      child: Text(
+                        lead.characters.skip(1).toString(),
+                        style: _body.copyWith(
+                          fontFamily: 'serif',
+                          fontSize: 19,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          const SizedBox(height: 22),
+          Container(
+            width: double.infinity,
+            decoration: const BoxDecoration(
+              border: Border(left: BorderSide(color: _orange, width: 3)),
+            ),
+            padding: const EdgeInsets.fromLTRB(16, 8, 0, 8),
+            child: Text(
+              quote.isEmpty ? 'Pull quote · $_missing' : '“$quote”',
+              style: _display.copyWith(
+                color: _orange,
+                fontSize: 27,
+                fontStyle: FontStyle.italic,
+                height: 1.2,
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _qualifications() {
+    if (member.qualifications.isEmpty) {
+      return const Text(_missing, style: _body);
+    }
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        const gap = 18.0;
+        final scale = MediaQuery.textScalerOf(context).scale(15) / 15;
+        final columns = constraints.maxWidth >= 288 * scale ? 2 : 1;
+        final width = (constraints.maxWidth - (columns - 1) * gap) / columns;
+        return Wrap(
+          spacing: gap,
+          runSpacing: gap,
+          children: [
+            for (final qualification in member.qualifications)
+              SizedBox(
+                width: width,
+                child: _entry(
+                  label: qualification.level,
+                  title: qualification.title,
+                  details: [
+                    qualification.institution,
+                    qualification.year,
+                    ?qualification.gradeOrStatus,
+                  ],
+                ),
+              ),
+          ],
+        );
+      },
+    );
+  }
+
+  Widget _skills() {
+    if (member.softSkills.isEmpty) {
+      return Text(_missing, style: _body.copyWith(color: _paper));
+    }
+    return Wrap(
+      spacing: 10,
+      runSpacing: 10,
+      children: [
+        for (final skill in member.softSkills)
+          Container(
+            padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+            decoration: BoxDecoration(
+              border: Border.all(color: _lightOrange),
+              borderRadius: BorderRadius.circular(2),
+            ),
+            child: Text(skill.name, style: _body.copyWith(color: _paper)),
+          ),
+      ],
+    );
+  }
+
+  Widget _talents() {
+    if (member.talents.isEmpty) {
+      return const Text(_missing, style: _body);
+    }
+    return Column(
+      children: [
+        for (final talent in member.talents)
+          _entry(
+            label: talent.category,
+            title: talent.title,
+            details: [talent.detail],
+          ),
+      ],
+    );
+  }
+
+  Widget _entry({
+    required String label,
+    required String title,
+    required List<String> details,
+  }) {
+    return Container(
+      width: double.infinity,
+      padding: const EdgeInsets.symmetric(vertical: 12),
+      decoration: const BoxDecoration(
+        border: Border(top: BorderSide(color: _rule)),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(label.toUpperCase(), style: _label),
+          const SizedBox(height: 5),
+          Text(title, style: _display.copyWith(fontSize: 23, height: 1.15)),
+          const SizedBox(height: 6),
+          for (final detail in details) Text(detail, style: _body),
+        ],
+      ),
     );
   }
 }
