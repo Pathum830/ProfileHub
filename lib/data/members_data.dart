@@ -126,91 +126,122 @@ class MembersData {
     ),
 
     // =========================================================================
-    // MEMBER 02 — Replace with Member 02's actual details
+    // MEMBER 02 — Chathupama Thathsarani
     // Screen file: lib/screens/members/member_02_screen.dart
-    // Design Style: Professional Business Profile
+    // Design Style: Professional Corporate Profile
     // =========================================================================
     GroupMember(
       id: 'member_02',
       memberNumber: 2,
-      studentId: 'STU-2026-002',
-      fullName: 'Member 02 (Placeholder Name)',
-      shortRole: 'Systems & Auth Lead',
+      studentId: 'NDT/IT/2025/002 (Placeholder)',
+      fullName: 'Chathupama Thathsarani',
+      shortRole: 'Software Engineer | Full-Stack Developer',
       shortDescription:
-          'Focused on reliable backend integration, Firebase security, and QA.',
-      address: 'Kandy, Central Province (Placeholder City)',
-      email: 'member02.placeholder@university.edu.example',
+          'Detail-oriented Information Technology undergraduate (NDT) at the Institute of Technology, University of Moratuwa, passionate about Software Engineering and System Architecture. Skilled in modern stacks including React, Flutter, Java, Python, PHP, MongoDB, and MySQL.',
+      address: 'Moratuwa, Sri Lanka',
+      email: 'chathupamathathsarani51@gmail.com',
       photoAsset: 'assets/images/member_02.jpg',
-      designStyleName: 'Professional Business',
+      designStyleName: 'Professional Corporate Profile',
       accentColor: Color(0xFF0F2942),
-      bioQuote: 'Reliability and clarity turn good prototypes into production software.',
+      bioQuote:
+          'Proven ability to translate complex requirements into clean, maintainable code and optimized database solutions, backed by practical exposure to enterprise data workflows.',
       qualifications: [
         AcademicQualification(
-          level: 'G.C.E. O/L',
-          title: 'Ordinary Level Examination (Placeholder)',
-          institution: 'Central High School (Placeholder)',
-          year: '2019',
-          gradeOrStatus: '8 As, 1 B (Sample)',
+          level: 'National Diploma',
+          title: 'National Diploma in Technology (NDT) – Information Technology',
+          institution:
+              'Institute of Technology, University of Moratuwa (ITUM)',
+          year: '2025 – 2027 (Expected)',
+          gradeOrStatus: 'Undergraduate (Ongoing)',
+        ),
+        AcademicQualification(
+          level: 'Certification',
+          title: 'JavaScript Essentials',
+          institution: 'Cisco Networking Academy',
+          year: '2026',
+          gradeOrStatus: 'Certified',
+        ),
+        AcademicQualification(
+          level: 'Certification',
+          title: 'Python for Beginners',
+          institution:
+              'Centre for Open & Distance Learning (CODL), University of Moratuwa',
+          year: '2026',
+          gradeOrStatus: 'Certified',
+        ),
+        AcademicQualification(
+          level: 'Certificate',
+          title: 'Certificate Course in English',
+          institution: 'The Open University of Sri Lanka (OUSL)',
+          year: '2024',
+          gradeOrStatus: 'Completed',
+        ),
+        AcademicQualification(
+          level: 'Advanced Certificate',
+          title: 'Advanced Certificate Course in Cyber Security & Networking',
+          institution: 'NextGen Institute, Sri Lanka',
+          year: '2023',
+          gradeOrStatus: 'Completed',
         ),
         AcademicQualification(
           level: 'G.C.E. A/L',
-          title: 'Advanced Level — Commerce & IT (Placeholder)',
-          institution: 'Central College (Placeholder)',
-          year: '2022',
-          gradeOrStatus: '2 As, 1 B (Sample)',
+          title: 'G.C.E. Advanced Level Examination (Placeholder)',
+          institution: 'Secondary School / College Name (Placeholder)',
+          year: 'YYYY (Placeholder)',
+          gradeOrStatus: 'Results (Placeholder)',
         ),
         AcademicQualification(
-          level: 'Diploma',
-          title: 'Diploma in Information Systems (Placeholder)',
-          institution: 'Computing Academy (Placeholder)',
-          year: '2023',
-          gradeOrStatus: 'Merit',
-        ),
-        AcademicQualification(
-          level: 'Degree',
-          title: 'BSc (Hons) in Information Technology (Ongoing)',
-          institution: 'University Campus (Placeholder)',
-          year: '2024 – Present',
-          gradeOrStatus: 'Year 2',
+          level: 'G.C.E. O/L',
+          title: 'G.C.E. Ordinary Level Examination (Placeholder)',
+          institution: 'Secondary School Name (Placeholder)',
+          year: 'YYYY (Placeholder)',
+          gradeOrStatus: 'Results (Placeholder)',
         ),
       ],
       softSkills: [
         SoftSkill(
-          name: 'Leadership',
-          level: 0.93,
-          description: 'Coordinates task tracking and release readiness checks.',
+          name: 'Problem Solving',
+          level: 0.95,
+          description:
+              'Proven ability to translate complex software requirements into clean, maintainable code and optimized database solutions.',
         ),
         SoftSkill(
-          name: 'Analytical Thinking',
-          level: 0.91,
-          description: 'Breaks down authentication and validation edge cases.',
+          name: 'Teamwork & Collaboration',
+          level: 0.92,
+          description:
+              'Active collaborator in multi-developer sprint workflows, code reviews, and Git/GitHub repository management.',
         ),
         SoftSkill(
-          name: 'Public Speaking',
+          name: 'Adaptability',
+          level: 0.88,
+          description:
+              'Swiftly masters emerging tech stacks across web (React), mobile (Flutter), and backend systems (Node.js).',
+        ),
+        SoftSkill(
+          name: 'Communication',
           level: 0.85,
-          description: 'Presents project demos and architecture walkthroughs.',
-        ),
-        SoftSkill(
-          name: 'Conflict Resolution',
-          level: 0.87,
-          description: 'Keeps group discussions constructive and goal-oriented.',
+          description:
+              'Articulate technical and client communication cultivated through banking customer service and academic presentations.',
         ),
       ],
       talents: [
         SpecialTalent(
-          title: 'Competitive Chess',
-          category: 'Sports',
-          detail: 'University chess society member and tactical puzzle solver.',
+          title: 'Full-Stack & System Architecture',
+          category: 'Technical Excellence',
+          detail:
+              'Architects scalable solutions like Serva (ITUM infrastructure management) and WedEase (AI wedding platform) using React, Flutter, Node.js, and SQL/NoSQL.',
         ),
         SpecialTalent(
-          title: 'Debate & Toastmasters',
-          category: 'Speaking',
-          detail: 'Participates in structured extempore speaking sessions.',
+          title: 'Banking Operations & Digital Workflows',
+          category: 'Industry Experience',
+          detail:
+              'Professional banking internship at Hatton National Bank (HNB) executing transaction workflows, digital banking software, and data accuracy audits.',
         ),
         SpecialTalent(
-          title: 'Financial Modeling',
-          category: 'Hobby',
-          detail: 'Builds personal budgeting spreadsheets and tech case studies.',
+          title: 'Secure Systems & Cyber Security',
+          category: 'Security & Innovation',
+          detail:
+              'Built secure web-based automated voting systems with audit trails and completed advanced cyber security & networking certification.',
         ),
       ],
     ),
