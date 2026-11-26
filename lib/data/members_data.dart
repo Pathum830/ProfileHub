@@ -600,84 +600,107 @@ class MembersData {
     ),
 
     // =========================================================================
-    // MEMBER 06 — Replace with Member 06's actual details
+    // MEMBER 06 — Thiruththanikan
     // Screen file: lib/screens/members/member_06_screen.dart
     // Design Style: Magazine-Style Profile
     // =========================================================================
     GroupMember(
       id: 'member_06',
       memberNumber: 6,
-      studentId: 'STU-2026-006',
-      fullName: 'Member 06 (Placeholder Name)',
-      shortRole: 'Editorial & Typography Lead',
+      studentId: '23IT0539',
+      fullName: 'Thiruththanikan',
+      shortRole: 'Software Engineer · Full-Stack & AI Solutions Developer',
       shortDescription:
-          'Loves print-inspired mobile grids, expressive headings, and storytelling.',
-      address: 'Matara, Southern Province (Placeholder City)',
-      email: 'member06.placeholder@university.edu.example',
+          'Thiruththanikan is an Information Technology undergraduate and '
+          'software engineer with experience in full-stack development, machine '
+          'learning, and cloud deployment. As a digital assistant at Commercial '
+          'Bank of Ceylon, he helped retail clients use online and mobile '
+          'banking services and resolve transaction issues.',
+      address: 'Point Pedro, Sri Lanka',
+      email: 'thiruththanikan2003@gmail.com',
       photoAsset: 'assets/images/member_06.jpg',
       designStyleName: 'Magazine Editorial',
-      accentColor: Color(0xFFB91C1C),
-      bioQuote: 'Great typography gives digital screens the poise of print.',
+      accentColor: Color(0xFF97502F),
+      bioQuote:
+          'Translating business and operational requirements into high-impact '
+          'digital solutions',
       qualifications: [
         AcademicQualification(
-          level: 'G.C.E. O/L',
-          title: 'Ordinary Level Examination (Placeholder)',
-          institution: 'Southern Model School (Placeholder)',
-          year: '2020',
-          gradeOrStatus: '8 As, 1 C (Sample)',
+          level: 'National Diploma',
+          title:
+              'National Diploma in Technology (NDT) in Information Technology',
+          institution: 'Institute of Technology, University of Moratuwa',
+          year: '2024 – Present',
+          gradeOrStatus: 'In progress',
         ),
         AcademicQualification(
           level: 'G.C.E. A/L',
-          title: 'Advanced Level — Languages & ICT (Placeholder)',
-          institution: 'Matara Central College (Placeholder)',
-          year: '2023',
-          gradeOrStatus: '2 As, 1 B (Sample)',
+          title: 'Advanced Level · Physical Science',
+          institution: 'J / Hartley College',
+          year: '2022/2023',
+          gradeOrStatus: 'Grades not provided (placeholder)',
+        ),
+        AcademicQualification(
+          level: 'G.C.E. O/L',
+          title: 'Ordinary Level Examination',
+          institution: 'J / Hartley College',
+          year: '2019',
+          gradeOrStatus: 'Grades not provided (placeholder)',
         ),
         AcademicQualification(
           level: 'Certificate',
-          title: 'Editorial & Digital Publishing Certificate (Placeholder)',
-          institution: 'Media Institute (Placeholder)',
-          year: '2024',
-          gradeOrStatus: 'Merit',
+          title: 'Python for Beginners',
+          institution:
+              'Institute of Technology / University of Moratuwa (CODL)',
+          year: 'Year not provided (placeholder)',
         ),
       ],
       softSkills: [
+        // The model requires a level. This profile presents unscored labels.
         SoftSkill(
-          name: 'Storytelling',
-          level: 0.94,
-          description: 'Frames user journeys with compelling visual hierarchy.',
+          name: 'Customer communication',
+          level: 0,
+          description:
+              'Guided retail clients through digital banking workflows.',
         ),
         SoftSkill(
-          name: 'Critical Thinking',
-          level: 0.89,
-          description: 'Evaluates readability and contrast on small viewports.',
+          name: 'Problem solving',
+          level: 0,
+          description: 'Troubleshot authentication and transaction queries.',
         ),
         SoftSkill(
-          name: 'Presentation',
-          level: 0.92,
-          description: 'Leads slide decks and live project demonstrations.',
-        ),
-        SoftSkill(
-          name: 'Teamwork',
-          level: 0.88,
-          description: 'Reviews copy consistency across all screens.',
+          name: 'Explaining technical concepts',
+          level: 0,
+          description:
+              'Broke complex workflows into steps customers could follow.',
         ),
       ],
       talents: [
         SpecialTalent(
-          title: 'Classical Violin',
-          category: 'Music',
-          detail: 'Performed in school chamber ensembles for 6 years.',
+          title: 'ResQAI',
+          category: 'Applied AI',
+          detail:
+              'Designed a disaster-response platform that processes voice, text, '
+              'and image reports to help prioritize rescue dispatch.',
         ),
         SpecialTalent(
-          title: 'Editorial Photography',
-          category: 'Art',
-          detail: 'Portrait lighting and magazine-style photo essays.',
+          title: 'Interactive portfolio',
+          category: 'Frontend engineering',
+          detail:
+              'Built a responsive React portfolio to showcase projects and '
+              'credentials, with accessible components and smooth transitions.',
         ),
         SpecialTalent(
-          title: 'Cycling',
-          category: 'Sports',
-          detail: 'Early morning coastal road rides.',
+          title: 'Enterprise event management',
+          category: 'Full-stack development',
+          detail:
+              'Developed a platform for event discovery, registration, and '
+              'ticketing, with role-based administration.',
+        ),
+        SpecialTalent(
+          title: 'Not provided (placeholder)',
+          category: 'Hobbies',
+          detail: 'The biography supplied no hobby information.',
         ),
       ],
     ),
