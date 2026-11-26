@@ -396,7 +396,7 @@ class MembersData {
     GroupMember(
       id: 'member_05',
       memberNumber: 5,
-      studentId: 'STU-2026-005 (Placeholder)',
+      studentId: '23IT0536',
       fullName: 'Chamodi Madhushani',
       shortRole: 'Software Engineer • Mobile App Dev',
       shortDescription:
@@ -411,17 +411,17 @@ class MembersData {
       qualifications: [
         AcademicQualification(
           level: 'G.C.E. O/L',
-          title: 'Ordinary Level Examination (Placeholder)',
-          institution: 'Secondary School Name (Placeholder)',
-          year: 'YYYY (Placeholder)',
-          gradeOrStatus: 'Results (Placeholder)',
+          title: 'G.C.E. Ordinary Level Examination',
+          institution: 'Sri Gnanodaya Central College, Divulapitiya',
+          year: '2013 – 2019',
+          gradeOrStatus: '4 As, 4 Bs, 1 C',
         ),
         AcademicQualification(
           level: 'G.C.E. A/L',
-          title: 'Advanced Level Examination (Placeholder)',
-          institution: 'College Name (Placeholder)',
-          year: 'YYYY (Placeholder)',
-          gradeOrStatus: 'Results (Placeholder)',
+          title: 'G.C.E. Advanced Level Examination',
+          institution: "President's College, Minuwangoda",
+          year: '2020 – 2022',
+          gradeOrStatus: '1 C, 2 Ss',
         ),
         AcademicQualification(
           level: 'Certificate',
@@ -493,19 +493,19 @@ class MembersData {
       ],
       talents: [
         SpecialTalent(
-          title: 'Special Talent 01 (Placeholder)',
-          category: 'Placeholder',
-          detail: 'Add your verified artistic, creative, or musical talent here.',
+          title: 'Dancing',
+          category: 'Art',
+          detail: 'Enjoys dancing as a creative and artistic expression.',
         ),
         SpecialTalent(
-          title: 'Sport / Activity 02 (Placeholder)',
-          category: 'Placeholder',
-          detail: 'Add your verified sports or extracurricular activity here.',
+          title: 'Table Tennis',
+          category: 'Sports',
+          detail: 'Enjoys playing table tennis as a recreational sport.',
         ),
         SpecialTalent(
-          title: 'Personal Hobby 03 (Placeholder)',
-          category: 'Placeholder',
-          detail: 'Add your verified music, reading, or personal hobby here.',
+          title: 'Volleyball',
+          category: 'Sports',
+          detail: 'Enjoys playing volleyball as a team sport.',
         ),
       ],
     ),
