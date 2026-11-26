@@ -35,46 +35,46 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'YOUR_WEB_API_KEY',
-    appId: 'YOUR_WEB_APP_ID',
-    messagingSenderId: 'YOUR_MESSAGING_SENDER_ID',
-    projectId: 'YOUR_FIREBASE_PROJECT_ID',
-    authDomain: 'YOUR_FIREBASE_PROJECT_ID.firebaseapp.com',
-    storageBucket: 'YOUR_FIREBASE_PROJECT_ID.firebasestorage.app',
+    apiKey: 'AIzaSyAtw7u6D_L3FKK2W_jYrZXNMk6EP-tAg3E',
+    appId: '1:751111458973:web:36e5c14d2442f29ee74474',
+    messagingSenderId: '751111458973',
+    projectId: 'nexa-profile',
+    authDomain: 'nexa-profile.firebaseapp.com',
+    storageBucket: 'nexa-profile.firebasestorage.app',
+    measurementId: 'G-W431N1RXL4',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'YOUR_ANDROID_API_KEY',
-    appId: 'YOUR_ANDROID_APP_ID',
-    messagingSenderId: 'YOUR_MESSAGING_SENDER_ID',
-    projectId: 'YOUR_FIREBASE_PROJECT_ID',
-    storageBucket: 'YOUR_FIREBASE_PROJECT_ID.firebasestorage.app',
+    apiKey: 'AIzaSyDFR7TshBCnPNM9SFe5P-AKmLxsLOqa764',
+    appId: '1:751111458973:android:95ddb6ea0a33ef1be74474',
+    messagingSenderId: '751111458973',
+    projectId: 'nexa-profile',
+    storageBucket: 'nexa-profile.firebasestorage.app',
   );
-
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'YOUR_IOS_API_KEY',
-    appId: 'YOUR_IOS_APP_ID',
-    messagingSenderId: 'YOUR_MESSAGING_SENDER_ID',
-    projectId: 'YOUR_FIREBASE_PROJECT_ID',
-    storageBucket: 'YOUR_FIREBASE_PROJECT_ID.firebasestorage.app',
+    apiKey: 'AIzaSyDS9f3cNGsuEEiWuyK4xlK0ddp0xd05rfQ',
+    appId: '1:751111458973:ios:a1f7ae18d0fe2084e74474',
+    messagingSenderId: '751111458973',
+    projectId: 'nexa-profile',
+    storageBucket: 'nexa-profile.firebasestorage.app',
     iosBundleId: 'com.mobilecomm.ca02.groupProfileApp',
   );
-
   static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'YOUR_MACOS_API_KEY',
-    appId: 'YOUR_MACOS_APP_ID',
-    messagingSenderId: 'YOUR_MESSAGING_SENDER_ID',
-    projectId: 'YOUR_FIREBASE_PROJECT_ID',
-    storageBucket: 'YOUR_FIREBASE_PROJECT_ID.firebasestorage.app',
+    apiKey: 'AIzaSyDS9f3cNGsuEEiWuyK4xlK0ddp0xd05rfQ',
+    appId: '1:751111458973:ios:a1f7ae18d0fe2084e74474',
+    messagingSenderId: '751111458973',
+    projectId: 'nexa-profile',
+    storageBucket: 'nexa-profile.firebasestorage.app',
     iosBundleId: 'com.mobilecomm.ca02.groupProfileApp',
   );
 
   static const FirebaseOptions windows = FirebaseOptions(
-    apiKey: 'YOUR_WINDOWS_API_KEY',
-    appId: 'YOUR_WINDOWS_APP_ID',
-    messagingSenderId: 'YOUR_MESSAGING_SENDER_ID',
-    projectId: 'YOUR_FIREBASE_PROJECT_ID',
-    authDomain: 'YOUR_FIREBASE_PROJECT_ID.firebaseapp.com',
-    storageBucket: 'YOUR_FIREBASE_PROJECT_ID.firebasestorage.app',
+    apiKey: 'AIzaSyAtw7u6D_L3FKK2W_jYrZXNMk6EP-tAg3E',
+    appId: '1:751111458973:web:73efbc50e964dabde74474',
+    messagingSenderId: '751111458973',
+    projectId: 'nexa-profile',
+    authDomain: 'nexa-profile.firebaseapp.com',
+    storageBucket: 'nexa-profile.firebasestorage.app',
+    measurementId: 'G-D7JS62FXF6',
   );
 }
