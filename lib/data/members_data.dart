@@ -389,91 +389,123 @@ class MembersData {
     ),
 
     // =========================================================================
-    // MEMBER 05 — Replace with Member 05's actual details
+    // MEMBER 05 — Chamodi Madhushani
     // Screen file: lib/screens/members/member_05_screen.dart
-    // Design Style: Timeline-Based Biography
+    // Design Style: Personal Journey Timeline
     // =========================================================================
     GroupMember(
       id: 'member_05',
       memberNumber: 5,
-      studentId: 'STU-2026-005',
-      fullName: 'Member 05 (Placeholder Name)',
-      shortRole: 'Documentation & State Lead',
+      studentId: 'STU-2026-005 (Placeholder)',
+      fullName: 'Chamodi Madhushani',
+      shortRole: 'Software Engineer • Mobile App Dev',
       shortDescription:
-          'Structures learning journeys, chronological data, and Provider state.',
-      address: 'Kurunegala, North Western Province (Placeholder City)',
-      email: 'member05.placeholder@university.edu.example',
+          'Motivated IT undergraduate at the Institute of Technology, University of Moratuwa, passionate about Full-Stack and Mobile Application Development.',
+      address: 'Horampalla, Sri Lanka',
+      email: 'chamodimadhushani18@gmail.com',
       photoAsset: 'assets/images/member_05.jpg',
-      designStyleName: 'Timeline Biography',
-      accentColor: Color(0xFF1B6B5A),
-      bioQuote: 'Every milestone shapes the engineer we become tomorrow.',
+      designStyleName: 'Personal Journey Timeline',
+      accentColor: Color(0xFF1B4D3E),
+      bioQuote:
+          'Passionate about exploring new technologies, applying academic knowledge to real-world projects, and growing as a Software Engineer.',
       qualifications: [
         AcademicQualification(
           level: 'G.C.E. O/L',
           title: 'Ordinary Level Examination (Placeholder)',
-          institution: 'Wayamba National School (Placeholder)',
-          year: '2019',
-          gradeOrStatus: '9 As (Sample)',
+          institution: 'Secondary School Name (Placeholder)',
+          year: 'YYYY (Placeholder)',
+          gradeOrStatus: 'Results (Placeholder)',
         ),
         AcademicQualification(
           level: 'G.C.E. A/L',
-          title: 'Advanced Level — Biological / Tech Stream (Placeholder)',
-          institution: 'North Western College (Placeholder)',
-          year: '2022',
-          gradeOrStatus: '3 Bs (Sample)',
+          title: 'Advanced Level Examination (Placeholder)',
+          institution: 'College Name (Placeholder)',
+          year: 'YYYY (Placeholder)',
+          gradeOrStatus: 'Results (Placeholder)',
+        ),
+        AcademicQualification(
+          level: 'Certificate',
+          title: 'Certificate Course in Web Design for Beginners',
+          institution: 'CODL, University of Moratuwa',
+          year: 'Year (Placeholder)',
+          gradeOrStatus: 'Completed',
+        ),
+        AcademicQualification(
+          level: 'Certificate',
+          title: 'Certificate Course in Python for Beginners',
+          institution: 'CODL, University of Moratuwa',
+          year: 'Year (Placeholder)',
+          gradeOrStatus: 'Completed',
+        ),
+        AcademicQualification(
+          level: 'Certificate',
+          title: 'Certificate Course in Introduction to Data Science',
+          institution: 'CISCO Networking Academy',
+          year: 'Year (Placeholder)',
+          gradeOrStatus: 'Completed',
         ),
         AcademicQualification(
           level: 'Diploma',
-          title: 'Diploma in Software Development (Placeholder)',
-          institution: 'National ICT Institute (Placeholder)',
-          year: '2023',
-          gradeOrStatus: 'Distinction',
+          title: 'Diploma in Information Technology & English',
+          institution: 'Esoft Metro Campus',
+          year: 'Year (Placeholder)',
+          gradeOrStatus: 'Completed',
         ),
         AcademicQualification(
-          level: 'Degree',
-          title: 'BSc (Hons) in Computer Science (Ongoing)',
-          institution: 'University Campus (Placeholder)',
-          year: '2024 – Present',
-          gradeOrStatus: 'Year 2',
+          level: 'Undergraduate',
+          title: 'Undergraduate in Information Technology',
+          institution: 'Institute of Technology, University of Moratuwa',
+          year: '2025 – Present',
+          gradeOrStatus: 'Ongoing',
         ),
       ],
       softSkills: [
         SoftSkill(
-          name: 'Organization',
-          level: 0.94,
-          description: 'Maintains clean project timelines and README records.',
-        ),
-        SoftSkill(
-          name: 'Mentoring',
-          level: 0.88,
-          description: 'Helps peers debug Git merge conflicts and layout bugs.',
+          name: 'Teamwork',
+          level: 0.90,
+          description:
+              'Collaborates effectively on group software and IoT projects such as the Smart Medical Hand Band system.',
         ),
         SoftSkill(
           name: 'Communication',
-          level: 0.91,
-          description: 'Writes concise, structured specifications.',
+          level: 0.88,
+          description:
+              'Strong interpersonal communication for presenting technical work and coordinating across team roles.',
         ),
         SoftSkill(
-          name: 'Patience',
-          level: 0.90,
-          description: 'Calmly troubleshoots tricky async state flows.',
+          name: 'Problem Solving',
+          level: 0.92,
+          description:
+              'Applies analytical thinking to full-stack web, Firebase, and Flutter mobile application challenges.',
+        ),
+        SoftSkill(
+          name: 'Time Management',
+          level: 0.87,
+          description:
+              'Balances undergraduate studies, technical certifications, and hands-on development projects.',
+        ),
+        SoftSkill(
+          name: 'Self-Learning',
+          level: 0.94,
+          description:
+              'Quick learner passionate about exploring new technologies and continuously improving technical skills.',
         ),
       ],
       talents: [
         SpecialTalent(
-          title: 'Creative Writing',
-          category: 'Hobby',
-          detail: 'Short fiction essays and technical reflection journals.',
+          title: 'Special Talent 01 (Placeholder)',
+          category: 'Placeholder',
+          detail: 'Add your verified artistic, creative, or musical talent here.',
         ),
         SpecialTalent(
-          title: 'Table Tennis',
-          category: 'Sports',
-          detail: 'Fast-paced doubles matches in the student union hall.',
+          title: 'Sport / Activity 02 (Placeholder)',
+          category: 'Placeholder',
+          detail: 'Add your verified sports or extracurricular activity here.',
         ),
         SpecialTalent(
-          title: 'Botanical Sketching',
-          category: 'Art',
-          detail: 'Ink and watercolor studies of native leaves.',
+          title: 'Personal Hobby 03 (Placeholder)',
+          category: 'Placeholder',
+          detail: 'Add your verified music, reading, or personal hobby here.',
         ),
       ],
     ),
