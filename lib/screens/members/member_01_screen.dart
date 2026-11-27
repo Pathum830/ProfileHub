@@ -4,13 +4,20 @@ import 'package:group_profile_app/models/group_member.dart';
 import 'package:group_profile_app/widgets/favorite_button.dart';
 import 'package:group_profile_app/widgets/member_photo.dart';
 
-/// MEMBER 01 BIO SCREEN — Design Style: Modern Minimalist Profile
+/// MEMBER 01 PORTFOLIO SCREEN — Pathum Siriwardhana
 /// ============================================================================
-/// Contributor: Member 01 (Pathum Siriwardhana)
-/// Modern minimalist white & beige biography layout featuring a collapsible
-/// SliverAppBar with a circular framed portrait, smooth scroll-driven
-/// animations, structured Cards, an academic timeline, minimalist soft skill
-/// indicators, and a responsive talents & hobbies showcase.
+/// Design Style: Executive DevOps & Software Engineering Portfolio
+/// Palette: Deep Navy (#101B35), Royal Blue (#315EBD), White (#FFFFFF),
+///          Light Grey (#F4F6FA).
+/// Sections:
+///   - Hero Header with verified portrait, name, professional identity & nav
+///   - About Me & Contact Details
+///   - Education Timeline
+///   - Technical Skills (grouped by category, no invented ratings)
+///   - Featured Projects (GuideLanka, PartTime LK, ERP Module, CI/CD Pipeline)
+///   - Work Experience (Training Assistant – People's Bank, undated)
+///   - Certifications (IBM SkillsBuild, University of Moratuwa, Google)
+///   - Professional Contact Footer
 /// ============================================================================
 class Member01Screen extends StatefulWidget {
   const Member01Screen({super.key, required this.member});
@@ -23,43 +30,264 @@ class Member01Screen extends StatefulWidget {
 
 class _Member01ScreenState extends State<Member01Screen>
     with SingleTickerProviderStateMixin {
-  // Elegant White & Beige Minimalist Palette
-  static const Color _alabaster = Color(0xFFFBF9F5);
-  static const Color _pureWhite = Color(0xFFFFFFFF);
-  static const Color _linenBeige = Color(0xFFF4EFE6);
-  static const Color _sandBeige = Color(0xFFE7DEC9);
-  static const Color _stoneBorder = Color(0xFFE5DDD0);
-  static const Color _espresso = Color(0xFF1F1B17);
-  static const Color _umber = Color(0xFF6B6257);
-  static const Color _bronze = Color(0xFF9C7A54);
+  // Core Palette
+  static const Color _deepNavy = Color(0xFF101B35);
+  static const Color _navyElevated = Color(0xFF17264A);
+  static const Color _royalBlue = Color(0xFF315EBD);
+  static const Color _royalBlueSoft = Color(0xFFEAF0FC);
+  static const Color _white = Color(0xFFFFFFFF);
+  static const Color _lightGrey = Color(0xFFF4F6FA);
+  static const Color _borderGrey = Color(0xFFE1E6F0);
+  static const Color _slateText = Color(0xFF475569);
+  static const Color _mutedNavy = Color(0xFF94A3B8);
 
   late final ScrollController _scrollController;
   late final AnimationController _entranceController;
-  String _activeFilter = 'All';
+  bool _showAppBarTitle = false;
+  String _selectedSkillCategory = 'All';
+
+  final GlobalKey _aboutKey = GlobalKey();
+  final GlobalKey _educationKey = GlobalKey();
+  final GlobalKey _skillsKey = GlobalKey();
+  final GlobalKey _projectsKey = GlobalKey();
+  final GlobalKey _experienceKey = GlobalKey();
+  final GlobalKey _certificationsKey = GlobalKey();
+  final GlobalKey _contactKey = GlobalKey();
+
+  static const List<String> _summaryParagraphs = [
+    'Information Technology student at the Institute of Technology, University of Moratuwa (ITUM), with academic project experience in software development, backend engineering, RESTful API development, database management, cloud technologies and DevOps automation.',
+    'Hands-on experience with Python, Java, Go, JavaScript, Dart, Flutter, Docker, Git, GitHub Actions, Linux and CI/CD workflows.',
+    'Interested in building reliable software applications, backend systems and automated deployment pipelines.',
+  ];
+
+  static const List<_SkillCategory> _skillCategories = [
+    _SkillCategory(
+      id: 'Languages',
+      title: 'Programming Languages',
+      icon: Icons.code_rounded,
+      skills: [
+        'Python',
+        'Java',
+        'Go',
+        'JavaScript',
+        'Dart',
+        'PHP',
+        'SQL',
+        'Bash',
+      ],
+    ),
+    _SkillCategory(
+      id: 'Backend',
+      title: 'Backend Frameworks',
+      icon: Icons.dns_rounded,
+      skills: [
+        'FastAPI',
+        'Spring Boot',
+        'Gin (Go)',
+        'Node.js',
+        'Express.js',
+        'Laravel',
+      ],
+    ),
+    _SkillCategory(
+      id: 'Frontend',
+      title: 'Frontend & Mobile',
+      icon: Icons.devices_rounded,
+      skills: [
+        'Vue.js',
+        'React',
+        'Flutter',
+      ],
+    ),
+    _SkillCategory(
+      id: 'DevOps',
+      title: 'DevOps & Tools',
+      icon: Icons.settings_suggest_rounded,
+      skills: [
+        'Docker',
+        'Git',
+        'GitHub',
+        'GitHub Actions',
+        'Maven',
+        'Linux',
+        'CI/CD',
+        'Bash Scripting',
+      ],
+    ),
+    _SkillCategory(
+      id: 'Databases',
+      title: 'Databases',
+      icon: Icons.storage_rounded,
+      skills: [
+        'PostgreSQL',
+        'MySQL',
+        'MongoDB',
+      ],
+    ),
+    _SkillCategory(
+      id: 'Cloud',
+      title: 'Cloud & Backend Services',
+      icon: Icons.cloud_queue_rounded,
+      skills: [
+        'Supabase',
+        'Firebase',
+        'Vercel',
+      ],
+    ),
+  ];
+
+  static const List<_PortfolioProject> _featuredProjects = [
+    _PortfolioProject(
+      number: '01',
+      title: 'GuideLanka',
+      subtitle: 'AI-Powered Rural Tourism and Safari Management Platform',
+      icon: Icons.explore_rounded,
+      technologies: [
+        'Python',
+        'FastAPI',
+        'PostgreSQL',
+        'Supabase',
+        'Gemini API',
+      ],
+      highlights: [
+        'Developed backend services for GPS tracking and emergency monitoring.',
+        'Integrated Gemini API.',
+        'Worked with Supabase and PostgreSQL.',
+      ],
+    ),
+    _PortfolioProject(
+      number: '02',
+      title: 'PartTime LK',
+      subtitle: 'Part-Time Job Marketplace',
+      icon: Icons.work_outline_rounded,
+      technologies: [
+        'Flutter',
+        'Dart',
+        'Firebase',
+        'Git',
+        'GitHub',
+      ],
+      highlights: [
+        'Developed a mobile application connecting part-time job seekers with employers.',
+        'Integrated Firebase services.',
+        'Used Git and GitHub for version control.',
+      ],
+    ),
+    _PortfolioProject(
+      number: '03',
+      title: 'ERP Project Management Module',
+      subtitle: 'Enterprise Project Workflow & Backend System',
+      icon: Icons.hub_rounded,
+      technologies: [
+        'Go',
+        'Gin',
+        'GORM',
+        'PostgreSQL',
+        'Docker',
+        'JWT',
+        'Vue.js 3',
+      ],
+      highlights: [
+        'Developed backend APIs.',
+        'Worked with database management and JWT authentication.',
+        'Used Docker for development environment consistency.',
+        'Collaborated using Git and GitHub.',
+      ],
+    ),
+    _PortfolioProject(
+      number: '04',
+      title: 'CI/CD Pipeline Implementation',
+      subtitle: 'Automated Build, Test & Delivery Workflow',
+      icon: Icons.account_tree_rounded,
+      technologies: [
+        'Java',
+        'Spring Boot',
+        'Maven',
+        'GitHub Actions',
+      ],
+      highlights: [
+        'Implemented CI/CD workflows.',
+        'Automated Maven build and testing processes.',
+        'Managed source code using Git and GitHub.',
+      ],
+    ),
+  ];
+
+  static const List<_CertificationItem> _certifications = [
+    _CertificationItem(
+      title: 'Cloud Computing Fundamentals',
+      issuer: 'IBM SkillsBuild',
+      year: '2026',
+      icon: Icons.cloud_done_outlined,
+    ),
+    _CertificationItem(
+      title: 'Python for Beginners',
+      issuer: 'University of Moratuwa',
+      year: '2025',
+      icon: Icons.terminal_rounded,
+    ),
+    _CertificationItem(
+      title: 'Google AI Essentials',
+      issuer: 'Google',
+      year: '2026',
+      icon: Icons.auto_awesome_outlined,
+    ),
+  ];
 
   @override
   void initState() {
     super.initState();
-    _scrollController = ScrollController();
+    _scrollController = ScrollController()..addListener(_onScroll);
     _entranceController = AnimationController(
       vsync: this,
-      duration: const Duration(milliseconds: 700),
+      duration: const Duration(milliseconds: 750),
     )..forward();
+  }
+
+  void _onScroll() {
+    if (!_scrollController.hasClients) return;
+    final shouldShow = _scrollController.offset > 170;
+    if (shouldShow != _showAppBarTitle) {
+      setState(() => _showAppBarTitle = shouldShow);
+    }
   }
 
   @override
   void dispose() {
-    _scrollController.dispose();
+    _scrollController
+      ..removeListener(_onScroll)
+      ..dispose();
     _entranceController.dispose();
     super.dispose();
+  }
+
+  void _scrollToSection(GlobalKey key) {
+    final targetContext = key.currentContext;
+    if (targetContext == null) return;
+    Scrollable.ensureVisible(
+      targetContext,
+      duration: const Duration(milliseconds: 480),
+      curve: Curves.easeOutCubic,
+      alignment: 0.04,
+    );
   }
 
   void _copyEmail(String email) {
     Clipboard.setData(ClipboardData(text: email));
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
-        content: Text('Copied email: $email'),
-        backgroundColor: _espresso,
+        content: Row(
+          children: [
+            const Icon(
+              Icons.check_circle_outline_rounded,
+              color: _white,
+              size: 18,
+            ),
+            const SizedBox(width: 10),
+            Expanded(child: Text('Email copied: $email')),
+          ],
+        ),
+        backgroundColor: _deepNavy,
         behavior: SnackBarBehavior.floating,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
       ),
@@ -71,94 +299,96 @@ class _Member01ScreenState extends State<Member01Screen>
     final m = widget.member;
     final screenWidth = MediaQuery.sizeOf(context).width;
     final isCompact = screenWidth < 400;
-    final horizontalPadding = screenWidth >= 640
-        ? 28.0
-        : isCompact
-            ? 16.0
-            : 20.0;
+    final horizontalPadding = screenWidth >= 900
+        ? 36.0
+        : screenWidth >= 600
+            ? 24.0
+            : isCompact
+                ? 14.0
+                : 18.0;
 
     return Scaffold(
-      backgroundColor: _alabaster,
+      backgroundColor: _lightGrey,
       body: CustomScrollView(
         controller: _scrollController,
         physics: const BouncingScrollPhysics(
           parent: AlwaysScrollableScrollPhysics(),
         ),
         slivers: [
-          _buildSliverAppBar(m, isCompact),
+          _buildPinnedAppBar(m),
+          SliverToBoxAdapter(
+            child: _buildHeroSection(m, screenWidth, isCompact),
+          ),
           SliverToBoxAdapter(
             child: SafeArea(
               top: false,
               child: Center(
                 child: ConstrainedBox(
-                  constraints: const BoxConstraints(maxWidth: 760),
+                  constraints: const BoxConstraints(maxWidth: 960),
                   child: Padding(
                     padding: EdgeInsets.fromLTRB(
                       horizontalPadding,
-                      20,
+                      24,
                       horizontalPadding,
                       40,
                     ),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.stretch,
                       children: [
-                        _StaggeredEntrance(
+                        _StaggeredBlock(
                           controller: _entranceController,
-                          start: 0.0,
+                          start: 0.05,
                           end: 0.45,
-                          child: _buildSummaryCard(m, isCompact),
-                        ),
-                        const SizedBox(height: 16),
-                        _StaggeredEntrance(
-                          controller: _entranceController,
-                          start: 0.12,
-                          end: 0.58,
-                          child: _buildContactCard(m),
+                          child: KeyedSubtree(
+                            key: _aboutKey,
+                            child: _buildAboutAndContactSection(m, isCompact),
+                          ),
                         ),
                         const SizedBox(height: 22),
-                        _StaggeredEntrance(
+                        _StaggeredBlock(
                           controller: _entranceController,
-                          start: 0.22,
-                          end: 0.70,
-                          child: _buildFilterBar(),
+                          start: 0.15,
+                          end: 0.55,
+                          child: KeyedSubtree(
+                            key: _educationKey,
+                            child: _buildEducationTimelineSection(m),
+                          ),
                         ),
-                        const SizedBox(height: 20),
-                        AnimatedSize(
-                          duration: const Duration(milliseconds: 300),
-                          curve: Curves.easeOutCubic,
-                          alignment: Alignment.topCenter,
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.stretch,
-                            children: [
-                              if (_activeFilter == 'All' ||
-                                  _activeFilter == 'Academics') ...[
-                                _StaggeredEntrance(
-                                  controller: _entranceController,
-                                  start: 0.30,
-                                  end: 0.80,
-                                  child: _buildAcademicsTimelineCard(m),
-                                ),
-                                const SizedBox(height: 16),
-                              ],
-                              if (_activeFilter == 'All' ||
-                                  _activeFilter == 'Skills') ...[
-                                _StaggeredEntrance(
-                                  controller: _entranceController,
-                                  start: 0.40,
-                                  end: 0.90,
-                                  child: _buildSoftSkillsCard(m),
-                                ),
-                                const SizedBox(height: 16),
-                              ],
-                              if (_activeFilter == 'All' ||
-                                  _activeFilter == 'Talents')
-                                _StaggeredEntrance(
-                                  controller: _entranceController,
-                                  start: 0.50,
-                                  end: 1.0,
-                                  child: _buildTalentsCard(m),
-                                ),
-                            ],
+                        const SizedBox(height: 22),
+                        _StaggeredBlock(
+                          controller: _entranceController,
+                          start: 0.25,
+                          end: 0.68,
+                          child: KeyedSubtree(
+                            key: _skillsKey,
+                            child: _buildTechnicalSkillsSection(),
+                          ),
+                        ),
+                        const SizedBox(height: 22),
+                        _StaggeredBlock(
+                          controller: _entranceController,
+                          start: 0.35,
+                          end: 0.78,
+                          child: KeyedSubtree(
+                            key: _projectsKey,
+                            child: _buildFeaturedProjectsSection(),
+                          ),
+                        ),
+                        const SizedBox(height: 22),
+                        _StaggeredBlock(
+                          controller: _entranceController,
+                          start: 0.45,
+                          end: 0.90,
+                          child: _buildExperienceAndCertificationsRow(),
+                        ),
+                        const SizedBox(height: 22),
+                        _StaggeredBlock(
+                          controller: _entranceController,
+                          start: 0.55,
+                          end: 1.0,
+                          child: KeyedSubtree(
+                            key: _contactKey,
+                            child: _buildProfessionalContactFooter(m),
                           ),
                         ),
                       ],
@@ -173,246 +403,142 @@ class _Member01ScreenState extends State<Member01Screen>
     );
   }
 
-  Widget _buildSliverAppBar(GroupMember m, bool isCompact) {
-    final expandedHeight = isCompact ? 336.0 : 348.0;
-
+  Widget _buildPinnedAppBar(GroupMember m) {
     return SliverAppBar(
       pinned: true,
-      stretch: true,
-      expandedHeight: expandedHeight,
-      backgroundColor: _alabaster,
-      surfaceTintColor: Colors.transparent,
-      foregroundColor: _espresso,
       elevation: 0,
       scrolledUnderElevation: 0,
+      backgroundColor: _deepNavy,
+      foregroundColor: _white,
+      titleSpacing: 4,
+      title: AnimatedOpacity(
+        duration: const Duration(milliseconds: 220),
+        opacity: _showAppBarTitle ? 1.0 : 0.0,
+        child: Row(
+          children: [
+            Container(
+              width: 8,
+              height: 8,
+              decoration: const BoxDecoration(
+                color: _royalBlue,
+                shape: BoxShape.circle,
+              ),
+            ),
+            const SizedBox(width: 10),
+            Expanded(
+              child: Text(
+                m.fullName,
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
+                style: const TextStyle(
+                  color: _white,
+                  fontSize: 16,
+                  fontWeight: FontWeight.w700,
+                  letterSpacing: -0.2,
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
       actions: [
+        IconButton(
+          tooltip: 'Copy email',
+          onPressed: () => _copyEmail(m.email),
+          icon: const Icon(Icons.mail_outline_rounded, size: 20),
+        ),
         Padding(
           padding: const EdgeInsets.only(right: 8),
           child: FavoriteButton(
             memberId: m.id,
-            activeColor: _bronze,
-            inactiveColor: _espresso,
-            backgroundColor: _pureWhite.withValues(alpha: 0.88),
+            activeColor: const Color(0xFF60A5FA),
+            inactiveColor: _white,
+            backgroundColor: _navyElevated,
+            iconSize: 20,
           ),
         ),
       ],
       bottom: PreferredSize(
-        preferredSize: const Size.fromHeight(2),
-        child: _ScrollProgressBar(
-          controller: _scrollController,
-          trackColor: _stoneBorder.withValues(alpha: 0.55),
-          fillColor: _bronze,
-        ),
-      ),
-      flexibleSpace: LayoutBuilder(
-        builder: (context, constraints) {
-          final topPadding = MediaQuery.paddingOf(context).top;
-          final minHeight = kToolbarHeight + topPadding + 2;
-          final maxHeight = expandedHeight + topPadding;
-          final collapseRatio = ((maxHeight - constraints.biggest.height) /
-                  (maxHeight - minHeight))
-              .clamp(0.0, 1.0);
-          final heroOpacity = (1.0 - collapseRatio * 1.45).clamp(0.0, 1.0);
-          final titleOpacity = ((collapseRatio - 0.58) / 0.42).clamp(0.0, 1.0);
-
-          return Stack(
-            fit: StackFit.expand,
-            children: [
-              // Subtle alabaster-to-linen gradient backdrop
-              Container(
-                decoration: const BoxDecoration(
-                  gradient: LinearGradient(
-                    begin: Alignment.topCenter,
-                    end: Alignment.bottomCenter,
-                    colors: [_pureWhite, _alabaster, _linenBeige],
-                  ),
-                ),
-              ),
-              // Minimalist decorative hairline rings
-              Positioned(
-                top: -40,
-                right: -50,
-                child: Opacity(
-                  opacity: heroOpacity * 0.45,
-                  child: Container(
-                    width: 210,
-                    height: 210,
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      border: Border.all(color: _sandBeige, width: 1.2),
-                    ),
-                  ),
-                ),
-              ),
-              // Expanded Circular Portrait & Full Name Header
-              Positioned.fill(
-                child: ClipRect(
-                  child: Opacity(
-                    opacity: heroOpacity,
-                    child: Transform.translate(
-                      offset: Offset(0, -18 * collapseRatio),
-                      child: SafeArea(
-                        bottom: false,
-                        child: OverflowBox(
-                          minHeight: 0,
-                          maxHeight: expandedHeight,
-                          alignment: Alignment.center,
-                          child: Padding(
-                            padding: const EdgeInsets.fromLTRB(24, 44, 24, 16),
-                            child: Column(
-                              mainAxisSize: MainAxisSize.min,
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                _FramedCircularPhoto(
-                                  member: m,
-                                  size: isCompact ? 114 : 128,
-                                ),
-                                const SizedBox(height: 14),
-                                Container(
-                                  padding: const EdgeInsets.symmetric(
-                                    horizontal: 12,
-                                    vertical: 4,
-                                  ),
-                                  decoration: BoxDecoration(
-                                    color: _pureWhite,
-                                    borderRadius: BorderRadius.circular(20),
-                                    border: Border.all(color: _stoneBorder),
-                                  ),
-                                  child: Text(
-                                    'MEMBER 01  •  ${m.designStyleName.toUpperCase()}',
-                                    style: const TextStyle(
-                                      color: _bronze,
-                                      fontSize: 10,
-                                      fontWeight: FontWeight.w700,
-                                      letterSpacing: 1.6,
-                                    ),
-                                  ),
-                                ),
-                                const SizedBox(height: 9),
-                                Text(
-                                  m.fullName,
-                                  textAlign: TextAlign.center,
-                                  maxLines: 2,
-                                  overflow: TextOverflow.ellipsis,
-                                  style: TextStyle(
-                                    color: _espresso,
-                                    fontSize: isCompact ? 23 : 26,
-                                    fontWeight: FontWeight.w600,
-                                    letterSpacing: -0.6,
-                                    height: 1.15,
-                                  ),
-                                ),
-                                const SizedBox(height: 5),
-                                Text(
-                                  m.shortRole.toUpperCase(),
-                                  textAlign: TextAlign.center,
-                                  maxLines: 1,
-                                  overflow: TextOverflow.ellipsis,
-                                  style: const TextStyle(
-                                    color: _umber,
-                                    fontSize: 11.5,
-                                    fontWeight: FontWeight.w600,
-                                    letterSpacing: 1.8,
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-              // Collapsed AppBar Title
-              Positioned(
-                left: 56,
-                right: 64,
-                bottom: 16,
-                child: IgnorePointer(
-                  ignoring: titleOpacity < 0.1,
-                  child: Opacity(
-                    opacity: titleOpacity,
-                    child: Text(
-                      m.fullName,
-                      maxLines: 1,
-                      overflow: TextOverflow.ellipsis,
-                      style: const TextStyle(
-                        color: _espresso,
-                        fontSize: 17,
-                        fontWeight: FontWeight.w600,
-                        letterSpacing: -0.2,
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-            ],
-          );
-        },
+        preferredSize: const Size.fromHeight(2.5),
+        child: _PortfolioScrollProgress(controller: _scrollController),
       ),
     );
   }
 
-  Widget _buildSummaryCard(GroupMember m, bool isCompact) {
-    return _MinimalistCard(
-      padding: EdgeInsets.all(isCompact ? 18 : 22),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+  Widget _buildHeroSection(
+    GroupMember m,
+    double screenWidth,
+    bool isCompact,
+  ) {
+    final isWide = screenWidth >= 680;
+    final horizontalPad = screenWidth >= 900
+        ? 36.0
+        : isWide
+            ? 24.0
+            : isCompact
+                ? 16.0
+                : 20.0;
+
+    return Container(
+      decoration: const BoxDecoration(
+        gradient: LinearGradient(
+          begin: Alignment.topCenter,
+          end: Alignment.bottomCenter,
+          colors: [_deepNavy, Color(0xFF142244)],
+        ),
+      ),
+      child: Stack(
         children: [
-          const _SectionHeader(
-            indexLabel: '00',
-            title: 'PROFILE OVERVIEW',
+          Positioned.fill(
+            child: CustomPaint(
+              painter: _BlueprintGridPainter(),
+            ),
           ),
-          const SizedBox(height: 10),
-          Align(
-            alignment: Alignment.centerLeft,
-            child: Container(
-              padding: const EdgeInsets.symmetric(
-                horizontal: 10,
-                vertical: 4,
-              ),
-              decoration: BoxDecoration(
-                color: _linenBeige,
-                borderRadius: BorderRadius.circular(12),
-              ),
-              child: Text(
-                m.studentId,
-                style: const TextStyle(
-                  color: _umber,
-                  fontSize: 11,
-                  fontWeight: FontWeight.w600,
+          Center(
+            child: ConstrainedBox(
+              constraints: const BoxConstraints(maxWidth: 960),
+              child: Padding(
+                padding: EdgeInsets.fromLTRB(
+                  horizontalPad,
+                  12,
+                  horizontalPad,
+                  28,
                 ),
-              ),
-            ),
-          ),
-          const SizedBox(height: 14),
-          Text(
-            m.shortDescription,
-            style: const TextStyle(
-              color: _espresso,
-              fontSize: 14.5,
-              height: 1.6,
-            ),
-          ),
-          const SizedBox(height: 14),
-          Container(
-            width: double.infinity,
-            padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 12),
-            decoration: BoxDecoration(
-              color: _linenBeige.withValues(alpha: 0.7),
-              borderRadius: BorderRadius.circular(12),
-              border: const Border(
-                left: BorderSide(color: _bronze, width: 3),
-              ),
-            ),
-            child: Text(
-              '"${m.bioQuote}"',
-              style: const TextStyle(
-                color: _umber,
-                fontSize: 13.5,
-                fontStyle: FontStyle.italic,
-                height: 1.5,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    if (isWide)
+                      Row(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          _HeroPortraitFrame(
+                            member: m,
+                            size: 146,
+                          ),
+                          const SizedBox(width: 28),
+                          Expanded(
+                            child: _buildHeroIdentityBlock(m, isCentered: false),
+                          ),
+                        ],
+                      )
+                    else
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Center(
+                            child: _HeroPortraitFrame(
+                              member: m,
+                              size: isCompact ? 118 : 132,
+                            ),
+                          ),
+                          const SizedBox(height: 18),
+                          _buildHeroIdentityBlock(m, isCentered: true),
+                        ],
+                      ),
+                    const SizedBox(height: 22),
+                    _buildQuickJumpNav(isCentered: !isWide),
+                  ],
+                ),
               ),
             ),
           ),
@@ -421,65 +547,311 @@ class _Member01ScreenState extends State<Member01Screen>
     );
   }
 
-  Widget _buildContactCard(GroupMember m) {
-    return _MinimalistCard(
-      padding: const EdgeInsets.all(20),
+  Widget _buildHeroIdentityBlock(GroupMember m, {required bool isCentered}) {
+    final align = isCentered ? CrossAxisAlignment.center : CrossAxisAlignment.start;
+    final textAlign = isCentered ? TextAlign.center : TextAlign.left;
+
+    return Column(
+      crossAxisAlignment: align,
+      children: [
+        Container(
+          padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 5),
+          decoration: BoxDecoration(
+            color: _royalBlue.withValues(alpha: 0.22),
+            borderRadius: BorderRadius.circular(20),
+            border: Border.all(
+              color: _royalBlue.withValues(alpha: 0.65),
+            ),
+          ),
+          child: const Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Icon(
+                Icons.verified_user_outlined,
+                size: 13,
+                color: Color(0xFF93C5FD),
+              ),
+              SizedBox(width: 6),
+              Flexible(
+                child: Text(
+                  'MEMBER 01  •  IT PORTFOLIO',
+                  overflow: TextOverflow.ellipsis,
+                  style: TextStyle(
+                    color: Color(0xFFDBEAFE),
+                    fontSize: 10.5,
+                    fontWeight: FontWeight.w700,
+                    letterSpacing: 1.2,
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+        const SizedBox(height: 12),
+        Text(
+          m.fullName,
+          textAlign: textAlign,
+          style: TextStyle(
+            color: _white,
+            fontSize: isCentered ? 26 : 32,
+            fontWeight: FontWeight.w800,
+            letterSpacing: -0.6,
+            height: 1.15,
+          ),
+        ),
+        const SizedBox(height: 8),
+        Text(
+          m.shortRole,
+          textAlign: textAlign,
+          style: const TextStyle(
+            color: Color(0xFF93C5FD),
+            fontSize: 14,
+            fontWeight: FontWeight.w600,
+            height: 1.4,
+          ),
+        ),
+        const SizedBox(height: 14),
+        Wrap(
+          alignment: isCentered ? WrapAlignment.center : WrapAlignment.start,
+          spacing: 10,
+          runSpacing: 8,
+          children: [
+            _HeroMetaPill(
+              icon: Icons.location_on_outlined,
+              label: m.address,
+            ),
+            _HeroMetaPill(
+              icon: Icons.school_outlined,
+              label: 'ITUM • 2024 – Present',
+            ),
+            InkWell(
+              onTap: () => _copyEmail(m.email),
+              borderRadius: BorderRadius.circular(20),
+              child: _HeroMetaPill(
+                icon: Icons.mail_outline_rounded,
+                label: m.email,
+                isInteractive: true,
+              ),
+            ),
+          ],
+        ),
+      ],
+    );
+  }
+
+  Widget _buildQuickJumpNav({required bool isCentered}) {
+    final navItems = [
+      ('About', Icons.person_outline_rounded, _aboutKey),
+      ('Education', Icons.school_outlined, _educationKey),
+      ('Skills', Icons.layers_outlined, _skillsKey),
+      ('Projects', Icons.rocket_launch_outlined, _projectsKey),
+      ('Experience', Icons.work_outline_rounded, _experienceKey),
+      ('Certifications', Icons.workspace_premium_outlined, _certificationsKey),
+      ('Contact', Icons.alternate_email_rounded, _contactKey),
+    ];
+
+    return Container(
+      width: double.infinity,
+      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+      decoration: BoxDecoration(
+        color: _navyElevated.withValues(alpha: 0.78),
+        borderRadius: BorderRadius.circular(16),
+        border: Border.all(
+          color: _royalBlue.withValues(alpha: 0.3),
+        ),
+      ),
+      child: SingleChildScrollView(
+        scrollDirection: Axis.horizontal,
+        physics: const BouncingScrollPhysics(),
+        child: Row(
+          mainAxisAlignment:
+              isCentered ? MainAxisAlignment.center : MainAxisAlignment.start,
+          children: navItems.map((item) {
+            return Padding(
+              padding: const EdgeInsets.only(right: 6),
+              child: InkWell(
+                onTap: () => _scrollToSection(item.$3),
+                borderRadius: BorderRadius.circular(10),
+                child: Container(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 11,
+                    vertical: 7,
+                  ),
+                  decoration: BoxDecoration(
+                    color: _deepNavy.withValues(alpha: 0.65),
+                    borderRadius: BorderRadius.circular(10),
+                    border: Border.all(
+                      color: _white.withValues(alpha: 0.08),
+                    ),
+                  ),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Icon(
+                        item.$2,
+                        size: 14,
+                        color: const Color(0xFF93C5FD),
+                      ),
+                      const SizedBox(width: 6),
+                      Text(
+                        item.$1,
+                        style: const TextStyle(
+                          color: _white,
+                          fontSize: 12,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            );
+          }).toList(),
+        ),
+      ),
+    );
+  }
+
+  Widget _buildAboutAndContactSection(GroupMember m, bool isCompact) {
+    return _PortfolioCard(
+      padding: EdgeInsets.all(isCompact ? 18 : 24),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const _SectionHeader(
-            indexLabel: '01',
-            title: 'CONTACT & LOCATION',
+          const _PortfolioSectionTitle(
+            eyebrow: '01 / PROFILE',
+            title: 'About Me & Contact Details',
+            subtitle: 'Professional summary and verified contact information',
           ),
-          const SizedBox(height: 16),
+          const SizedBox(height: 18),
           LayoutBuilder(
             builder: (context, constraints) {
-              final twoColumns = constraints.maxWidth >= 500;
-              final addressTile = _ContactTile(
-                icon: Icons.place_outlined,
-                label: 'ADDRESS',
-                value: m.address,
+              final isWide = constraints.maxWidth >= 660;
+              final aboutText = Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  for (var i = 0; i < _summaryParagraphs.length; i++) ...[
+                    if (i < _summaryParagraphs.length - 1)
+                      Text(
+                        _summaryParagraphs[i],
+                        style: const TextStyle(
+                          color: _deepNavy,
+                          fontSize: 14.5,
+                          height: 1.65,
+                        ),
+                      )
+                    else
+                      Container(
+                        width: double.infinity,
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: 14,
+                          vertical: 12,
+                        ),
+                        decoration: BoxDecoration(
+                          color: _royalBlueSoft.withValues(alpha: 0.65),
+                          borderRadius: BorderRadius.circular(12),
+                          border: const Border(
+                            left: BorderSide(color: _royalBlue, width: 3.5),
+                          ),
+                        ),
+                        child: Text(
+                          _summaryParagraphs[i],
+                          style: const TextStyle(
+                            color: _deepNavy,
+                            fontSize: 14,
+                            fontWeight: FontWeight.w500,
+                            height: 1.55,
+                          ),
+                        ),
+                      ),
+                    if (i < _summaryParagraphs.length - 1)
+                      const SizedBox(height: 12),
+                  ],
+                ],
               );
-              final emailTile = _ContactTile(
-                icon: Icons.mail_outline_rounded,
-                label: 'EMAIL',
-                value: m.email,
-                trailing: IconButton(
-                  tooltip: 'Copy email address',
-                  onPressed: () => _copyEmail(m.email),
-                  icon: const Icon(
-                    Icons.copy_rounded,
-                    size: 18,
-                    color: _bronze,
-                  ),
+
+              final contactDetails = Container(
+                padding: const EdgeInsets.all(16),
+                decoration: BoxDecoration(
+                  color: _lightGrey,
+                  borderRadius: BorderRadius.circular(16),
+                  border: Border.all(color: _borderGrey),
+                ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const Text(
+                      'DIRECT DETAILS',
+                      style: TextStyle(
+                        color: _royalBlue,
+                        fontSize: 11,
+                        fontWeight: FontWeight.w800,
+                        letterSpacing: 1.4,
+                      ),
+                    ),
+                    const SizedBox(height: 14),
+                    _DetailInfoRow(
+                      icon: Icons.badge_outlined,
+                      label: 'Full Name',
+                      value: m.fullName,
+                    ),
+                    const Padding(
+                      padding: EdgeInsets.symmetric(vertical: 10),
+                      child: Divider(color: _borderGrey, height: 1),
+                    ),
+                    _DetailInfoRow(
+                      icon: Icons.location_on_outlined,
+                      label: 'Location',
+                      value: m.address,
+                    ),
+                    const Padding(
+                      padding: EdgeInsets.symmetric(vertical: 10),
+                      child: Divider(color: _borderGrey, height: 1),
+                    ),
+                    _DetailInfoRow(
+                      icon: Icons.mail_outline_rounded,
+                      label: 'Email',
+                      value: m.email,
+                      trailing: IconButton(
+                        tooltip: 'Copy email address',
+                        onPressed: () => _copyEmail(m.email),
+                        icon: const Icon(
+                          Icons.copy_rounded,
+                          size: 18,
+                          color: _royalBlue,
+                        ),
+                      ),
+                    ),
+                    const Padding(
+                      padding: EdgeInsets.symmetric(vertical: 10),
+                      child: Divider(color: _borderGrey, height: 1),
+                    ),
+                    const _DetailInfoRow(
+                      icon: Icons.engineering_outlined,
+                      label: 'Focus',
+                      value: 'Software Engineering • DevOps & Cloud',
+                    ),
+                  ],
                 ),
               );
 
-              if (twoColumns) {
+              if (isWide) {
                 return Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Expanded(child: addressTile),
-                    Container(
-                      width: 1,
-                      height: 46,
-                      margin: const EdgeInsets.symmetric(horizontal: 16),
-                      color: _stoneBorder,
-                    ),
-                    Expanded(child: emailTile),
+                    Expanded(flex: 6, child: aboutText),
+                    const SizedBox(width: 22),
+                    Expanded(flex: 5, child: contactDetails),
                   ],
                 );
               }
 
               return Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
-                  addressTile,
-                  const Padding(
-                    padding: EdgeInsets.symmetric(vertical: 12),
-                    child: Divider(color: _stoneBorder, height: 1),
-                  ),
-                  emailTile,
+                  aboutText,
+                  const SizedBox(height: 18),
+                  contactDetails,
                 ],
               );
             },
@@ -489,128 +861,153 @@ class _Member01ScreenState extends State<Member01Screen>
     );
   }
 
-  Widget _buildFilterBar() {
-    const filters = [
-      ('All', 'All Sections'),
-      ('Academics', 'Academics'),
-      ('Skills', 'Soft Skills'),
-      ('Talents', 'Talents'),
-    ];
+  Widget _buildEducationTimelineSection(GroupMember m) {
+    final educationEntries = m.qualifications
+        .where((q) => q.level.toLowerCase() != 'certificate')
+        .toList();
 
-    return SingleChildScrollView(
-      scrollDirection: Axis.horizontal,
-      physics: const BouncingScrollPhysics(),
-      child: Row(
-        children: filters.map((item) {
-          final key = item.$1;
-          final label = item.$2;
-          final selected = _activeFilter == key;
-
-          return Padding(
-            padding: const EdgeInsets.only(right: 8),
-            child: ChoiceChip(
-              label: Text(label),
-              selected: selected,
-              showCheckmark: false,
-              selectedColor: _espresso,
-              backgroundColor: _pureWhite,
-              side: BorderSide(
-                color: selected ? _espresso : _stoneBorder,
-              ),
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(24),
-              ),
-              padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 8),
-              labelStyle: TextStyle(
-                color: selected ? _alabaster : _umber,
-                fontSize: 12.5,
-                fontWeight: FontWeight.w600,
-                letterSpacing: 0.3,
-              ),
-              onSelected: (_) => setState(() => _activeFilter = key),
-            ),
-          );
-        }).toList(),
-      ),
-    );
-  }
-
-  Widget _buildAcademicsTimelineCard(GroupMember m) {
-    final qualifications = m.qualifications;
-
-    return _MinimalistCard(
-      padding: const EdgeInsets.all(20),
+    return _PortfolioCard(
+      padding: const EdgeInsets.all(22),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const _SectionHeader(
-            indexLabel: '02',
-            title: 'ACADEMIC TIMELINE',
+          const _PortfolioSectionTitle(
+            eyebrow: '02 / EDUCATION',
+            title: 'Education Timeline',
+            subtitle: 'Academic foundation in Information Technology',
           ),
           const SizedBox(height: 18),
-          for (var i = 0; i < qualifications.length; i++)
-            _TimelineEntry(
-              qualification: qualifications[i],
+          for (var i = 0; i < educationEntries.length; i++)
+            _EducationTimelineItem(
+              qualification: educationEntries[i],
               isFirst: i == 0,
-              isLast: i == qualifications.length - 1,
-              isHighlighted: i == qualifications.length - 1,
+              isLast: i == educationEntries.length - 1,
             ),
         ],
       ),
     );
   }
 
-  Widget _buildSoftSkillsCard(GroupMember m) {
-    return _MinimalistCard(
-      padding: const EdgeInsets.all(20),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          const _SectionHeader(
-            indexLabel: '03',
-            title: 'SOFT SKILLS',
-          ),
-          const SizedBox(height: 18),
-          for (var i = 0; i < m.softSkills.length; i++) ...[
-            _MinimalistSkillRow(skill: m.softSkills[i]),
-            if (i < m.softSkills.length - 1)
-              const Padding(
-                padding: EdgeInsets.symmetric(vertical: 14),
-                child: Divider(color: _stoneBorder, height: 1),
-              ),
-          ],
-        ],
-      ),
-    );
-  }
+  Widget _buildTechnicalSkillsSection() {
+    final visibleCategories = _selectedSkillCategory == 'All'
+        ? _skillCategories
+        : _skillCategories
+            .where((c) => c.id == _selectedSkillCategory)
+            .toList();
 
-  Widget _buildTalentsCard(GroupMember m) {
-    return _MinimalistCard(
-      padding: const EdgeInsets.all(20),
+    return _PortfolioCard(
+      padding: const EdgeInsets.all(22),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const _SectionHeader(
-            indexLabel: '04',
-            title: 'SPECIAL TALENTS & HOBBIES',
+          const _PortfolioSectionTitle(
+            eyebrow: '03 / CAPABILITIES',
+            title: 'Technical Skills',
+            subtitle: 'Languages, frameworks, DevOps tools, databases & cloud',
           ),
           const SizedBox(height: 16),
+          SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            physics: const BouncingScrollPhysics(),
+            child: Row(
+              children: [
+                _buildSkillFilterChip('All', 'All Categories'),
+                for (final category in _skillCategories)
+                  _buildSkillFilterChip(category.id, category.id),
+              ],
+            ),
+          ),
+          const SizedBox(height: 18),
+          AnimatedSize(
+            duration: const Duration(milliseconds: 260),
+            curve: Curves.easeOutCubic,
+            alignment: Alignment.topCenter,
+            child: LayoutBuilder(
+              builder: (context, constraints) {
+                final columns = constraints.maxWidth >= 600 &&
+                        visibleCategories.length > 1
+                    ? 2
+                    : 1;
+                const spacing = 14.0;
+                final cardWidth = columns == 1
+                    ? constraints.maxWidth
+                    : (constraints.maxWidth - spacing) / 2;
+
+                return Wrap(
+                  spacing: spacing,
+                  runSpacing: spacing,
+                  children: visibleCategories
+                      .map(
+                        (category) => SizedBox(
+                          width: cardWidth,
+                          child: _SkillCategoryCard(category: category),
+                        ),
+                      )
+                      .toList(),
+                );
+              },
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildSkillFilterChip(String id, String label) {
+    final selected = _selectedSkillCategory == id;
+    return Padding(
+      padding: const EdgeInsets.only(right: 8),
+      child: ChoiceChip(
+        label: Text(label),
+        selected: selected,
+        showCheckmark: false,
+        selectedColor: _deepNavy,
+        backgroundColor: _lightGrey,
+        side: BorderSide(
+          color: selected ? _deepNavy : _borderGrey,
+        ),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(22),
+        ),
+        padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
+        labelStyle: TextStyle(
+          color: selected ? _white : _slateText,
+          fontSize: 12,
+          fontWeight: FontWeight.w600,
+        ),
+        onSelected: (_) => setState(() => _selectedSkillCategory = id),
+      ),
+    );
+  }
+
+  Widget _buildFeaturedProjectsSection() {
+    return _PortfolioCard(
+      padding: const EdgeInsets.all(22),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const _PortfolioSectionTitle(
+            eyebrow: '04 / ENGINEERING WORK',
+            title: 'Featured Projects',
+            subtitle: 'Backend services, mobile applications, and CI/CD pipelines',
+          ),
+          const SizedBox(height: 18),
           LayoutBuilder(
             builder: (context, constraints) {
-              final columns = constraints.maxWidth >= 520 ? 2 : 1;
-              const spacing = 12.0;
-              final itemWidth = columns == 1
-                  ? constraints.maxWidth
-                  : (constraints.maxWidth - spacing) / 2;
+              final twoColumns = constraints.maxWidth >= 640;
+              const spacing = 16.0;
+              final itemWidth = twoColumns
+                  ? (constraints.maxWidth - spacing) / 2
+                  : constraints.maxWidth;
 
               return Wrap(
                 spacing: spacing,
                 runSpacing: spacing,
-                children: m.talents
+                children: _featuredProjects
                     .map(
-                      (talent) => SizedBox(
+                      (project) => SizedBox(
                         width: itemWidth,
-                        child: _TalentTile(talent: talent),
+                        child: _FeaturedProjectCard(project: project),
                       ),
                     )
                     .toList(),
@@ -621,10 +1018,334 @@ class _Member01ScreenState extends State<Member01Screen>
       ),
     );
   }
+
+  Widget _buildExperienceAndCertificationsRow() {
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        final sideBySide = constraints.maxWidth >= 680;
+        final experienceWidget = KeyedSubtree(
+          key: _experienceKey,
+          child: _buildWorkExperienceCard(),
+        );
+        final certificationsWidget = KeyedSubtree(
+          key: _certificationsKey,
+          child: _buildCertificationsCard(),
+        );
+
+        if (sideBySide) {
+          return Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Expanded(flex: 5, child: experienceWidget),
+              const SizedBox(width: 18),
+              Expanded(flex: 7, child: certificationsWidget),
+            ],
+          );
+        }
+
+        return Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            experienceWidget,
+            const SizedBox(height: 22),
+            certificationsWidget,
+          ],
+        );
+      },
+    );
+  }
+
+  Widget _buildWorkExperienceCard() {
+    return _PortfolioCard(
+      padding: const EdgeInsets.all(22),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const _PortfolioSectionTitle(
+            eyebrow: '05 / EXPERIENCE',
+            title: 'Work Experience',
+            subtitle: 'Industry & organizational background',
+          ),
+          const SizedBox(height: 18),
+          Container(
+            width: double.infinity,
+            padding: const EdgeInsets.all(16),
+            decoration: BoxDecoration(
+              color: _lightGrey,
+              borderRadius: BorderRadius.circular(16),
+              border: Border.all(color: _borderGrey),
+            ),
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Container(
+                  width: 44,
+                  height: 44,
+                  decoration: BoxDecoration(
+                    color: _deepNavy,
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  child: const Icon(
+                    Icons.account_balance_outlined,
+                    color: _white,
+                    size: 22,
+                  ),
+                ),
+                const SizedBox(width: 14),
+                const Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Training Assistant',
+                        style: TextStyle(
+                          color: _deepNavy,
+                          fontSize: 16,
+                          fontWeight: FontWeight.w700,
+                        ),
+                      ),
+                      SizedBox(height: 4),
+                      Text(
+                        "People's Bank",
+                        style: TextStyle(
+                          color: _royalBlue,
+                          fontSize: 14,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildCertificationsCard() {
+    return _PortfolioCard(
+      padding: const EdgeInsets.all(22),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const _PortfolioSectionTitle(
+            eyebrow: '06 / CREDENTIALS',
+            title: 'Certifications',
+            subtitle: 'Verified technical & cloud coursework',
+          ),
+          const SizedBox(height: 18),
+          for (var i = 0; i < _certifications.length; i++) ...[
+            _CertificationTile(item: _certifications[i]),
+            if (i < _certifications.length - 1) const SizedBox(height: 12),
+          ],
+        ],
+      ),
+    );
+  }
+
+  Widget _buildProfessionalContactFooter(GroupMember m) {
+    return Container(
+      padding: const EdgeInsets.all(24),
+      decoration: BoxDecoration(
+        gradient: const LinearGradient(
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+          colors: [_deepNavy, Color(0xFF17284E)],
+        ),
+        borderRadius: BorderRadius.circular(22),
+        boxShadow: [
+          BoxShadow(
+            color: _deepNavy.withValues(alpha: 0.18),
+            blurRadius: 24,
+            offset: const Offset(0, 10),
+          ),
+        ],
+      ),
+      child: LayoutBuilder(
+        builder: (context, constraints) {
+          final isWide = constraints.maxWidth >= 560;
+          final textBlock = Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Container(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 10,
+                  vertical: 4,
+                ),
+                decoration: BoxDecoration(
+                  color: _royalBlue.withValues(alpha: 0.25),
+                  borderRadius: BorderRadius.circular(16),
+                  border: Border.all(
+                    color: _royalBlue.withValues(alpha: 0.6),
+                  ),
+                ),
+                child: const Text(
+                  '07 / CONNECT',
+                  style: TextStyle(
+                    color: Color(0xFFDBEAFE),
+                    fontSize: 10.5,
+                    fontWeight: FontWeight.w700,
+                    letterSpacing: 1.3,
+                  ),
+                ),
+              ),
+              const SizedBox(height: 12),
+              const Text(
+                'Get in Touch',
+                style: TextStyle(
+                  color: _white,
+                  fontSize: 22,
+                  fontWeight: FontWeight.w800,
+                  letterSpacing: -0.3,
+                ),
+              ),
+              const SizedBox(height: 6),
+              Text(
+                'Available for software engineering, backend development, and DevOps & cloud opportunities.',
+                style: TextStyle(
+                  color: _white.withValues(alpha: 0.84),
+                  fontSize: 13.5,
+                  height: 1.5,
+                ),
+              ),
+              const SizedBox(height: 14),
+              Wrap(
+                spacing: 14,
+                runSpacing: 8,
+                children: [
+                  Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      const Icon(
+                        Icons.location_on_outlined,
+                        size: 15,
+                        color: Color(0xFF93C5FD),
+                      ),
+                      const SizedBox(width: 6),
+                      Flexible(
+                        child: Text(
+                          m.address,
+                          overflow: TextOverflow.ellipsis,
+                          style: const TextStyle(
+                            color: _white,
+                            fontSize: 13,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                  Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      const Icon(
+                        Icons.mail_outline_rounded,
+                        size: 15,
+                        color: Color(0xFF93C5FD),
+                      ),
+                      const SizedBox(width: 6),
+                      Flexible(
+                        child: Text(
+                          m.email,
+                          overflow: TextOverflow.ellipsis,
+                          style: const TextStyle(
+                            color: _white,
+                            fontSize: 13,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ],
+          );
+
+          final actions = Column(
+            crossAxisAlignment:
+                isWide ? CrossAxisAlignment.end : CrossAxisAlignment.stretch,
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              FilledButton.icon(
+                onPressed: () => _copyEmail(m.email),
+                style: FilledButton.styleFrom(
+                  backgroundColor: _royalBlue,
+                  foregroundColor: _white,
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 18,
+                    vertical: 14,
+                  ),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(14),
+                  ),
+                ),
+                icon: const Icon(Icons.copy_rounded, size: 18),
+                label: const Text(
+                  'Copy Email',
+                  style: TextStyle(fontWeight: FontWeight.w700),
+                ),
+              ),
+              const SizedBox(height: 10),
+              OutlinedButton.icon(
+                onPressed: () {
+                  _scrollController.animateTo(
+                    0,
+                    duration: const Duration(milliseconds: 450),
+                    curve: Curves.easeOutCubic,
+                  );
+                },
+                style: OutlinedButton.styleFrom(
+                  foregroundColor: _white,
+                  side: BorderSide(
+                    color: _white.withValues(alpha: 0.28),
+                  ),
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 18,
+                    vertical: 12,
+                  ),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(14),
+                  ),
+                ),
+                icon: const Icon(Icons.arrow_upward_rounded, size: 17),
+                label: const Text(
+                  'Back to Top',
+                  style: TextStyle(fontWeight: FontWeight.w600),
+                ),
+              ),
+            ],
+          );
+
+          if (isWide) {
+            return Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Expanded(child: textBlock),
+                const SizedBox(width: 24),
+                actions,
+              ],
+            );
+          }
+
+          return Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              textBlock,
+              const SizedBox(height: 18),
+              actions,
+            ],
+          );
+        },
+      ),
+    );
+  }
 }
 
-class _FramedCircularPhoto extends StatelessWidget {
-  const _FramedCircularPhoto({
+class _HeroPortraitFrame extends StatelessWidget {
+  const _HeroPortraitFrame({
     required this.member,
     required this.size,
   });
@@ -637,31 +1358,43 @@ class _FramedCircularPhoto extends StatelessWidget {
     return Container(
       width: size,
       height: size,
-      padding: const EdgeInsets.all(5),
+      padding: const EdgeInsets.all(4),
       decoration: BoxDecoration(
-        shape: BoxShape.circle,
-        color: _Member01ScreenState._pureWhite,
-        border: Border.all(
-          color: _Member01ScreenState._sandBeige,
-          width: 2,
+        borderRadius: BorderRadius.circular(26),
+        gradient: const LinearGradient(
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+          colors: [
+            _Member01ScreenState._royalBlue,
+            Color(0xFF60A5FA),
+            _Member01ScreenState._royalBlue,
+          ],
         ),
         boxShadow: [
           BoxShadow(
-            color: _Member01ScreenState._bronze.withValues(alpha: 0.14),
-            blurRadius: 22,
+            color: _Member01ScreenState._royalBlue.withValues(alpha: 0.35),
+            blurRadius: 24,
             offset: const Offset(0, 10),
           ),
         ],
       ),
-      child: ClipOval(
-        child: Hero(
-          tag: 'photo_${member.id}',
-          child: MemberPhoto(
-            assetPath: member.photoAsset,
-            memberNumber: member.memberNumber,
-            accentColor: _Member01ScreenState._bronze,
-            width: size - 10,
-            height: size - 10,
+      child: Container(
+        padding: const EdgeInsets.all(3),
+        decoration: BoxDecoration(
+          color: _Member01ScreenState._deepNavy,
+          borderRadius: BorderRadius.circular(22),
+        ),
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(19),
+          child: Hero(
+            tag: 'photo_${member.id}',
+            child: MemberPhoto(
+              assetPath: member.photoAsset,
+              memberNumber: member.memberNumber,
+              accentColor: _Member01ScreenState._royalBlue,
+              width: size - 14,
+              height: size - 14,
+            ),
           ),
         ),
       ),
@@ -669,8 +1402,68 @@ class _FramedCircularPhoto extends StatelessWidget {
   }
 }
 
-class _MinimalistCard extends StatelessWidget {
-  const _MinimalistCard({
+class _HeroMetaPill extends StatelessWidget {
+  const _HeroMetaPill({
+    required this.icon,
+    required this.label,
+    this.isInteractive = false,
+  });
+
+  final IconData icon;
+  final String label;
+  final bool isInteractive;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 11, vertical: 6),
+      decoration: BoxDecoration(
+        color: isInteractive
+            ? _Member01ScreenState._royalBlue.withValues(alpha: 0.26)
+            : _Member01ScreenState._navyElevated,
+        borderRadius: BorderRadius.circular(20),
+        border: Border.all(
+          color: isInteractive
+              ? _Member01ScreenState._royalBlue
+              : _Member01ScreenState._white.withValues(alpha: 0.12),
+        ),
+      ),
+      child: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Icon(
+            icon,
+            size: 14,
+            color: const Color(0xFF93C5FD),
+          ),
+          const SizedBox(width: 6),
+          Flexible(
+            child: Text(
+              label,
+              overflow: TextOverflow.ellipsis,
+              style: const TextStyle(
+                color: _Member01ScreenState._white,
+                fontSize: 12,
+                fontWeight: FontWeight.w500,
+              ),
+            ),
+          ),
+          if (isInteractive) ...[
+            const SizedBox(width: 6),
+            const Icon(
+              Icons.copy_rounded,
+              size: 12,
+              color: Color(0xFFBFDBFE),
+            ),
+          ],
+        ],
+      ),
+    );
+  }
+}
+
+class _PortfolioCard extends StatelessWidget {
+  const _PortfolioCard({
     required this.child,
     this.padding = const EdgeInsets.all(20),
   });
@@ -680,13 +1473,18 @@ class _MinimalistCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      elevation: 0,
-      margin: EdgeInsets.zero,
-      color: _Member01ScreenState._pureWhite,
-      shape: RoundedRectangleBorder(
+    return Container(
+      decoration: BoxDecoration(
+        color: _Member01ScreenState._white,
         borderRadius: BorderRadius.circular(20),
-        side: const BorderSide(color: _Member01ScreenState._stoneBorder),
+        border: Border.all(color: _Member01ScreenState._borderGrey),
+        boxShadow: [
+          BoxShadow(
+            color: _Member01ScreenState._deepNavy.withValues(alpha: 0.04),
+            blurRadius: 18,
+            offset: const Offset(0, 6),
+          ),
+        ],
       ),
       child: Padding(
         padding: padding,
@@ -696,45 +1494,63 @@ class _MinimalistCard extends StatelessWidget {
   }
 }
 
-class _SectionHeader extends StatelessWidget {
-  const _SectionHeader({
-    required this.indexLabel,
+class _PortfolioSectionTitle extends StatelessWidget {
+  const _PortfolioSectionTitle({
+    required this.eyebrow,
     required this.title,
+    required this.subtitle,
   });
 
-  final String indexLabel;
+  final String eyebrow;
   final String title;
+  final String subtitle;
 
   @override
   Widget build(BuildContext context) {
-    return Row(
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Container(
-          padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
-          decoration: BoxDecoration(
-            color: _Member01ScreenState._linenBeige,
-            borderRadius: BorderRadius.circular(8),
-          ),
-          child: Text(
-            indexLabel,
-            style: const TextStyle(
-              color: _Member01ScreenState._bronze,
-              fontSize: 11,
-              fontWeight: FontWeight.w700,
-              letterSpacing: 1.0,
+        Row(
+          children: [
+            Container(
+              width: 18,
+              height: 2.5,
+              decoration: BoxDecoration(
+                color: _Member01ScreenState._royalBlue,
+                borderRadius: BorderRadius.circular(2),
+              ),
             ),
+            const SizedBox(width: 8),
+            Flexible(
+              child: Text(
+                eyebrow,
+                overflow: TextOverflow.ellipsis,
+                style: const TextStyle(
+                  color: _Member01ScreenState._royalBlue,
+                  fontSize: 11,
+                  fontWeight: FontWeight.w800,
+                  letterSpacing: 1.5,
+                ),
+              ),
+            ),
+          ],
+        ),
+        const SizedBox(height: 6),
+        Text(
+          title,
+          style: const TextStyle(
+            color: _Member01ScreenState._deepNavy,
+            fontSize: 20,
+            fontWeight: FontWeight.w800,
+            letterSpacing: -0.4,
           ),
         ),
-        const SizedBox(width: 10),
-        Expanded(
-          child: Text(
-            title,
-            style: const TextStyle(
-              color: _Member01ScreenState._espresso,
-              fontSize: 12,
-              fontWeight: FontWeight.w700,
-              letterSpacing: 1.8,
-            ),
+        const SizedBox(height: 2),
+        Text(
+          subtitle,
+          style: const TextStyle(
+            color: _Member01ScreenState._slateText,
+            fontSize: 13,
           ),
         ),
       ],
@@ -742,8 +1558,8 @@ class _SectionHeader extends StatelessWidget {
   }
 }
 
-class _ContactTile extends StatelessWidget {
-  const _ContactTile({
+class _DetailInfoRow extends StatelessWidget {
+  const _DetailInfoRow({
     required this.icon,
     required this.label,
     required this.value,
@@ -761,16 +1577,16 @@ class _ContactTile extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Container(
-          width: 40,
-          height: 40,
-          decoration: const BoxDecoration(
-            color: _Member01ScreenState._linenBeige,
-            shape: BoxShape.circle,
+          width: 36,
+          height: 36,
+          decoration: BoxDecoration(
+            color: _Member01ScreenState._royalBlueSoft,
+            borderRadius: BorderRadius.circular(10),
           ),
           child: Icon(
             icon,
             size: 18,
-            color: _Member01ScreenState._bronze,
+            color: _Member01ScreenState._royalBlue,
           ),
         ),
         const SizedBox(width: 12),
@@ -779,21 +1595,21 @@ class _ContactTile extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                label,
+                label.toUpperCase(),
                 style: const TextStyle(
-                  color: _Member01ScreenState._umber,
+                  color: _Member01ScreenState._mutedNavy,
                   fontSize: 10.5,
                   fontWeight: FontWeight.w700,
-                  letterSpacing: 1.4,
+                  letterSpacing: 1.1,
                 ),
               ),
               const SizedBox(height: 2),
               Text(
                 value,
                 style: const TextStyle(
-                  color: _Member01ScreenState._espresso,
-                  fontSize: 14,
-                  fontWeight: FontWeight.w500,
+                  color: _Member01ScreenState._deepNavy,
+                  fontSize: 13.5,
+                  fontWeight: FontWeight.w600,
                 ),
               ),
             ],
@@ -805,25 +1621,19 @@ class _ContactTile extends StatelessWidget {
   }
 }
 
-class _TimelineEntry extends StatelessWidget {
-  const _TimelineEntry({
+class _EducationTimelineItem extends StatelessWidget {
+  const _EducationTimelineItem({
     required this.qualification,
     required this.isFirst,
     required this.isLast,
-    required this.isHighlighted,
   });
 
   final AcademicQualification qualification;
   final bool isFirst;
   final bool isLast;
-  final bool isHighlighted;
 
   @override
   Widget build(BuildContext context) {
-    final isPlaceholder =
-        qualification.title.toLowerCase().contains('placeholder') ||
-            qualification.institution.toLowerCase().contains('placeholder');
-
     return IntrinsicHeight(
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -833,34 +1643,30 @@ class _TimelineEntry extends StatelessWidget {
             child: Column(
               children: [
                 Container(
-                  width: 1.5,
-                  height: 6,
+                  width: 2,
+                  height: 8,
                   color: isFirst
                       ? Colors.transparent
-                      : _Member01ScreenState._stoneBorder,
+                      : _Member01ScreenState._borderGrey,
                 ),
                 Container(
-                  width: 14,
-                  height: 14,
+                  width: 16,
+                  height: 16,
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
-                    color: isHighlighted
-                        ? _Member01ScreenState._bronze
-                        : _Member01ScreenState._pureWhite,
+                    color: _Member01ScreenState._royalBlue,
                     border: Border.all(
-                      color: isPlaceholder
-                          ? _Member01ScreenState._sandBeige
-                          : _Member01ScreenState._bronze,
-                      width: 2,
+                      color: _Member01ScreenState._royalBlueSoft,
+                      width: 3,
                     ),
                   ),
                 ),
                 Expanded(
                   child: Container(
-                    width: 1.5,
+                    width: 2,
                     color: isLast
                         ? Colors.transparent
-                        : _Member01ScreenState._stoneBorder,
+                        : _Member01ScreenState._borderGrey,
                   ),
                 ),
               ],
@@ -869,19 +1675,13 @@ class _TimelineEntry extends StatelessWidget {
           const SizedBox(width: 12),
           Expanded(
             child: Padding(
-              padding: EdgeInsets.only(bottom: isLast ? 0 : 18),
+              padding: EdgeInsets.only(bottom: isLast ? 0 : 16),
               child: Container(
-                padding: const EdgeInsets.all(14),
+                padding: const EdgeInsets.all(16),
                 decoration: BoxDecoration(
-                  color: isHighlighted
-                      ? _Member01ScreenState._linenBeige
-                      : _Member01ScreenState._alabaster,
-                  borderRadius: BorderRadius.circular(14),
-                  border: Border.all(
-                    color: isHighlighted
-                        ? _Member01ScreenState._sandBeige
-                        : _Member01ScreenState._stoneBorder,
-                  ),
+                  color: _Member01ScreenState._lightGrey,
+                  borderRadius: BorderRadius.circular(16),
+                  border: Border.all(color: _Member01ScreenState._borderGrey),
                 ),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -891,65 +1691,82 @@ class _TimelineEntry extends StatelessWidget {
                       runSpacing: 6,
                       crossAxisAlignment: WrapCrossAlignment.center,
                       children: [
-                        Text(
-                          qualification.year,
-                          style: const TextStyle(
-                            color: _Member01ScreenState._bronze,
-                            fontSize: 11.5,
-                            fontWeight: FontWeight.w700,
-                            letterSpacing: 0.4,
+                        Container(
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 10,
+                            vertical: 4,
+                          ),
+                          decoration: BoxDecoration(
+                            color: _Member01ScreenState._royalBlue,
+                            borderRadius: BorderRadius.circular(12),
+                          ),
+                          child: Text(
+                            qualification.year,
+                            style: const TextStyle(
+                              color: _Member01ScreenState._white,
+                              fontSize: 11,
+                              fontWeight: FontWeight.w700,
+                            ),
                           ),
                         ),
                         Container(
                           padding: const EdgeInsets.symmetric(
-                            horizontal: 8,
-                            vertical: 2,
+                            horizontal: 9,
+                            vertical: 3,
                           ),
                           decoration: BoxDecoration(
-                            color: _Member01ScreenState._pureWhite,
-                            borderRadius: BorderRadius.circular(8),
+                            color: _Member01ScreenState._white,
+                            borderRadius: BorderRadius.circular(10),
                             border: Border.all(
-                              color: _Member01ScreenState._stoneBorder,
+                              color: _Member01ScreenState._borderGrey,
                             ),
                           ),
                           child: Text(
                             qualification.level,
                             style: const TextStyle(
-                              color: _Member01ScreenState._umber,
-                              fontSize: 10.5,
+                              color: _Member01ScreenState._deepNavy,
+                              fontSize: 11,
                               fontWeight: FontWeight.w600,
                             ),
                           ),
                         ),
-                        if (qualification.gradeOrStatus != null)
-                          Text(
-                            '• ${qualification.gradeOrStatus!}',
-                            style: const TextStyle(
-                              color: _Member01ScreenState._umber,
-                              fontSize: 11.5,
-                              fontWeight: FontWeight.w500,
-                            ),
-                          ),
                       ],
                     ),
-                    const SizedBox(height: 6),
+                    const SizedBox(height: 10),
                     Text(
                       qualification.title,
                       style: const TextStyle(
-                        color: _Member01ScreenState._espresso,
-                        fontSize: 14.5,
-                        fontWeight: FontWeight.w600,
+                        color: _Member01ScreenState._deepNavy,
+                        fontSize: 15.5,
+                        fontWeight: FontWeight.w700,
                         height: 1.3,
                       ),
                     ),
-                    const SizedBox(height: 3),
-                    Text(
-                      qualification.institution,
-                      style: const TextStyle(
-                        color: _Member01ScreenState._umber,
-                        fontSize: 12.5,
-                        height: 1.35,
-                      ),
+                    const SizedBox(height: 4),
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        const Padding(
+                          padding: EdgeInsets.only(top: 2),
+                          child: Icon(
+                            Icons.account_balance_rounded,
+                            size: 14,
+                            color: _Member01ScreenState._royalBlue,
+                          ),
+                        ),
+                        const SizedBox(width: 6),
+                        Expanded(
+                          child: Text(
+                            qualification.institution,
+                            style: const TextStyle(
+                              color: _Member01ScreenState._slateText,
+                              fontSize: 13.5,
+                              fontWeight: FontWeight.w500,
+                              height: 1.4,
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
                   ],
                 ),
@@ -962,115 +1779,19 @@ class _TimelineEntry extends StatelessWidget {
   }
 }
 
-class _MinimalistSkillRow extends StatelessWidget {
-  const _MinimalistSkillRow({required this.skill});
+class _SkillCategoryCard extends StatelessWidget {
+  const _SkillCategoryCard({required this.category});
 
-  final SoftSkill skill;
-
-  @override
-  Widget build(BuildContext context) {
-    final segments = 5;
-    final filledSegments = (skill.level * segments).round().clamp(1, segments);
-
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Row(
-          children: [
-            Expanded(
-              child: Text(
-                skill.name,
-                style: const TextStyle(
-                  color: _Member01ScreenState._espresso,
-                  fontSize: 14.5,
-                  fontWeight: FontWeight.w600,
-                ),
-              ),
-            ),
-            const SizedBox(width: 12),
-            // Minimalist 5-dot indicator
-            Row(
-              mainAxisSize: MainAxisSize.min,
-              children: List.generate(segments, (index) {
-                final active = index < filledSegments;
-                return Container(
-                  width: 8,
-                  height: 8,
-                  margin: EdgeInsets.only(left: index == 0 ? 0 : 5),
-                  decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    color: active
-                        ? _Member01ScreenState._bronze
-                        : _Member01ScreenState._sandBeige.withValues(alpha: 0.7),
-                  ),
-                );
-              }),
-            ),
-          ],
-        ),
-        const SizedBox(height: 8),
-        TweenAnimationBuilder<double>(
-          tween: Tween<double>(begin: 0, end: skill.level.clamp(0.0, 1.0)),
-          duration: const Duration(milliseconds: 650),
-          curve: Curves.easeOutCubic,
-          builder: (context, value, _) {
-            return ClipRRect(
-              borderRadius: BorderRadius.circular(4),
-              child: LinearProgressIndicator(
-                value: value,
-                minHeight: 4,
-                backgroundColor: _Member01ScreenState._linenBeige,
-                valueColor: const AlwaysStoppedAnimation<Color>(
-                  _Member01ScreenState._bronze,
-                ),
-              ),
-            );
-          },
-        ),
-        if (skill.description.isNotEmpty) ...[
-          const SizedBox(height: 7),
-          Text(
-            skill.description,
-            style: const TextStyle(
-              color: _Member01ScreenState._umber,
-              fontSize: 12.5,
-              height: 1.45,
-            ),
-          ),
-        ],
-      ],
-    );
-  }
-}
-
-class _TalentTile extends StatelessWidget {
-  const _TalentTile({required this.talent});
-
-  final SpecialTalent talent;
-
-  IconData _iconForCategory(String category) {
-    switch (category.toLowerCase()) {
-      case 'art':
-        return Icons.palette_outlined;
-      case 'sports':
-        return Icons.directions_run_rounded;
-      case 'music':
-        return Icons.music_note_outlined;
-      case 'tech hobby':
-        return Icons.terminal_rounded;
-      default:
-        return Icons.auto_awesome_outlined;
-    }
-  }
+  final _SkillCategory category;
 
   @override
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
-        color: _Member01ScreenState._alabaster,
+        color: _Member01ScreenState._lightGrey,
         borderRadius: BorderRadius.circular(16),
-        border: Border.all(color: _Member01ScreenState._stoneBorder),
+        border: Border.all(color: _Member01ScreenState._borderGrey),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -1078,48 +1799,276 @@ class _TalentTile extends StatelessWidget {
           Row(
             children: [
               Container(
-                width: 32,
-                height: 32,
-                decoration: const BoxDecoration(
-                  color: _Member01ScreenState._linenBeige,
-                  shape: BoxShape.circle,
+                width: 34,
+                height: 34,
+                decoration: BoxDecoration(
+                  color: _Member01ScreenState._deepNavy,
+                  borderRadius: BorderRadius.circular(10),
                 ),
                 child: Icon(
-                  _iconForCategory(talent.category),
-                  size: 16,
-                  color: _Member01ScreenState._bronze,
+                  category.icon,
+                  size: 18,
+                  color: _Member01ScreenState._white,
                 ),
               ),
               const SizedBox(width: 10),
               Expanded(
                 child: Text(
-                  talent.category.toUpperCase(),
+                  category.title,
                   style: const TextStyle(
-                    color: _Member01ScreenState._bronze,
-                    fontSize: 10.5,
+                    color: _Member01ScreenState._deepNavy,
+                    fontSize: 14.5,
                     fontWeight: FontWeight.w700,
-                    letterSpacing: 1.4,
                   ),
                 ),
               ),
             ],
           ),
-          const SizedBox(height: 10),
+          const SizedBox(height: 14),
+          Wrap(
+            spacing: 7,
+            runSpacing: 7,
+            children: category.skills
+                .map(
+                  (skill) => Container(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 10,
+                      vertical: 6,
+                    ),
+                    decoration: BoxDecoration(
+                      color: _Member01ScreenState._white,
+                      borderRadius: BorderRadius.circular(10),
+                      border: Border.all(
+                        color: _Member01ScreenState._borderGrey,
+                      ),
+                    ),
+                    child: Text(
+                      skill,
+                      style: const TextStyle(
+                        color: _Member01ScreenState._deepNavy,
+                        fontSize: 12,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                  ),
+                )
+                .toList(),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class _FeaturedProjectCard extends StatelessWidget {
+  const _FeaturedProjectCard({required this.project});
+
+  final _PortfolioProject project;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.all(18),
+      decoration: BoxDecoration(
+        color: _Member01ScreenState._lightGrey,
+        borderRadius: BorderRadius.circular(18),
+        border: Border.all(color: _Member01ScreenState._borderGrey),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Container(
+                width: 40,
+                height: 40,
+                decoration: BoxDecoration(
+                  color: _Member01ScreenState._royalBlueSoft,
+                  borderRadius: BorderRadius.circular(12),
+                  border: Border.all(
+                    color: _Member01ScreenState._royalBlue.withValues(alpha: 0.25),
+                  ),
+                ),
+                child: Icon(
+                  project.icon,
+                  size: 20,
+                  color: _Member01ScreenState._royalBlue,
+                ),
+              ),
+              const SizedBox(width: 12),
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      'PROJECT ${project.number}',
+                      style: const TextStyle(
+                        color: _Member01ScreenState._royalBlue,
+                        fontSize: 10.5,
+                        fontWeight: FontWeight.w800,
+                        letterSpacing: 1.3,
+                      ),
+                    ),
+                    const SizedBox(height: 2),
+                    Text(
+                      project.title,
+                      style: const TextStyle(
+                        color: _Member01ScreenState._deepNavy,
+                        fontSize: 16.5,
+                        fontWeight: FontWeight.w800,
+                        height: 1.25,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+          const SizedBox(height: 8),
           Text(
-            talent.title,
+            project.subtitle,
             style: const TextStyle(
-              color: _Member01ScreenState._espresso,
-              fontSize: 15,
+              color: _Member01ScreenState._slateText,
+              fontSize: 13,
               fontWeight: FontWeight.w600,
+              height: 1.35,
             ),
           ),
-          const SizedBox(height: 4),
-          Text(
-            talent.detail,
-            style: const TextStyle(
-              color: _Member01ScreenState._umber,
-              fontSize: 12.5,
-              height: 1.45,
+          const SizedBox(height: 12),
+          Wrap(
+            spacing: 6,
+            runSpacing: 6,
+            children: project.technologies
+                .map(
+                  (tech) => Container(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 9,
+                      vertical: 4,
+                    ),
+                    decoration: BoxDecoration(
+                      color: _Member01ScreenState._deepNavy,
+                      borderRadius: BorderRadius.circular(8),
+                    ),
+                    child: Text(
+                      tech,
+                      style: const TextStyle(
+                        color: _Member01ScreenState._white,
+                        fontSize: 11,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                  ),
+                )
+                .toList(),
+          ),
+          const SizedBox(height: 14),
+          const Divider(color: _Member01ScreenState._borderGrey, height: 1),
+          const SizedBox(height: 12),
+          for (var i = 0; i < project.highlights.length; i++) ...[
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const Padding(
+                  padding: EdgeInsets.only(top: 5),
+                  child: Icon(
+                    Icons.circle,
+                    size: 6,
+                    color: _Member01ScreenState._royalBlue,
+                  ),
+                ),
+                const SizedBox(width: 9),
+                Expanded(
+                  child: Text(
+                    project.highlights[i],
+                    style: const TextStyle(
+                      color: _Member01ScreenState._deepNavy,
+                      fontSize: 13,
+                      height: 1.45,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            if (i < project.highlights.length - 1) const SizedBox(height: 6),
+          ],
+        ],
+      ),
+    );
+  }
+}
+
+class _CertificationTile extends StatelessWidget {
+  const _CertificationTile({required this.item});
+
+  final _CertificationItem item;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.all(14),
+      decoration: BoxDecoration(
+        color: _Member01ScreenState._lightGrey,
+        borderRadius: BorderRadius.circular(14),
+        border: Border.all(color: _Member01ScreenState._borderGrey),
+      ),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Container(
+            width: 40,
+            height: 40,
+            decoration: BoxDecoration(
+              color: _Member01ScreenState._royalBlueSoft,
+              borderRadius: BorderRadius.circular(12),
+            ),
+            child: Icon(
+              item.icon,
+              size: 20,
+              color: _Member01ScreenState._royalBlue,
+            ),
+          ),
+          const SizedBox(width: 12),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  item.title,
+                  style: const TextStyle(
+                    color: _Member01ScreenState._deepNavy,
+                    fontSize: 14.5,
+                    fontWeight: FontWeight.w700,
+                    height: 1.25,
+                  ),
+                ),
+                const SizedBox(height: 3),
+                Text(
+                  item.issuer,
+                  style: const TextStyle(
+                    color: _Member01ScreenState._slateText,
+                    fontSize: 12.5,
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
+              ],
+            ),
+          ),
+          const SizedBox(width: 10),
+          Container(
+            padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+            decoration: BoxDecoration(
+              color: _Member01ScreenState._white,
+              borderRadius: BorderRadius.circular(10),
+              border: Border.all(color: _Member01ScreenState._borderGrey),
+            ),
+            child: Text(
+              item.year,
+              style: const TextStyle(
+                color: _Member01ScreenState._royalBlue,
+                fontSize: 11.5,
+                fontWeight: FontWeight.w700,
+              ),
             ),
           ),
         ],
@@ -1128,16 +2077,10 @@ class _TalentTile extends StatelessWidget {
   }
 }
 
-class _ScrollProgressBar extends StatelessWidget {
-  const _ScrollProgressBar({
-    required this.controller,
-    required this.trackColor,
-    required this.fillColor,
-  });
+class _PortfolioScrollProgress extends StatelessWidget {
+  const _PortfolioScrollProgress({required this.controller});
 
   final ScrollController controller;
-  final Color trackColor;
-  final Color fillColor;
 
   @override
   Widget build(BuildContext context) {
@@ -1153,17 +2096,57 @@ class _ScrollProgressBar extends StatelessWidget {
         }
         return LinearProgressIndicator(
           value: progress,
-          minHeight: 2,
-          backgroundColor: trackColor,
-          valueColor: AlwaysStoppedAnimation<Color>(fillColor),
+          minHeight: 2.5,
+          backgroundColor: _Member01ScreenState._navyElevated,
+          valueColor: const AlwaysStoppedAnimation<Color>(
+            _Member01ScreenState._royalBlue,
+          ),
         );
       },
     );
   }
 }
 
-class _StaggeredEntrance extends StatelessWidget {
-  const _StaggeredEntrance({
+class _BlueprintGridPainter extends CustomPainter {
+  @override
+  void paint(Canvas canvas, Size size) {
+    final linePaint = Paint()
+      ..color = _Member01ScreenState._royalBlue.withValues(alpha: 0.11)
+      ..strokeWidth = 1;
+
+    const step = 36.0;
+    for (double x = 0; x <= size.width; x += step) {
+      canvas.drawLine(Offset(x, 0), Offset(x, size.height), linePaint);
+    }
+    for (double y = 0; y <= size.height; y += step) {
+      canvas.drawLine(Offset(0, y), Offset(size.width, y), linePaint);
+    }
+
+    final glowPaint = Paint()
+      ..shader = RadialGradient(
+        colors: [
+          _Member01ScreenState._royalBlue.withValues(alpha: 0.22),
+          Colors.transparent,
+        ],
+      ).createShader(
+        Rect.fromCircle(
+          center: Offset(size.width * 0.85, size.height * 0.2),
+          radius: 190,
+        ),
+      );
+    canvas.drawCircle(
+      Offset(size.width * 0.85, size.height * 0.2),
+      190,
+      glowPaint,
+    );
+  }
+
+  @override
+  bool shouldRepaint(covariant CustomPainter oldDelegate) => false;
+}
+
+class _StaggeredBlock extends StatelessWidget {
+  const _StaggeredBlock({
     required this.controller,
     required this.start,
     required this.end,
@@ -1186,11 +2169,57 @@ class _StaggeredEntrance extends StatelessWidget {
       opacity: curve,
       child: SlideTransition(
         position: Tween<Offset>(
-          begin: const Offset(0, 0.04),
+          begin: const Offset(0, 0.03),
           end: Offset.zero,
         ).animate(curve),
         child: child,
       ),
     );
   }
+}
+
+class _SkillCategory {
+  const _SkillCategory({
+    required this.id,
+    required this.title,
+    required this.icon,
+    required this.skills,
+  });
+
+  final String id;
+  final String title;
+  final IconData icon;
+  final List<String> skills;
+}
+
+class _PortfolioProject {
+  const _PortfolioProject({
+    required this.number,
+    required this.title,
+    required this.subtitle,
+    required this.icon,
+    required this.technologies,
+    required this.highlights,
+  });
+
+  final String number;
+  final String title;
+  final String subtitle;
+  final IconData icon;
+  final List<String> technologies;
+  final List<String> highlights;
+}
+
+class _CertificationItem {
+  const _CertificationItem({
+    required this.title,
+    required this.issuer,
+    required this.year,
+    required this.icon,
+  });
+
+  final String title;
+  final String issuer;
+  final String year;
+  final IconData icon;
 }
