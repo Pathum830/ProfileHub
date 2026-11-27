@@ -18,108 +18,77 @@ class MembersData {
     // =========================================================================
     // MEMBER 01 — Pathum Siriwardhana
     // Screen file: lib/screens/members/member_01_screen.dart
-    // Design Style: Modern Minimalist Profile
+    // Design Style: Executive DevOps Portfolio
     // =========================================================================
     GroupMember(
       id: 'member_01',
       memberNumber: 1,
-      studentId: 'STU-2026-001 (Placeholder)',
+      studentId: 'ITUM • NDT (IT)',
       fullName: 'Pathum Siriwardhana',
-      shortRole: 'Intern DevOps Engineer',
-      shortDescription: 'IT student at ITUM focused on DevOps engineering, cloud infrastructure, Linux, Docker, and CI/CD automation.',
+      shortRole:
+          'Information Technology Student | Software Engineering | DevOps & Cloud',
+      shortDescription:
+          'Information Technology student at the Institute of Technology, University of Moratuwa (ITUM), with academic project experience in software development, backend engineering, RESTful API development, database management, cloud technologies and DevOps automation.',
       address: 'Badulla, Sri Lanka',
       email: 'pathumsiriwardhana86@gmail.com',
       photoAsset: 'assets/images/member_01.jpg',
-      designStyleName: 'Modern Minimalist',
-      accentColor: Color(0xFF9C7A54),
-      bioQuote: 'Helping deliver reliable software through efficient build, test, and deployment workflows.',
+      designStyleName: 'Executive DevOps Portfolio',
+      accentColor: Color(0xFF315EBD),
+      bioQuote:
+          'Interested in building reliable software applications, backend systems and automated deployment pipelines.',
       qualifications: [
         AcademicQualification(
-          level: 'G.C.E. O/L',
-          title: 'Ordinary Level Examination (Placeholder)',
-          institution: 'Secondary School Name (Placeholder)',
-          year: 'YYYY (Placeholder)',
-          gradeOrStatus: 'Results (Placeholder)',
-        ),
-        AcademicQualification(
-          level: 'G.C.E. A/L',
-          title: 'Advanced Level Examination (Placeholder)',
-          institution: 'B/Dharmadutha Collage (Placeholder)',
-          year: '2017 (Placeholder)',
-          gradeOrStatus: 'A6 B2 C1 (Placeholder)',
-        ),
-        AcademicQualification(
-          level: 'Certificate',
-          title: 'Python for Beginners',
-          institution: 'University of Moratuwa',
-          year: '2025',
-          gradeOrStatus: 'Completed',
+          level: 'Diploma',
+          title:
+              'National Diploma in Technology (NDT) – Information Technology',
+          institution: 'Institute of Technology, University of Moratuwa',
+          year: '2024 – Present',
         ),
         AcademicQualification(
           level: 'Certificate',
           title: 'Cloud Computing Fundamentals',
           institution: 'IBM SkillsBuild',
           year: '2026',
-          gradeOrStatus: 'Completed',
+        ),
+        AcademicQualification(
+          level: 'Certificate',
+          title: 'Python for Beginners',
+          institution: 'University of Moratuwa',
+          year: '2025',
         ),
         AcademicQualification(
           level: 'Certificate',
           title: 'Google AI Essentials',
           institution: 'Google',
           year: '2026',
-          gradeOrStatus: 'Completed',
-        ),
-        AcademicQualification(
-          level: 'Diploma',
-          title:
-              'National Diploma in Technology (NDT) – Information Technology',
-          institution: 'Institute of Technology, University of Moratuwa (ITUM), Sri Lanka',
-          year: '2024 – Present',
-          gradeOrStatus: 'Ongoing',
         ),
       ],
-      softSkills: [
-        SoftSkill(
-          name: 'Team Collaboration',
-          level: 0.85,
-          description: 'Collaborated in academic group projects using Git and GitHub workflows (level placeholder).',
-        ),
-        SoftSkill(
-          name: 'Communication (Placeholder)',
-          level: 0.80,
-          description:
-              'Placeholder — update with verified personal soft skill details.',
-        ),
-        SoftSkill(
-          name: 'Time Management (Placeholder)',
-          level: 0.80,
-          description:
-              'Placeholder — update with verified personal soft skill details.',
-        ),
-        SoftSkill(
-          name: 'Adaptability (Placeholder)',
-          level: 0.82,
-          description:
-              'Placeholder — update with verified personal soft skill details.',
-        ),
-      ],
+      // No skill ratings are invented; technical skills are grouped in Member01Screen.
+      softSkills: [],
       talents: [
         SpecialTalent(
-          title: 'Special Talent 01 (Placeholder)',
-          category: 'Placeholder',
+          title: 'GuideLanka',
+          category: 'AI & Backend Platform',
           detail:
-              'Add your verified artistic, creative, or technical talent here.',
+              'AI-Powered Rural Tourism and Safari Management Platform (Python, FastAPI, PostgreSQL, Supabase, Gemini API).',
         ),
         SpecialTalent(
-          title: 'Sport / Activity 02 (Placeholder)',
-          category: 'Placeholder',
-          detail: 'Add your verified sports or extracurricular activity here.',
+          title: 'PartTime LK',
+          category: 'Mobile Marketplace',
+          detail:
+              'Part-Time Job Marketplace mobile application (Flutter, Dart, Firebase, Git, GitHub).',
         ),
         SpecialTalent(
-          title: 'Personal Hobby 03 (Placeholder)',
-          category: 'Placeholder',
+          title: 'ERP Project Management Module',
+          category: 'Backend & DevOps',
           detail:
-              'Add your verified music, reading, or personal interest here.',
+              'Backend APIs, JWT authentication, and containerized development (Go, Gin, GORM, PostgreSQL, Docker, JWT, Vue.js 3).',
+        ),
+        SpecialTalent(
+          title: 'CI/CD Pipeline Implementation',
+          category: 'CI/CD Automation',
+          detail:
+              'Automated Maven build and testing workflows (Java, Spring Boot, Maven, GitHub Actions).',
         ),
       ],
     ),
@@ -274,7 +243,6 @@ class MembersData {
           'Motivated IT student at ITUM skilled in programming, web development, and UI/UX design, passionate about building impactful digital solutions.',
       address: 'Mahiyanganaya, Sri Lanka',
       email: 'sewwandinimeshika95@gmail.com',
- main
       photoAsset: 'assets/images/member_03.jpg',
       designStyleName: 'Creative Portfolio / Neo-Brutalist',
       accentColor: Color(0xFFFFDF00),
@@ -332,7 +300,6 @@ class MembersData {
           level: 0.92,
           description:
               'Analytical debugging and algorithmic problem solving across software projects.',
- main
         ),
         SoftSkill(
           name: 'Communication',
@@ -529,7 +496,6 @@ class MembersData {
           'Motivated IT undergraduate at the Institute of Technology, University of Moratuwa, passionate about Full-Stack and Mobile Application Development.',
       address: 'Horampalla, Sri Lanka',
       email: 'chamodimadhushani18@gmail.com',
- main
       photoAsset: 'assets/images/member_05.jpg',
       designStyleName: 'Personal Journey Timeline',
       accentColor: Color(0xFF1B4D3E),
@@ -658,7 +624,6 @@ class MembersData {
           'banking services and resolve transaction issues.',
       address: 'Point Pedro, Sri Lanka',
       email: 'thiruththanikan2003@gmail.com',
- main
       photoAsset: 'assets/images/member_06.jpg',
       designStyleName: 'Magazine Editorial',
       accentColor: Color(0xFF97502F),
@@ -763,7 +728,6 @@ class MembersData {
           'Creative Information Technology student at ITUM with two UI/UX certifications, designing dashboards and user flows in Figma and building practical interfaces in HTML, CSS, and React.js.',
       address: 'City / District, Sri Lanka (Placeholder)',
       email: 'yogarajthuvi123@gmail.com',
- main
       photoAsset: 'assets/images/member_07.jpg',
       designStyleName: 'Dark Cyberpunk',
       accentColor: Color(0xFF00F5D4),
@@ -869,7 +833,6 @@ class MembersData {
       shortDescription: 'IT undergraduate with university project experience in machine learning and natural language processing.',
       address: 'Not provided',
       email: 'fathimashahfa03@gmail.com',
- main
       photoAsset: 'assets/images/member_08.jpg',
       designStyleName: 'Modern Bento Grid',
       accentColor: Color(0xFF534386),
