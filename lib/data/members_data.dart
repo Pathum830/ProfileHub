@@ -154,16 +154,16 @@ class MembersData {
         AcademicQualification(
           level: 'G.C.E. A/L',
           title: 'G.C.E. Advanced Level Examination (Placeholder)',
-          institution: 'Secondary School / College Name (Placeholder)',
-          year: 'YYYY (Placeholder)',
-          gradeOrStatus: 'Results (Placeholder)',
+          institution: 'H/Vijayaba National School, Hungama (Placeholder)',
+          year: '2021 (Placeholder)',
+          gradeOrStatus: 'B-1 C-2 (Placeholder)',
         ),
         AcademicQualification(
           level: 'G.C.E. O/L',
           title: 'G.C.E. Ordinary Level Examination (Placeholder)',
-          institution: 'Secondary School Name (Placeholder)',
-          year: 'YYYY (Placeholder)',
-          gradeOrStatus: 'Results (Placeholder)',
+          institution: 'H/Vijayaba National School, Hungama (Placeholder)',
+          year: '2018 (Placeholder)',
+          gradeOrStatus: 'A-3 B-5 C-1 (Placeholder)',
         ),
       ],
       softSkills: [
