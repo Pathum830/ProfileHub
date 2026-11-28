@@ -172,6 +172,8 @@ class MembersData {
           level: 0.95,
           description:
               'Proven ability to translate complex software requirements into clean, maintainable code and optimized database solutions.',
+        ),
+        SoftSkill(
           name: 'Leadership',
           level: 0.93,
           description:
@@ -194,6 +196,8 @@ class MembersData {
           level: 0.85,
           description:
               'Articulate technical and client communication cultivated through banking customer service and academic presentations.',
+        ),
+        SoftSkill(
           name: 'Conflict Resolution',
           level: 0.87,
           description:
@@ -218,6 +222,8 @@ class MembersData {
           category: 'Security & Innovation',
           detail:
               'Built secure web-based automated voting systems with audit trails and completed advanced cyber security & networking certification.',
+        ),
+        SpecialTalent(
           title: 'Financial Modeling',
           category: 'Hobby',
           detail:
